@@ -171,10 +171,11 @@
                     <p class='text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
                     <div class="subscription d-flex">
                         <input type="text" placeholder='Enter your email address' class='form-control rounded-0'>
-                        <button class='text-white bg-dark btn rounded-0'>Subscribe</button>
+                        <button class='text-white bg-dark btn rounded-0 text-uppercase'>Subscribe</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </main>
+<?php include "footer.php" ?>

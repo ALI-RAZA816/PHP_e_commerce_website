@@ -17,13 +17,21 @@ body{
 /* header  */
 
 
+.footer-links,
 .pages{
     color: #2A2A2A;
     font-size: 16px;
     text-transform: uppercase;
 }
 
+.footer-links{
+    font-size: 15px !important;
+    text-transform: capitalize;
+}
+
 .pages:focus,
+.footer-links:focus,
+.footer-links:hover,
 .pages:hover{
     color: #2A2A2A;
 }

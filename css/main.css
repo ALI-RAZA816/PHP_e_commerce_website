@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Outfit", sans-serif;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+/* header  */
+
+.pages{
+    color: #2A2A2A;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.pages:focus,
+.pages:hover{
+    color: #2A2A2A;
+}

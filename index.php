@@ -146,4 +146,35 @@
             </div>
         </div>
     </section>
+    <section class="support-section">
+        <div class="container">
+            <div class='row' style='margin:8rem 0 3rem 0;'>
+                <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+                    <img src="./images/exchange_icon.png" style='height:50px;width:50px;' class='img-fluid mb-3' alt="">
+                    <span class='text-dark fw-bold'>Easy Exchange Policy</span>
+                    <span class='text-muted'>We offer hassle free  exchange policy</span>
+                </div>
+                <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+                    <img src="./images/quality_icon.png" style='height:50px;width:50px;' class='img-fluid mb-3' alt="">
+                    <span class='text-dark fw-bold'>7 Days Return Policy</span>
+                    <span class='text-muted'>We provide 7 days free return policy </span>
+                </div>
+                <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+                    <img src="./images/support_img.png" style='height:50px;width:50px;' class='img-fluid mb-3' alt="">
+                    <span class='text-dark fw-bold'>Best Customer Support</span>
+                    <span class='text-muted'>We provide 24/7 customer support</span>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-5 text-center" style='margin:10rem 0;'>
+                    <h2>Subscribe now & get 20% off</h2>
+                    <p class='text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                    <div class="subscription d-flex">
+                        <input type="text" placeholder='Enter your email address' class='form-control rounded-0'>
+                        <button class='text-white bg-dark btn rounded-0'>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>

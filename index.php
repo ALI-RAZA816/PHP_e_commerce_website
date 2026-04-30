@@ -9,14 +9,14 @@
                     <span class='text-uppercase'>Shop Now<i class="fa-solid fa-minus" style='color:#2A2A2A'></i></span>
                 </div>
                 <div class="col-6">
-                    <img src="./images/header_img.png" class='img-fluid' alt="">
+                    <img src="./images/header_img.png" class='img-fluid hero-image' alt="">
                 </div>
             </div>
         </div>
     </section>
     <section class='latest-collection-section'>
         <div class="container">
-            <div class="row text-center my-5">
+            <div class="row text-center" style='margin:8rem 0;'>
                 <div class="col-12">
                     <h1 class='text-muted text-uppercase fs-2'>Latest <span class='fw-bold text-dark'>Collections</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h1>
                     <span class='text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.</span>
@@ -25,7 +25,7 @@
             <div class="row gy-4">
                 <div class="card col-3 p-0 rounded-0 border-0">
                    <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
+                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
                         <div class="card-body p-0 d-flex flex-column">
                             <span class='text-muted'>Women Round Neck Cotton Top</span>
                             <span class='fw-bold text-dark'>$149</span>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="card col-3 p-0 rounded-0 border-0">
                    <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
+                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
                         <div class="card-body p-0 d-flex flex-column">
                             <span class='text-muted'>Women Round Neck Cotton Top</span>
                             <span class='fw-bold text-dark'>$149</span>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="card col-3 p-0 rounded-0 border-0">
                    <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
+                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
                         <div class="card-body p-0 d-flex flex-column">
                             <span class='text-muted'>Women Round Neck Cotton Top</span>
                             <span class='fw-bold text-dark'>$149</span>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="card col-3 p-0 rounded-0 border-0">
                    <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
+                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
                         <div class="card-body p-0 d-flex flex-column">
                             <span class='text-muted'>Women Round Neck Cotton Top</span>
                             <span class='fw-bold text-dark'>$149</span>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="card col-3 p-0 rounded-0 border-0">
                    <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
+                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
                         <div class="card-body p-0 d-flex flex-column">
                             <span class='text-muted'>Women Round Neck Cotton Top</span>
                             <span class='fw-bold text-dark'>$149</span>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="card col-3 p-0 rounded-0 border-0">
                    <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
+                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
                         <div class="card-body p-0 d-flex flex-column">
                             <span class='text-muted'>Women Round Neck Cotton Top</span>
                             <span class='fw-bold text-dark'>$149</span>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="card col-3 p-0 rounded-0 border-0">
                    <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
+                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
                         <div class="card-body p-0 d-flex flex-column">
                             <span class='text-muted'>Women Round Neck Cotton Top</span>
                             <span class='fw-bold text-dark'>$149</span>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="card col-3 p-0 rounded-0 border-0">
                    <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
+                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
                         <div class="card-body p-0 d-flex flex-column">
                             <span class='text-muted'>Women Round Neck Cotton Top</span>
                             <span class='fw-bold text-dark'>$149</span>

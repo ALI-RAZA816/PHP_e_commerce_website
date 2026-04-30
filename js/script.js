@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded',function(){
   
     nav_bars.addEventListener('click',function(){
         header_nav_tab.classList.add('active-menu');
+        document.body.style.overflowY = 'hidden';
     });
     cross.addEventListener('click',function(){
         header_nav_tab.classList.remove('active-menu');
+        document.body.style.overflowY = 'auto';
     });
 })

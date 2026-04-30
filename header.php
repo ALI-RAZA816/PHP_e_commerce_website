@@ -15,7 +15,7 @@
     <script src='./js/script.js'></script>
 </head>
 <body>
-    <header>
+    <header class='border-bottom'>
         <nav class="navbar py-3">
             <div class="container">
                 <div class="col-2">

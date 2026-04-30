@@ -1,5 +1,19 @@
+/* nav-tabs active  */
 .active-menu{
     opacity: 1 !important;
     height: 212px !important;
     visibility: visible !important;
 }
+
+
+/* filter angle rotate */
+
+.rotate{
+    transform: translate(-50%,-50%) rotate(90deg);
+}
+
+/* expand category container  */
+.expand{
+    height: 320px !important;
+}
+

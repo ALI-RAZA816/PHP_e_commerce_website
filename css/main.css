@@ -105,3 +105,67 @@ body{
 }
 
 
+/* collection page | filters-sidebar */
+
+.products > div > h1{
+    font-size: 1.8rem;
+}
+
+@media  screen and (max-width:768px) {
+    .products > div > h1{
+        font-size: 1.2rem;
+    }
+}
+
+
+.sideber > h2{
+    color: #3f3f3f;
+    font-weight: normal;
+    font-size: 1.8rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.filter-angle{
+    color: #b1b1b1;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transition: .20s ease;
+    transform: translate(-50%,-50%);
+}
+
+#filter-container{
+    overflow: hidden;
+    height:320px;
+    transition: height .50s ease-in-out;
+}
+
+@media screen and (max-width:768px) {
+    #filter-container{
+        height:0;
+    }
+    
+}
+
+.category h3,
+.types h3{
+    margin-bottom: 1rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.sorting:focus{
+    border: 1px solid #efefef;
+}
+.sorting{
+    height: 40px;
+    width: 230px;
+    border-radius: 0;
+    box-shadow: none !important;
+    border: 1px solid #efefef;
+}
+

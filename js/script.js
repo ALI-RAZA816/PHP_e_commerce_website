@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded',function(){
 
-
     let cross = document.getElementsByClassName('nav-tab-cross')[0];
     let nav_bars = document.getElementsByClassName('nav-bars')[0];
     let header_nav_tab = document.getElementById('header-nav-tabs');
@@ -21,4 +20,11 @@ document.addEventListener('DOMContentLoaded',function(){
        filter_angle.classList.toggle('rotate');
        filter_container.classList.toggle('expand');
     });
-})
+    
+    // const size_input = document.querySelectorAll('.size-input');
+    // size_input.forEach(item=>{
+    //     item.addEventListener('change',function(event){
+    //         alert(event.target.value);
+    //     })
+    // })
+});

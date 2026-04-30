@@ -169,3 +169,34 @@ body{
     border: 1px solid #efefef;
 }
 
+
+/* product page  */
+
+.product-title{
+    color: #3D3D3D;
+}
+
+.product-description{
+    color: #555555;
+}
+
+.size-selection input{
+    display: none;
+}
+
+.size-selection label{
+    height: 40px;
+    width: 40px;
+    color: #2A2A2A;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    font-size: 15px;
+    border: 1px solid #dddddd;
+    background-color: #efefef;
+}
+
+.size-selection input:checked + label{
+    border: 1px solid orangered;
+}
+

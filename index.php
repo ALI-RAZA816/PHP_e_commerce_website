@@ -24,76 +24,92 @@
             </div>
             <div class="row gy-4">
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -108,40 +124,48 @@
             </div>
             <div class="row gy-4">
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
                 <div class="card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                   <div class='px-3'>
-                        <img src="./images/Rectangle 3608.png" class="img-fluid" alt="...">
-                        <div class="card-body p-0 d-flex flex-column">
-                            <span class='text-muted'>Women Round Neck Cotton Top</span>
-                            <span class='fw-bold text-dark'>$149</span>
+                    <a href="product-page.php" class='text-decoration-none'>
+                        <div class='px-3'>
+                            <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
+                            <div class="card-body p-0 d-flex flex-column">
+                                <span class='text-muted '>Women Round Neck Cotton Top</span>
+                                <span class='fw-bold text-dark'>$149</span>
+                            </div>
                         </div>
-                   </div>
+                    </a>
                 </div>
             </div>
         </div>

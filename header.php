@@ -35,7 +35,7 @@
                 <div class="col-2  d-flex justify-content-end align-items-center">
                     <a href="#"><i class="fa-solid me-3 fa-magnifying-glass header-icons"></i></a>
                     <i class="fa-regular me-3 fa-user header-icons"></i>
-                    <a href="#"><i class="fa-solid fa-bag-shopping header-icons"></i></a>
+                    <a href="cart.php"><i class="fa-solid fa-bag-shopping header-icons"></i></a>
                     <i class="fa-solid fa-bars-staggered ms-3 nav-bars"></i>
                 </div>
             </div>

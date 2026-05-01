@@ -202,4 +202,38 @@ body{
 }
 
 
+/* cart page  */
+
+.cart-img{
+    height:80px;
+    width:70px;
+    overflow: hidden;
+}
+
+
+.single-order .title,
+.single-order .price{
+    color: #3a3a3a;
+    font-size: 15px;
+}
+
+.single-order .size{
+    height: 30px;
+    width: 30px;
+    color: #3a3a3a;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #efefef;
+}
+
+.single-order .quantity{
+    outline: none;
+    width:100px;
+    box-shadow: none !important;
+}
+
+.calculations p{
+    color: #3a3a3a;
+}
+
 

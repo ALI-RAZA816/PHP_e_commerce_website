@@ -192,6 +192,7 @@ body{
     line-height: 40px;
     position: absolute;
     font-size: 15px;
+    cursor: pointer;
     border: 1px solid #dddddd;
     background-color: #efefef;
 }
@@ -199,4 +200,6 @@ body{
 .size-selection input:checked + label{
     border: 1px solid orangered;
 }
+
+
 

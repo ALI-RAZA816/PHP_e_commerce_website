@@ -1,9 +1,9 @@
 <?php include "header.php" ?>
 <section class='product-images'>
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-6">
-                <div class="row g-0 p-0">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row g-0 p-0 mt-5 mb-4 mb-md-0 ">
                     <div class="col-2 me-4">
                         <div class='mb-3'>
                             <img src="./images/Rectangle 3634.png" class='img-fluid' alt="">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class='product-detail'>
                     <h1 class='product-title text-dark fs-3'>Men Round Neck Pure Cotton T-shirt</h1>
                     <span class='product-price fs-4'>$139</span>

@@ -59,6 +59,25 @@ body{
     border: 1px solid #2a2a2a21;
 }
 
+.user-profile{
+    position: relative;
+}
+
+.user-profile .profile{
+    position: absolute;
+    top:0;
+    opacity: 0;
+    z-index: 99;
+    visibility: hidden;
+    right: 0;
+    width: 150px;
+    padding:.5rem;
+    transition: .20s ease-in-out;
+    background-color: #efefef;
+}
+
+
+
 /* header responsive  */
 
 @media screen and (max-width:992px) {

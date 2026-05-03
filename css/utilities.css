@@ -21,3 +21,9 @@
     font-weight: bold !important;
 }
 
+.show-profile{
+    top:100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+

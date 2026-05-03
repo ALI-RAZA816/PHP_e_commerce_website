@@ -160,4 +160,4 @@
     </div>
 </section>
 <?php include "footer.php" ?>
-<!-- <script src='./js/size.js'></script> -->
+<script src='./js/size.js'></script>

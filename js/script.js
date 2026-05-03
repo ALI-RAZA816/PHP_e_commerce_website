@@ -13,11 +13,16 @@ document.addEventListener('DOMContentLoaded',function(){
         document.body.style.overflowY = 'auto';
     });
 
-
-    let filter_angle = document.getElementsByClassName('filter-angle')[0];
-    let filter_container = document.getElementById('filter-container');
-    filter_angle.addEventListener('click',function(){
-       filter_angle.classList.toggle('rotate');
-       filter_container.classList.toggle('expand');
+    let user_icon = document.getElementsByClassName("user-icon")[0];
+    const profile = document.querySelector(".profile");
+    user_icon.addEventListener('click',function(){
+        profile.classList.toggle('show-profile')
     });
+    
+    document.addEventListener('click',function(event){
+        if(!user_icon.contains(event.target)){
+            profile.classList.remove('show-profile')
+        }
+    })
+
 });

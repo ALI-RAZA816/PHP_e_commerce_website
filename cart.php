@@ -8,7 +8,7 @@
         </div>
         <div class="orders" style='min-height:100vh;margin-bottom:5rem;'>
             <div class="row cart-products align-items-start">
-                <div class="col-8">
+                <div class="col-md-8">
                     <div class="d-flex align-items-center justify-content-between border-top border-bottom py-2 single-order">
                         <div class='d-flex'>
                             <div class='cart-img me-3'>
@@ -36,8 +36,16 @@
                         <i class="fa-regular fa-trash-can cart-trash" style='color:#3a3a3a;cursor:pointer;'></i>
                     </div>
                 </div>
-                 <div class="col-4">
-                    <?php include "cart-total.php" ?>
+                 <div class="col-md-4 mt-4 mt-md-0">
+                    <div class="cart-total">
+                        <h5 class='text-muted text-uppercase'>Cart <span class='fw-bold text-dark'>Totals</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h5>
+                        <div class="calculations">
+                        <p class='mb-2 d-flex justify-content-between border-bottom pb-2'><span>Subtotal</span><span>$60.00</span></p>
+                        <p class='mb-2 d-flex justify-content-between border-bottom pb-2'><span>Shipping Fee</span><span>$00.00</span></p>
+                        <p class='mb-2 d-flex justify-content-between border-bottom pb-2'><span class='fw-bold'>Total</span><span>$00.00</span></p>
+                        </div>
+                        <a href="payment.php" class='text-decoration-none'><button class='btn rounded-0 d-block w-100 btn-dark text-white text-uppercase'>Proceed to Checkout</button></a>
+                    </div>
                 </div>
             </div>
         </div>

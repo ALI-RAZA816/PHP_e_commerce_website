@@ -79,6 +79,7 @@
                             </div>
                         </label>
                     </div>
+                    <button class='btn rounded-0 mt-4 d-block w-100 btn-dark text-white text-uppercase'>Place Order</button>
                 </div>
             </div>
         </div>

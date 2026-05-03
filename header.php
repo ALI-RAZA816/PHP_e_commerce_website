@@ -29,7 +29,7 @@
                         <li class="nav-item"><a class="nav-link pages" href="index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link pages" href="collection.php">Collection</a></li>
                         <li class="nav-item"><a class="nav-link pages" href="about.php">About</a></li>
-                        <li class="nav-item border-bottom-0"><a class="nav-link pages" href="#">Contact</a></li>
+                        <li class="nav-item border-bottom-0"><a class="nav-link pages" href="contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-2  d-flex justify-content-end align-items-center">

@@ -28,7 +28,7 @@
                         <i class='fa-solid fa-xmark nav-tab-cross'></i>
                         <li class="nav-item"><a class="nav-link pages" href="index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link pages" href="collection.php">Collection</a></li>
-                        <li class="nav-item"><a class="nav-link pages" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link pages" href="about.php">About</a></li>
                         <li class="nav-item border-bottom-0"><a class="nav-link pages" href="#">Contact</a></li>
                     </ul>
                 </div>

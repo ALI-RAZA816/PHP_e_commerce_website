@@ -27,3 +27,8 @@
     visibility: visible !important;
 }
 
+.active-link{
+    background-color: #FFEBF5 !important;
+    border-color: #C586A5 !important;
+}
+

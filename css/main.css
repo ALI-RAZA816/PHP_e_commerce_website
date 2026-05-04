@@ -255,6 +255,7 @@ body{
 
 
 /* about page  */
+.delivery-information input,
 .about-us-form textarea,
 .about-us-form input{
     box-shadow: none !important;
@@ -263,6 +264,11 @@ body{
 
 .about-us-form textarea{
     height:250px;
+}
+.delivery-information input:focus,
+.about-us-form textarea:focus,
+.about-us-form input:focus{
+    border-color:#3a3a3a;
 }
 
 

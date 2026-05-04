@@ -271,4 +271,20 @@ body{
     border-color:#3a3a3a;
 }
 
+/* signup page  */
+.signup-page h4,
+.login-page h4{
+    font-family: "Prata", serif;
+}
+
+.signup-page form input,
+.login-page form input{
+    box-shadow: none !important;
+    outline: none;
+}
+.signup-page form input:focus,
+.login-page form input:focus{
+    border-color: #2A2A2A !important;
+}
+
 

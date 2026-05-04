@@ -10,10 +10,10 @@
             <div class="row delivery-information align-items-start">
                 <div class="col-md-6">
                     <div class="row g-0 p-0 mb-3">
-                        <div class="col-6 pe-3">
+                        <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
                             <input type="text" class='form-control rounded-0' placeholder='First name'>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <input type="text" class='form-control rounded-0' placeholder='Last name'>
                         </div>
                     </div>
@@ -24,18 +24,18 @@
                         <input type="text" class='form-control rounded-0' placeholder='Street'>
                     </div>
                     <div class="row g-0 p-0 mb-3">
-                        <div class="col-6 pe-3">
+                        <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
                             <input type="text" class='form-control rounded-0' placeholder='City'>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <input type="text" class='form-control rounded-0' placeholder='State'>
                         </div>
                     </div>
                     <div class="row g-0 p-0 mb-3">
-                        <div class="col-6 pe-3">
+                        <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
                             <input type="text" class='form-control rounded-0' placeholder='Zip Code'>
                         </div>
-                        <div class="col-6">
+                        <div class="col-md-6">
                             <input type="text" class='form-control rounded-0' placeholder='Country'>
                         </div>
                     </div>

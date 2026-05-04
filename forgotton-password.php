@@ -2,7 +2,7 @@
 <section class='forgotton-password-page'>
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center" style='height:92vh;'>
-            <div class="col-4" style='margin-top:5rem;'>
+            <div class="col-md-4" style='margin-top:5rem;'>
                 <h3 class='text-dark text-capitlize text-center mb-4'>Reset Password<i class="fa-solid fa-minus"></i></h3>
                 <form action="">
                     <input type="text" class='form-control rounded-0 border mb-3' placeholder='Enter email address'>

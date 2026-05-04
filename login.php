@@ -7,7 +7,7 @@
                 <form action="">
                     <input type="text" class='form-control rounded-0 border mb-3' placeholder='Email'>
                     <input type="text" class='form-control rounded-0 border mb-2' placeholder='Password'>
-                    <p style='font-size:14px;' class='d-flex justify-content-between text-muted'><a href='#' class='text-decoration-none text-muted'>Forgotton Password?</a><span><a href="signup.php" class='text-decoration-none text-muted'>Signup</a></span></p>
+                    <p style='font-size:14px;' class='d-flex justify-content-between text-muted'><a href='forgotton-password.php' class='text-decoration-none text-muted'>Forgotton Password?</a><span><a href="signup.php" class='text-decoration-none text-muted'>Signup</a></span></p>
                     <button class='btn text-white bg-dark rounded-0 d-block mx-auto'>Login</button>
                 </form>
             </div>

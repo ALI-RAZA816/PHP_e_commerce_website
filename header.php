@@ -33,7 +33,7 @@
                     </ul>
                 </div>
                 <div class="col-2  d-flex justify-content-end align-items-center">
-                    <a href="#"><i class="fa-solid me-3 fa-magnifying-glass header-icons"></i></a>
+                    <a href="collection.php"><i class="fa-solid me-3 fa-magnifying-glass header-icons"></i></a>
                     <div class='user-profile'>
                         <i class="fa-regular me-3 fa-user header-icons user-icon"></i>
                         <div class="profile">

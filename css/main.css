@@ -344,3 +344,14 @@ body{
     background-color: rgba(250, 199, 207, 0.733);
 }
 
+.img-view1,
+.img-view2,
+.img-view3,
+.img-view4{
+    height:100%;
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+

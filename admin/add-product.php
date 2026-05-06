@@ -1,22 +1,30 @@
 <div class="add-product-page py-2 ps-md-5">
     <form action="">
         <div class='mb-3 product-images'>
-            <p class='text-muted mb-2'>Upload Image</p>
+            <p class='text-muted mb-2 text'>Upload Image</p>
             <label for="image-1" class='image border me-2'>
-                <i class="fa-regular fa-image image-icon text-muted"></i>
                 <input type="file" id='image-1' hidden>
+                <div class='img-view1'>
+                    <i class="fa-regular fa-image image-icon image-icon1 text-muted"></i>
+                </div>
             </label>
             <label for="image-2" class='image border me-2'>
-                <i class="fa-regular fa-image image-icon text-muted"></i>
                 <input type="file" id='image-2' hidden>
+                <div class='img-view2'>
+                    <i class="fa-regular fa-image image-icon image-icon2 text-muted"></i>
+                </div>
             </label>
             <label for="image-3" class='image border me-2'>
-                <i class="fa-regular fa-image image-icon text-muted"></i>
                 <input type="file" id='image-3' hidden>
+                <div class='img-view3'>
+                    <i class="fa-regular fa-image image-icon image-icon3 text-muted"></i>
+                </div>
             </label>
             <label for="image-4" class='image border'>
-                <i class="fa-regular fa-image image-icon text-muted"></i>
                 <input type="file" id='image-4' hidden>
+                <div class='img-view4'>
+                    <i class="fa-regular fa-image image-icon image-icon4 text-muted"></i>
+                </div>
             </label>
         </div>
         <div class='mb-3 product-title'>
@@ -79,3 +87,4 @@
         <button class="btn bg-dark text-white rounded-0 mt-3 text-uppercase">Add Item</button>
     </form>
 </div>
+<script src='../js/image.js'></script>

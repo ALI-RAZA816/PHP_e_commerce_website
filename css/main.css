@@ -355,3 +355,12 @@ body{
     background-size: contain;
 }
 
+.error{
+    position: fixed;
+    top:-25px;
+    z-index: 99;
+    left: 50%;
+    transition: top .50s ease;
+    transform: translate(-50%,-50%);
+}
+

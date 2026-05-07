@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <div class="error d-flex align-center border py-2 px-2 bg-white rounded-2 shadow-sm">
+        <i class="fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger"></i><span class='text-danger fs-6'>Image is required</span>
+    </div>
     <header class='border-bottom'>
         <nav class="navbar py-3">
             <div class="container">
@@ -26,5 +29,7 @@
             </div>
         </nav>
     </header>
+    <script src='../js/jquery.js'></script>
+    <script src='../js/main.js'></script>
 </body>
 </html>

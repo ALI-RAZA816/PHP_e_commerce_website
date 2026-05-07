@@ -12,6 +12,7 @@
         $SUB_CATEGORY = $_POST['sub_category'];
         $PRODUCT_PRICE = $_POST['product_price'];
         $PRODUCT_SIZE = $_POST['product_size'];
+        
         function upload_image_1(){
             
             $IMAGE_1_NAME = $_FILES['image1']['name'];

@@ -9,6 +9,7 @@ CREATE TABLE `products`(
     `product_title` VARCHAR(200) NOT NULL,
     `product_description` TEXT NOT NULL,
     `product_category` VARCHAR(100) NOT NULL,
+    `sub_category` VARCHAR(100) NOT NULL,
     `product_price` INT(100) NOT NULL,
     `product_sizes` VARCHAR(200) NOT NULL,
     `img1` TEXT NOT NULL,

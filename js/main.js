@@ -149,9 +149,8 @@ $(document).ready(function(){
                         $(".error").html("");
                     },3000);
                 }else{
-                    alert("Product cannot addedd");
                     $(".error").css("top","30px");
-                    $(".error").html("<span class='text-danger fs-6'>Product cannot addedd</span><i class='fa-solid fa-face-frown'></i>");
+                    $(".error").html("<span class='text-danger fs-6'>Product cannot addedd</span><i class='fa-solid fa-face-frown ms-2 fs-5 text-danger'></i>");
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");

@@ -136,7 +136,7 @@
             echo "Product addedd successfully";
         }
     }else{
-        header("Location: {$host_name}/abouttry.php");
+        header("Location: {$host_name}/admin/not-found.php");
     }
     
 ?>

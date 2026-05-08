@@ -2,16 +2,14 @@
 
     include "config.php";
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
         
-        $IMAGE_2 = $_FILES['image2'];
-        $IMAGE_3 = $_FILES['image3'];
-        $IMAGE_4 = $_FILES['image4'];
-        $PRODUCT_TITLE = $_POST['product_title'];
-        $PRODUCT_DESCRIPTION = $_POST['product_description'];
-        $PRODUCT_CATEGORY = $_POST['product_category'];
-        $SUB_CATEGORY = $_POST['sub_category'];
-        $PRODUCT_PRICE = $_POST['product_price'];
-        $PRODUCT_SIZE = $_POST['product_size'];
+        $PRODUCT_TITLE = mysqli_real_escape_string($conn, $_POST['product_title']);
+        $PRODUCT_DESCRIPTION = mysqli_real_escape_string($conn, $_POST['product_description']);
+        $PRODUCT_CATEGORY = mysqli_real_escape_string($conn, $_POST['product_category']);
+        $SUB_CATEGORY = mysqli_real_escape_string($conn, $_POST['sub_category']);
+        $PRODUCT_PRICE = mysqli_real_escape_string($conn, $_POST['product_price']);
+        $PRODUCT_SIZE = mysqli_real_escape_string($conn, $_POST['product_size']);
         
         function upload_image_1(){
             
@@ -29,7 +27,7 @@
                 die();
             }
 
-            if($IMAGE_1_SIZE > 1073741824){
+            if($IMAGE_1_SIZE > 3145728){
                 echo "File size must be 3MB or less";
                 die();
             }
@@ -58,7 +56,7 @@
                 die();
             }
 
-            if($IMAGE_2_SIZE > 1073741824){
+            if($IMAGE_2_SIZE > 3145728){
                 echo "File size must be 3MB or less";
                 die();
             }
@@ -87,7 +85,7 @@
                 die();
             }
 
-            if($IMAGE_3_SIZE > 1073741824){
+            if($IMAGE_3_SIZE > 3145728){
                 echo "File size must be 3MB or less";
                 die();
             }
@@ -116,7 +114,7 @@
                 die();
             }
 
-            if($IMAGE_4_SIZE > 1073741824){
+            if($IMAGE_4_SIZE > 3145728){
                 echo "File size must be 3MB or less";
                 die();
             }
@@ -129,12 +127,20 @@
         }
         $IMAGE_NAME_4 = upload_image_4();
 
-        $query = "INSERT INTO products (product_title, product_description, product_category, sub_category, product_price, product_sizes, img1, img2,img3,img4) VALUES ('{$PRODUCT_TITLE}','{$PRODUCT_DESCRIPTION}','{$PRODUCT_CATEGORY}','{$SUB_CATEGORY}',{$PRODUCT_PRICE},'{$PRODUCT_SIZE}','{$IMAGE_NAME_1}','{$IMAGE_NAME_2}','{$IMAGE_NAME_3}','{$IMAGE_NAME_4 }')";
-        $result = mysqli_query($conn, $query);
-
-        if($result){
-            echo "Product addedd successfully";
+        if(isset($_POST['bestseller'])){
+            $query = "INSERT INTO bestsellers (product_title, product_description, product_category, sub_category, product_price, product_sizes, img1, img2,img3,img4) VALUES ('{$PRODUCT_TITLE}','{$PRODUCT_DESCRIPTION}','{$PRODUCT_CATEGORY}','{$SUB_CATEGORY}',{$PRODUCT_PRICE},'{$PRODUCT_SIZE}','{$IMAGE_NAME_1}','{$IMAGE_NAME_2}','{$IMAGE_NAME_3}','{$IMAGE_NAME_4}')";
+            $result = mysqli_query($conn, $query);
+            if($result){
+                echo 'Product added to bestseller';
+            }
+        }else if (!isset($_POST['bestseller'])){
+            $query1 = "INSERT INTO products (product_title, product_description, product_category, sub_category, product_price, product_sizes, img1, img2, img3, img4) VALUES ('{$PRODUCT_TITLE}','{$PRODUCT_DESCRIPTION}','{$PRODUCT_CATEGORY}','{$SUB_CATEGORY}',{$PRODUCT_PRICE},'{$PRODUCT_SIZE}','{$IMAGE_NAME_1}','{$IMAGE_NAME_2}','{$IMAGE_NAME_3}','{$IMAGE_NAME_4}')";
+            $result1 = mysqli_query($conn, $query1);
+            if($result1){
+                echo 'Product added successfully';
+            }
         }
+        
     }else{
         header("Location: {$host_name}/admin/not-found.php");
     }

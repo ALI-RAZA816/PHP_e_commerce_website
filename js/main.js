@@ -1,5 +1,5 @@
 $(document).ready(function(){
-   
+    var HOST_NAME = "Product added successfully";
     $('.add-item').on('click',function(event){
         event.preventDefault();
 
@@ -141,16 +141,25 @@ $(document).ready(function(){
                         $(".error").css("top","-25px");
                         $(".error").html("");
                     },3000);
-                }else if(data === 'Product addedd successfully'){
+                }else if(data === 'Product added to bestseller'){
                     $(".error").css("top","30px");
-                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product addedd successfully</span>");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product added successfully to bestseller</span>");
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
+                        window.location.href="http://localhost/php_e_commerce_website/admin/bestseller.php";
+                    },3000);
+                }else if(data === 'Product added successfully'){
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product added successfully</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        window.location.href="http://localhost/php_e_commerce_website/admin/list-items.php";
                     },3000);
                 }else{
                     $(".error").css("top","30px");
-                    $(".error").html("<span class='text-danger fs-6'>Product cannot addedd</span><i class='fa-solid fa-face-frown ms-2 fs-5 text-danger'></i>");
+                    $(".error").html("<span class='text-danger fs-6'>Product cannot added</span><i class='fa-solid fa-face-frown ms-2 fs-5 text-danger'></i>");
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");

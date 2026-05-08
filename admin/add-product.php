@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="form-check mt-3">
-            <input class="form-check-input bestsellers" type="checkbox" value="bestseller" id="checkDefault">
+            <input class="form-check-input bestsellers" name='bestseller' type="checkbox" value="bestseller" id="checkDefault">
             <label class="form-check-label" for="checkDefault">Add to bestseller</label>
         </div>
         <button class="btn bg-dark text-white rounded-0 mt-3 text-uppercase add-item">Add Item</button>

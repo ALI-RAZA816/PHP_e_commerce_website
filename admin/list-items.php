@@ -8,7 +8,7 @@
             <div class="col-10 py-2">
                 <p class='text-muted'>All Product List</p>
                 <div class="all-products-list">
-                    <table class="table">
+                    <!-- <table class="table">
                         <thead>
                             <tr class='border'>
                                 <th>Image</th>
@@ -26,7 +26,7 @@
                                 <td class='text-muted'>Men Tapered Fit Flat-Front Trousers</td>
                                 <td class='text-muted text-center'>Men</td>
                                 <td class='text-muted text-center'>$23</td>
-                                <td class='text-muted text-center'><i class='fa-solid fa-xmark'></i></td>
+                                <td class='text-muted text-center'><i class="fa-solid fa-pen-to-square me-1" style='cursor:pointer;'></i><i class='fa-solid fa-trash text-danger' style='cursor:pointer;'></i></td>
                             </tr>
                             <tr class='align-middle border'>
                                 <th class='col-1'>
@@ -35,7 +35,7 @@
                                 <td class='text-muted'>Men Tapered Fit Flat-Front Trousers</td>
                                 <td class='text-muted text-center'>Men</td>
                                 <td class='text-muted text-center'>$23</td>
-                                <td class='text-muted text-center'><i class='fa-solid fa-xmark'></i></td>
+                                <td class='text-muted text-center'><i class="fa-solid fa-pen-to-square me-1" style='cursor:pointer;'></i><i class='fa-solid fa-trash text-danger' style='cursor:pointer;'></i></td>
                             </tr>
                             <tr class='align-middle border'>
                                 <th class='col-1'>
@@ -44,7 +44,7 @@
                                 <td class='text-muted'>Men Tapered Fit Flat-Front Trousers</td>
                                 <td class='text-muted text-center'>Men</td>
                                 <td class='text-muted text-center'>$23</td>
-                                <td class='text-muted text-center'><i class='fa-solid fa-xmark'></i></td>
+                                <td class='text-muted text-center'><i class="fa-solid fa-pen-to-square me-1" style='cursor:pointer;'></i><i class='fa-solid fa-trash text-danger' style='cursor:pointer;'></i></td>
                             </tr>
                             <tr class='align-middle border'>
                                 <th class='col-1'>
@@ -53,10 +53,10 @@
                                 <td class='text-muted'>Men Tapered Fit Flat-Front Trousers</td>
                                 <td class='text-muted text-center'>Men</td>
                                 <td class='text-muted text-center'>$23</td>
-                                <td class='text-muted text-center'><i class='fa-solid fa-xmark'></i></td>
+                                <td class='text-muted text-center'><i class="fa-solid fa-pen-to-square me-1" style='cursor:pointer;'></i><i class='fa-solid fa-trash text-danger' style='cursor:pointer;'></i></td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table> -->
                 </div>
             </div>
         </div>

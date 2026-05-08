@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    // add products
     var HOST_NAME = "Product added successfully";
     $('.add-item').on('click',function(event){
         event.preventDefault();
@@ -168,4 +169,27 @@ $(document).ready(function(){
             }
         });
     });
+
+    // load product data
+    function load_List_Products(){
+        $.ajax({
+            url:'script/output-list-items.php',
+            success:function(data){
+                $(".all-products-list").html(data);
+            }
+        });
+    }
+    load_List_Products();
+
+    // load bestseller product data
+    function load_bestseller_Products(){
+        $.ajax({
+            url:'script/output-bestseller.php',
+            success:function(data){
+                $(".bestseller").html(data);
+            }
+        });
+    }
+    load_bestseller_Products()
+
 });

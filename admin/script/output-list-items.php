@@ -25,12 +25,17 @@
                                 </th>
                                 <td class='text-muted'>{$row['product_title']}</td>
                                 <td class='text-muted text-center'>{$category}</td>
-                                <td class='text-muted text-center'>{$row['product_price']}</td>
-                                <td class='text-muted text-center'><i class='fa-solid fa-pen-to-square me-1' style='cursor:pointer;'></i><i class='fa-solid fa-trash text-danger' style='cursor:pointer;'></i></td>
+                                <td class='text-muted text-center'><i class='fa-solid fa-dollar-sign'></i>{$row['product_price']}</td>
+                                <td class='text-muted text-center'><i class='fa-solid fa-pen-to-square me-1' style='cursor:pointer;'></i><i class='fa-solid fa-trash list-delete-product text-danger' data-product_id={$row['id']} style='cursor:pointer;'></i></td>
                             </tr>";
                 $output .= "</tbody>
                     </table>";
         }
+    }else{
+        $output = "<div class='d-flex flex-column justify-content-center align-items-center' style='height:80vh;'>
+            <i class='fa-solid fa-box' style='color:#efefef;font-size:5rem;'></i>
+            <h5 class='m-0 mt-2 text-muted'>No Products</h5>
+        </div>";
     }
     echo $output;
 

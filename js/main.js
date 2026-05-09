@@ -190,6 +190,66 @@ $(document).ready(function(){
             }
         });
     }
-    load_bestseller_Products()
+    load_bestseller_Products();
+
+    // delete product from list_items
+    $(document).on('click','.list-delete-product',function(){
+        var deleteId = $(this).data('product_id');
+        $.ajax({
+            url:'script/delete-list-item.php',
+            type:'POST',
+            data:{
+                delete_Id:deleteId
+            },
+            success:function(data){
+                if(data === 'Product deleted'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i></i><span class='text-success fs-6'>Product deleted</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        load_List_Products();
+                    },3000);
+                }else{
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Product can't deleted</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                    },3000);
+                }
+            }
+        })
+    });
+
+    // delete product from list_items
+    $(document).on('click','.best-seller-delete-icon',function(){
+        var deleteId = $(this).data('product_id');
+        $.ajax({
+            url:'script/delete-bestseller-item.php',
+            type:'POST',
+            data:{
+                delete_Id:deleteId
+            },
+            success:function(data){
+                 if(data === 'Product deleted'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product deleted</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        load_bestseller_Products();
+                    },3000);
+                }else{
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Product can't deleted</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                    },3000);
+                }
+            }
+        })
+    });
 
 });

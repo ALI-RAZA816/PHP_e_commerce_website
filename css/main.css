@@ -347,7 +347,8 @@ body{
 .img-view1,
 .img-view2,
 .img-view3,
-.img-view4{
+.img-view4,
+.img-view{
     height:100%;
     width:100%;
     background-repeat: no-repeat;

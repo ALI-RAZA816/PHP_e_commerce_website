@@ -252,4 +252,32 @@ $(document).ready(function(){
         })
     });
 
+    // edit product
+    $('.edit-item').on('click',function(event){
+        event.preventDefault();
+        var form = $(this).closest('form')[0];
+        var formData = new FormData(form);
+
+        var sizes = [];
+        $('.edit-size').each(function(){
+            if($(this).is(":checked")){
+                sizes.push($(this).val());
+            }
+        });
+        sizes = sizes.toString();
+        formData.append('edit-sizes',sizes);
+
+        $.ajax({
+            url:'script/edit-product.php',
+            type:'POST',
+            data:formData,
+            success:function(data){
+                alert(data);
+            },
+            error:function(data){
+                alert(data);
+            }
+        });
+    });
+
 });

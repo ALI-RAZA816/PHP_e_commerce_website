@@ -128,10 +128,10 @@
         $IMAGE_NAME_4 = upload_image_4();
 
         if(isset($_POST['bestseller'])){
-            $query = "INSERT INTO bestsellers (product_title, product_description, product_category, sub_category, product_price, product_sizes, img1, img2,img3,img4) VALUES ('{$PRODUCT_TITLE}','{$PRODUCT_DESCRIPTION}','{$PRODUCT_CATEGORY}','{$SUB_CATEGORY}',{$PRODUCT_PRICE},'{$PRODUCT_SIZE}','{$IMAGE_NAME_1}','{$IMAGE_NAME_2}','{$IMAGE_NAME_3}','{$IMAGE_NAME_4}')";
+            $query = "INSERT INTO products (product_title, product_description, product_category, sub_category, product_price, product_sizes, bestseller, img1, img2,img3,img4) VALUES ('{$PRODUCT_TITLE}','{$PRODUCT_DESCRIPTION}','{$PRODUCT_CATEGORY}','{$SUB_CATEGORY}',{$PRODUCT_PRICE},'{$PRODUCT_SIZE}','{$_POST['bestseller']}','{$IMAGE_NAME_1}','{$IMAGE_NAME_2}','{$IMAGE_NAME_3}','{$IMAGE_NAME_4}')";
             $result = mysqli_query($conn, $query);
             if($result){
-                echo 'Product added to bestseller';
+                echo 'Product added successfully';
             }
         }else if (!isset($_POST['bestseller'])){
             $query1 = "INSERT INTO products (product_title, product_description, product_category, sub_category, product_price, product_sizes, img1, img2, img3, img4) VALUES ('{$PRODUCT_TITLE}','{$PRODUCT_DESCRIPTION}','{$PRODUCT_CATEGORY}','{$SUB_CATEGORY}',{$PRODUCT_PRICE},'{$PRODUCT_SIZE}','{$IMAGE_NAME_1}','{$IMAGE_NAME_2}','{$IMAGE_NAME_3}','{$IMAGE_NAME_4}')";

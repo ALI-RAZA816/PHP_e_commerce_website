@@ -142,13 +142,13 @@ $(document).ready(function(){
                         $(".error").css("top","-25px");
                         $(".error").html("");
                     },3000);
-                }else if(data === 'Product added to bestseller'){
+                }else if(data === 'Product added successfully'){
                     $(".error").css("top","30px");
                     $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product added successfully to bestseller</span>");
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
-                        window.location.href="http://localhost/php_e_commerce_website/admin/bestseller.php";
+                        window.location.href="http://localhost/php_e_commerce_website/admin/list-items.php";
                     },3000);
                 }else if(data === 'Product added successfully'){
                     $(".error").css("top","30px");
@@ -338,12 +338,18 @@ $(document).ready(function(){
                         $('.error').css("top","-25px");
                         $('.error').html("");
                         load_bestseller_Products();
+                        window.location.href="http://localhost/php_e_commerce_website/admin/list-items.php";
+                    },3000);
+                }else{
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Product cannot updated</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        load_bestseller_Products();
                     },3000);
                 }
-            },
-            // error:function(data){
-            //     alert(data);
-            // }
+            }
         });
     });
 

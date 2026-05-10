@@ -12,7 +12,7 @@ CREATE TABLE `products`(
     `sub_category` VARCHAR(100) NOT NULL,
     `product_price` INT(100) NOT NULL,
     `product_sizes` VARCHAR(200) NOT NULL,
-    `bestseller` VARCHAR(100) DEFAULT 'NULL',
+    `bestseller` VARCHAR(100) DEFAULT NULL,
     `img1` TEXT NOT NULL,
     `img2` TEXT NOT NULL,
     `img3` TEXT NOT NULL,

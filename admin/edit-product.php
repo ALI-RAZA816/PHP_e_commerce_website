@@ -159,6 +159,19 @@
                                         }
                                 ?>
                             </div>
+                            <?php 
+                                if(empty($row['bestseller'])){
+                                    echo " <div class='form-check mt-3'>
+                                            <input class='form-check-input bestsellers' name='edit-bestseller' type='checkbox' value='bestseller' id='checkDefault'>
+                                            <label class='form-check-label' for='checkDefault'>Add to bestseller</label>
+                                        </div>";
+                                }else{
+                                      echo " <div class='form-check mt-3'>
+                                            <input class='form-check-input bestsellers' name='edit-bestseller' type='checkbox' value='bestseller' id='checkDefault' checked>
+                                            <label class='form-check-label' for='checkDefault'>Add to bestseller</label>
+                                        </div>";
+                                }
+                            ?>
                             <button class="btn bg-dark text-white rounded-0 mt-3 text-uppercase edit-item">Edit Item</button>
                         </form>
                     </div>

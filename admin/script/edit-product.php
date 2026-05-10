@@ -8,6 +8,7 @@
     $EDIT_SUB_CATEGORY = $_POST['edit-sub-category'];
     $EDIT_PRICE = $_POST['edit-product-price'];
     $EDIT_SIZES = $_POST['edit-sizes'];
+    
 
     function upload_image_1(){
 
@@ -162,9 +163,17 @@
         }
     }
     $IMAGE_NAME_4 = upload_image_4();
-    $query = "UPDATE products SET product_title = '{$EDIT_TITLE}', product_description = '{$EDIT_DESCRIPTION}', product_category = '{$EDIT_CATEGORY}', sub_category = '{$EDIT_SUB_CATEGORY}', product_price = {$EDIT_PRICE}, product_sizes = '{$EDIT_SIZES}', img1 = '{$IMAGE_NAME_1}', img2 = '{$IMAGE_NAME_2}', img3 = '{$IMAGE_NAME_3}', img4 = '{$IMAGE_NAME_4}' WHERE id = {$_POST['edit-id']}";
-    $result = mysqli_query($conn, $query);
-    if($result){
-        echo "Product Updated";
+    if(isset($_POST['edit-bestseller'])){
+        $query = "UPDATE products SET product_title = '{$EDIT_TITLE}', product_description = '{$EDIT_DESCRIPTION}', product_category = '{$EDIT_CATEGORY}', sub_category = '{$EDIT_SUB_CATEGORY}', product_price = {$EDIT_PRICE}, product_sizes = '{$EDIT_SIZES}', bestseller = '{$_POST['edit-bestseller']}', img1 = '{$IMAGE_NAME_1}', img2 = '{$IMAGE_NAME_2}', img3 = '{$IMAGE_NAME_3}', img4 = '{$IMAGE_NAME_4}' WHERE id = {$_POST['edit-id']}";
+        $result = mysqli_query($conn, $query);
+        if($result){
+            echo "Product Updated";
+        }
+    }else if(!isset($_POST['edit-bestseller'])){
+        $query = "UPDATE products SET product_title = '{$EDIT_TITLE}', product_description = '{$EDIT_DESCRIPTION}', product_category = '{$EDIT_CATEGORY}', sub_category = '{$EDIT_SUB_CATEGORY}', product_price = {$EDIT_PRICE}, product_sizes = '{$EDIT_SIZES}', bestseller = NULL, img1 = '{$IMAGE_NAME_1}', img2 = '{$IMAGE_NAME_2}', img3 = '{$IMAGE_NAME_3}', img4 = '{$IMAGE_NAME_4}' WHERE id = {$_POST['edit-id']}";
+        $result = mysqli_query($conn, $query);
+        if($result){
+            echo "Product Updated";
+        }
     }
 ?>

@@ -135,7 +135,14 @@ $(document).ready(function(){
             contentType:false,
             processData:false,
             success:function(data){
-                if(data === 'Choose PNG or JPEG file format'){
+                if(data === 'File size must be 3MB or less'){
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>File size must be 3MB or less</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                    },3000);
+                }else if(data === 'Choose PNG or JPEG file format'){
                     $(".error").css("top","30px");
                     $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Choose PNG or JPEG file format</span>");
                     setTimeout(()=>{
@@ -144,7 +151,7 @@ $(document).ready(function(){
                     },3000);
                 }else if(data === 'Product added successfully'){
                     $(".error").css("top","30px");
-                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product added successfully to bestseller</span>");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product added successfully</span>");
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
@@ -181,17 +188,6 @@ $(document).ready(function(){
     }
     load_List_Products();
 
-    // load bestseller product data
-    function load_bestseller_Products(){
-        $.ajax({
-            url:'script/output-bestseller.php',
-            success:function(data){
-                $(".bestseller").html(data);
-            }
-        });
-    }
-    load_bestseller_Products();
-
     // delete product from list_items
     $(document).on('click','.list-delete-product',function(){
         var deleteId = $(this).data('product_id');
@@ -222,36 +218,7 @@ $(document).ready(function(){
         })
     });
 
-    // delete product from list_items
-    $(document).on('click','.best-seller-delete-icon',function(){
-        var deleteId = $(this).data('product_id');
-        $.ajax({
-            url:'script/delete-bestseller-item.php',
-            type:'POST',
-            data:{
-                delete_Id:deleteId
-            },
-            success:function(data){
-                 if(data === 'Product deleted'){
-                    $('.error').css("top","30px");
-                    $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product deleted</span>");
-                    setTimeout(()=>{
-                        $('.error').css("top","-25px");
-                        $('.error').html("");
-                        load_bestseller_Products();
-                    },3000);
-                }else{
-                    $('.error').css("top","30px");
-                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Product can't deleted</span>");
-                    setTimeout(()=>{
-                        $('.error').css("top","-25px");
-                        $('.error').html("");
-                    },3000);
-                }
-            }
-        })
-    });
-
+    
     // edit product
     $('.edit-item').on('click',function(event){
         event.preventDefault();
@@ -331,14 +298,28 @@ $(document).ready(function(){
             contentType:false,
             processData:false,
             success:function(data){
-                if(data === 'Product Updated'){
+                if(data === 'File size must be 3MB or less'){
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>File size must be 3MB or less</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                    },3000);
+                }else if(data === 'Choose PNG or JPEG file format'){
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Choose PNG or JPEG file format</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                    },3000);
+                }else if(data === 'Product Updated'){
                     $('.error').css("top","30px");
                     $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product Updated</span>");
                     setTimeout(()=>{
                         $('.error').css("top","-25px");
                         $('.error').html("");
-                        load_bestseller_Products();
                         window.location.href="http://localhost/php_e_commerce_website/admin/list-items.php";
+                        load_bestseller_Products();
                     },3000);
                 }else{
                     $('.error').css("top","30px");

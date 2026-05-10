@@ -255,6 +255,63 @@ $(document).ready(function(){
     // edit product
     $('.edit-item').on('click',function(event){
         event.preventDefault();
+
+        if(!$(".edit-title").val()){
+            $(".error").css("top","30px");
+            $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Title is required</span>");
+            $('.edit-title').addClass('img_error');
+            setTimeout(()=>{
+                $(".error").css("top","-25px");
+                $(".error").html("");
+                $('.edit-title').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$(".edit-description").val()){
+            $(".error").css("top","30px");
+            $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Description is required</span>");
+            $('.edit-description').addClass('img_error');
+            setTimeout(()=>{
+                $(".error").css("top","-25px");
+                $(".error").html("");
+                $('.edit-description').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$(".edit-category").val()){
+            $(".error").css("top","30px");
+            $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Select the category</span>");
+            $('.edit-category').addClass('img_error');
+            setTimeout(()=>{
+                $(".error").css("top","-25px");
+                $(".error").html("");
+                $('.edit-category').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$(".edit-sub-category").val()){
+            $(".error").css("top","30px");
+            $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Select sub category</span>");
+            $('.edit-sub-category').addClass('img_error');
+            setTimeout(()=>{
+                $(".error").css("top","-25px");
+                $(".error").html("");
+                $('.edit-sub-category').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$(".edit-price").val()){
+            $(".error").css("top","30px");
+            $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Insert product price</span>");
+            $('.edit-price').addClass('img_error');
+            setTimeout(()=>{
+                $(".error").css("top","-25px");
+                $(".error").html("");
+                $('.edit-price').removeClass('img_error');
+            },3000);
+            return;
+        }
+
         var form = $(this).closest('form')[0];
         var formData = new FormData(form);
 
@@ -271,12 +328,22 @@ $(document).ready(function(){
             url:'script/edit-product.php',
             type:'POST',
             data:formData,
+            contentType:false,
+            processData:false,
             success:function(data){
-                alert(data);
+                if(data === 'Product Updated'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product Updated</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        load_bestseller_Products();
+                    },3000);
+                }
             },
-            error:function(data){
-                alert(data);
-            }
+            // error:function(data){
+            //     alert(data);
+            // }
         });
     });
 

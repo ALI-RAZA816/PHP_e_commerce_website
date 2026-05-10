@@ -26,7 +26,7 @@
                                 <td class='text-muted'>{$row['product_title']}</td>
                                 <td class='text-muted text-center'>{$category}</td>
                                 <td class='text-muted text-center'><i class='fa-solid fa-dollar-sign'></i>{$row['product_price']}</td>
-                                <td class='text-muted text-center'><a href='edit-product.php?&edit-id={$row['id']}' class='text-decoration-none text-muted'><i class='fa-solid fa-pen-to-square me-1' style='cursor:pointer;'></i></a><i class='fa-solid fa-trash list-delete-product text-danger' data-product_id={$row['id']} style='cursor:pointer;'></i></td>
+                                <td class='text-muted text-center'><a href='edit-product.php?edit_id={$row['id']}' class='text-decoration-none text-muted'><i class='fa-solid fa-pen-to-square me-1' style='cursor:pointer;'></i></a><i class='fa-solid fa-trash list-delete-product text-danger' data-product_id={$row['id']} style='cursor:pointer;'></i></td>
                             </tr>";
                         }
                 $output .= "</tbody>

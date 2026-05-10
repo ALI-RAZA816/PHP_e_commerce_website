@@ -2,7 +2,6 @@
 
     include "config.php";
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
         
         $PRODUCT_TITLE = mysqli_real_escape_string($conn, $_POST['product_title']);
         $PRODUCT_DESCRIPTION = mysqli_real_escape_string($conn, $_POST['product_description']);

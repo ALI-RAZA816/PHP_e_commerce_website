@@ -334,7 +334,7 @@ $(document).ready(function(){
     });
 
     // create account handling code
-    $('.create-account').on('click',function(event){
+    $('#create-account').on('click',function(event){
         event.preventDefault();
         var name = $(".name").val();
         var email = $(".email").val();
@@ -384,7 +384,9 @@ $(document).ready(function(){
             },
             success:function(data){
                 if(data === 'Account Created'){
-                    $('.signup-form').trigger('reset');
+                    $(".name").val('');
+                    $(".email").val('');
+                    $(".password").val('');
                     $(".error").css("top","30px");
                     $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Account Created</span>");
                     setTimeout(()=>{
@@ -491,13 +493,48 @@ $(document).ready(function(){
             type:'POST',
             success:function(data){
                 if(data === 'You logged out'){
-                     $('.signup-form').trigger('reset');
                     $(".error").css("top","30px");
                     $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>You logged out</span>");
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
                        window.location.href="http://localhost/php_e_commerce_website";
+                    },3000);
+                }
+            }
+        })
+    });
+
+    // fetch users data
+    function users(){
+        $.ajax({
+            url:'script/fetch-users.php',
+            success:function(data){
+                $('.users-data').html(data);
+            }
+        });
+    }
+    users();
+
+
+    // delete user 
+    $(document).on('click','#delete-user-button',function(event){
+        event.preventDefault();
+        var delete_user_id = $(this).data('delete-user');
+        $.ajax({
+            url:'script/delete-user.php',
+            type:'POST',
+            data:{
+                UserId:delete_user_id
+            },
+            success:function(data){
+                if(data === 'User deleted'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i></i><span class='text-success fs-6'>User deleted</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        users();
                     },3000);
                 }
             }

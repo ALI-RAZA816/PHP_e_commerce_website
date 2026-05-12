@@ -18,3 +18,18 @@ CREATE TABLE `products`(
     `img3` TEXT NOT NULL,
     `img4` TEXT NOT NULL
 ) AUTO_INCREMENT = 1;
+
+
+-- USERS TABLE STRUCTNRE 
+
+CREATE TABLE `users`(
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(200) NOT NULL,
+    `email` VARCHAR(200) NOT NULL,
+    `password` VARCHAR(100) NOT NULL,
+    `user_role` VARCHAR(100) NOT NULL DEFAULT 'user',
+    `status` VARCHAR(100) NOT NULL DEFAULT 'active',
+    `join_date` VARCHAR(200) NOT NULL
+) AUTO_INCREMENT = 1;
+
+

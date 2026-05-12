@@ -1,4 +1,6 @@
-<?php include "header.php"?>
+<?php 
+    include "header.php";
+?>
 <section class='admin-page position-relative'>
     <div class="container">
         <div class="row">

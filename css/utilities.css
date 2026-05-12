@@ -32,7 +32,8 @@
     border-color: #C586A5 !important;
 }
 
-.img_error{
+.img_error,
+.field_error{
     border-color:#dc3545 !important;
 }
 

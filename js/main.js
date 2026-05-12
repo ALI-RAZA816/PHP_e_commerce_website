@@ -218,7 +218,6 @@ $(document).ready(function(){
         })
     });
 
-    
     // edit product
     $('.edit-item').on('click',function(event){
         event.preventDefault();
@@ -334,4 +333,174 @@ $(document).ready(function(){
         });
     });
 
+    // create account handling code
+    $('.create-account').on('click',function(event){
+        event.preventDefault();
+        var name = $(".name").val();
+        var email = $(".email").val();
+        var password = $(".password").val();
+
+        if(!name){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Name is required</span>");
+            $('.name').addClass('field_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.name').removeClass('field_error');
+            },3000);
+            return;
+        }
+        if(!email){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Email is required</span>");
+            $('.email').addClass('field_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.email').removeClass('field_error');
+            },3000);
+            return;
+        }
+        if(!password){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Password is required</span>");
+            $('.password').addClass('field_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.password').removeClass('field_error');
+            },3000);
+            return;
+        }
+     
+        $.ajax({
+            url:'admin/script/create-account.php',
+            type:'POST',
+            data:{
+                name:name,
+                email:email,
+                password:password,
+            },
+            success:function(data){
+                if(data === 'Account Created'){
+                    $('.signup-form').trigger('reset');
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Account Created</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        window.location.href="http://localhost/php_e_commerce_website/login.php";
+                    },3000);
+                }else if(data === 'Name already exist'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Name already exist</span>");
+                    $('.name').addClass('field_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.name').removeClass('field_error');
+                    },3000);
+                }else if(data === 'Email already exist'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Email already exist</span>");
+                    $('.email').addClass('field_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.email').removeClass('field_error');
+                    },3000);
+                }
+            }
+        })
+    });
+
+    // login account handling code
+    $('.login').on('click',function(event){
+        event.preventDefault()
+        var login_email = $('.login-email').val();
+        var login_password = $('.login-password').val();
+        if(!login_email){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Email is required</span>");
+            $('.login-email').addClass('field_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.login-email').removeClass('field_error');
+            },3000);
+            return;
+        }
+        if(!login_password){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Password is required</span>");
+            $('.login-password').addClass('field_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.login-password').removeClass('field_error');
+            },3000);
+            return;
+        }
+
+        $.ajax({
+            url:'admin/script/login-account.php',
+            type:'POST',
+            data:{
+                login_email:login_email,
+                login_password:login_password,
+            },
+            success:function(data){
+                  if(data === 'Login successfull'){
+                    $('.login-form').trigger('reset');
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Login successfull</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        window.location.href="http://localhost/php_e_commerce_website";
+                    },3000);
+                }else if(data === 'Incorrect email'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Incorrect email</span>");
+                    $('.login-email').addClass('field_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.login-email').removeClass('field_error');
+                    },3000);
+                }else if(data === 'Incorrect password'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Incorrect password</span>");
+                    $('.login-password').addClass('field_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.login-password').removeClass('field_error');
+                    },3000);
+                }
+            }
+        })
+    });
+
+    // logout handling
+    $('.logout').on('click',function(event){
+        event.preventDefault();
+        $.ajax({
+            url:'admin/script/logout.php',
+            type:'POST',
+            success:function(data){
+                if(data === 'You logged out'){
+                     $('.signup-form').trigger('reset');
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>You logged out</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                       window.location.href="http://localhost/php_e_commerce_website";
+                    },3000);
+                }
+            }
+        })
+    })
 });

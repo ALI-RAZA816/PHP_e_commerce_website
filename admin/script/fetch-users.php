@@ -34,7 +34,7 @@
                                             <td class='text-capitalize text-success'>{$row['status']}</td>
                                             <td>{$row['join_date']}</td>
                                             <td>
-                                                <i class='fa-solid fa-edit text-muted'></i>
+                                                <a href='edit-user-page.php' class='text-decoration-none text-muted'><i class='fa-solid fa-edit text-muted'></i></a>
                                                 <i style= 'cursor:pointer;'class='fa-solid fa-trash text-danger'
                                                 data-delete-user={$row['id']} id='delete-user-button'></i>
                                             </td>

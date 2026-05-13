@@ -365,3 +365,91 @@ body{
     transform: translate(-50%,-50%);
 }
 
+.profile .user-img{
+    height:65px;
+    width:65px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid #efefef;
+}
+
+.profile .detail .name{
+    line-height: 10px;
+}
+.profile .detail .name,
+.profile .detail .gmail{
+    font-size: 15px;
+    margin: 0;
+}
+
+.profile .detail div span{
+    border-radius: 2px;
+    padding:0 5px;
+    margin-right: 10px;
+    font-size: 14px;
+    color:green;
+    background-color: rgba(0, 128, 0,.20);
+}
+
+.profile .detail div span:last-child{
+    color:rgba(0, 0, 255);
+    background-color: rgba(0, 0, 255,.20);
+}
+
+.personal-information input:focus{
+    border: 1px solid #333;
+}
+.personal-information input{
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.roles .supers-admin p:first-of-type{
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.roles .supers-admin p:last-of-type{
+    font-size: 12px;
+}
+
+.roles .role-selection:checked + label{
+    border-color: rgba(0, 0, 255, 0.534) !important;
+    background-color: rgba(0, 0, 255,.20);
+}
+
+.status .actives p,
+.status .inactive p,
+.status .suspend p{
+    font-size: 1rem;
+}
+
+.status .actives i,
+.status .inactive i,
+.status .suspend i{
+    font-size: 1.5rem;
+}
+
+.active-selection:checked + label{
+    border-color:green !important;
+    color:green;
+    background-color: rgba(0, 128, 0,.40);
+}
+
+.inactive-selection:checked + label{
+    border-color: #333 !important;
+    color:#333;
+    background-color:#33333333;
+}
+.suspend-selection:checked + label{
+    border-color: red !important;
+    color:rgba(255, 0, 0, 0.664);
+    background-color:rgba(255, 0, 0, 0.363);
+}
+
+.personal-information .form button{
+    width:max-content;
+}
+
+

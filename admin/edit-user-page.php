@@ -24,7 +24,7 @@
                     <div class="personal-information rounded-2 pt-3 border mt-5">
                         <p class='text-muted text-capitalize fw-bold ms-4'>Personal information</p>
                         <form action="" class='row px-4 pb-3 g-0 form '>
-                            <div class="col-6">
+                            <div class="col-6 pe-md-3">
                                 <label for="" class='form-label'>Name</label>
                                 <input type="text" class='form-control rounded-0' placeholder='Name'>
                             </div>
@@ -39,7 +39,7 @@
                                         <label for="" style='width:100%;' class='p-2'>
                                             <input type="radio" name='role' class='role-selection' id='super-admin' hidden>
                                             <label for="super-admin" class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
-                                                <i class="fa-solid fa-crown mb-2"></i>
+                                                <i class="fa-solid fa-crown mb-3" style='color:#DAA464;'></i>
                                                 <p class='mb-0 fw-bold'>Super Admin</p>
                                                 <p class='mb-0'>Full Platform Access</p>
                                             </label>
@@ -49,7 +49,7 @@
                                         <label for="" style='width:100%;' class='p-2'>
                                             <input type="radio" name='role' class='role-selection' id='admin' hidden>
                                             <label for="admin" class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
-                                                <i class="fa-solid fa-unlock mb-2"></i>
+                                                <i class="fa-solid fa-unlock mb-3" style='color:#170C79;'></i>
                                                 <p class='mb-0 fw-bold'>Admin</p>
                                                 <p class='mb-0'>Manage users, content & settings</p>
                                             </label>
@@ -59,7 +59,7 @@
                                         <label for="" style='width:100%;' class='p-2'>
                                             <input type="radio" name='role' class='role-selection' id='editor' hidden>
                                             <label for="editor" class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
-                                                <i class="fa-solid fa-edit mb-2"></i>
+                                                <i class="fa-solid fa-edit mb-3" style='color:#1F6F5F;'></i>
                                                 <p class='mb-0 fw-bold'>Editor</p>
                                                 <p class='mb-0'>Publish & manage content</p>
                                             </label>
@@ -69,7 +69,7 @@
                                         <label for="" style='width:100%;' class='p-2'>
                                             <input type="radio" name='role' class='role-selection' id='reader' hidden>
                                             <label for="reader" class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
-                                                <i class="fa-solid fa-book mb-2"></i>
+                                                <i class="fa-solid fa-book mb-3" style='color:#8A5F41;'></i>
                                                 <p class='mb-0 fw-bold'>Reader</p>
                                                 <p class='mb-0'>Read only access</p>
                                             </label>

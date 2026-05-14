@@ -1,6 +1,5 @@
 $(document).ready(function(){
     // add products
-    var HOST_NAME = "Product added successfully";
     $('.add-item').on('click',function(event){
         event.preventDefault();
 
@@ -535,6 +534,38 @@ $(document).ready(function(){
                         $('.error').css("top","-25px");
                         $('.error').html("");
                         users();
+                    },3000);
+                }
+            }
+        })
+    });
+
+    // edit-user
+    $('.edit-user-button').on('click',function(event){
+        event.preventDefault();
+        var form = $(this).closest('form')[0];
+        var formData = new FormData(form);
+        $.ajax({
+            url:'script/edit-user.php',
+            type:'POST',
+            data:formData,
+            contentType:false,
+            processData:false,
+            success:function(data){
+                if(data === 'User updated'){
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>User updated</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        window.location.href="http://localhost/php_e_commerce_website/admin/users.php";
+                    },3000);
+                }else{
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>User can't updated</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
                     },3000);
                 }
             }

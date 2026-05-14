@@ -27,7 +27,7 @@ CREATE TABLE `users`(
     `name` VARCHAR(200) NOT NULL,
     `email` VARCHAR(200) NOT NULL,
     `password` VARCHAR(100) NOT NULL,
-    `user_role` VARCHAR(100) NOT NULL DEFAULT 'user',
+    `user_role` VARCHAR(100) NOT NULL DEFAULT 'reader',
     `status` VARCHAR(100) NOT NULL DEFAULT 'active',
     `join_date` VARCHAR(200) NOT NULL
 ) AUTO_INCREMENT = 1;

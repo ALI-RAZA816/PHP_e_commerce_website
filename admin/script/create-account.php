@@ -7,6 +7,7 @@
         $NAME = mysqli_real_escape_string($conn, $_POST['name']);
         $EMAIL = mysqli_real_escape_string($conn, $_POST['email']);
         $PASSWORD = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        
         $query1 = "SELECT * FROM users WHERE Lower(name) = Lower('{$NAME}')";
         $result1 = mysqli_query($conn, $query1);
         if(mysqli_num_rows($result1) > 0){

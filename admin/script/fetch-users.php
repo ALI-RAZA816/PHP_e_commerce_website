@@ -53,8 +53,8 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class='text-capitalize text-primary fw-bold'><span style='color:{$role_color};background-color:{$role_bg_color};font-size:13px;' class='p-1 d-inline-block rounded-1 mb-0'>{$row['user_role']}</span></td>
-                                            <td class='text-capitalize '><span style='color:{$color};background-color:{$bgcolor};font-size:14px;' class='d-inline-block rounded-1 mb-0 p-1'>{$row['status']}</span></td>
+                                            <td class='text-capitalize text-primary fw-bold'><span style='color:{$role_color};background-color:{$role_bg_color};font-size:13px;' class='px-1 d-inline-block rounded-1 mb-0'>{$row['user_role']}</span></td>
+                                            <td class='text-capitalize '><span style='color:{$color};background-color:{$bgcolor};font-size:14px;' class='d-inline-block rounded-1 mb-0 px-1'>{$row['status']}</span></td>
                                             <td>{$row['join_date']}</td>
                                             <td>
                                                 <a href='edit-user-page.php?editId={$row['id']}' class='text-decoration-none text-muted'><i class='fa-solid fa-edit text-muted'></i></a>

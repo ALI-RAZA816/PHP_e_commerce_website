@@ -480,6 +480,24 @@ $(document).ready(function(){
                         $('.login-password').removeClass('field_error');
                     },3000);
                 }
+                else if(data === 'Account not found'){
+                    $('.error').css("top","30px");
+                    $('.login-form').trigger('reset');
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6' style='line-height:16px;'>Account not found. <br> Your account may be removed or suspended.</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                    },3000);
+                }
+                else if(data === 'Account inactive'){
+                    $('.error').css("top","30px");
+                    $('.login-form').trigger('reset');
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6' style='line-height:16px;'>Account not found. <br> Your account temporarily inactive or removed</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                    },3000);
+                }
             }
         })
     });

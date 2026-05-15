@@ -9,6 +9,17 @@
         
         $query = "SELECT * FROM users WHERE email = '{$LOGIN_EMAIL}'";
         $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        if(mysqli_num_rows($result) > 0){
+            if($row['status'] === 'inactive'){
+                echo "Account inactive";
+                die();
+            }
+            if($row['status'] === 'suspend'){
+                echo "Account not found";
+                die();
+            }
+        }
 
         if(mysqli_num_rows($result) === 0){
             echo "Incorrect email";

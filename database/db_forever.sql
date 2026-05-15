@@ -36,12 +36,12 @@ CREATE TABLE `users`(
 -- DUMP DATA 
 INSERT INTO users (name, email, password, user_role, status, join_date) 
 VALUES 
-('Ali Raza Mujahid','alirazamujahid102@gmail.com','$2y$10$eEC64v20MsGQPqxp8IBtOeUMVhaDWKa1TvVXmnT198nI4OLahYXHG','super-admin','active','15 May 2026'),
-('Shehroz Ahmad','shehrozahmad1055gmail.com','$2y$10$uEW6i.nr1C2gShCM0XVZl.kNjRD9UmgTeXl0/fOMVcoadCzNaIWqK','admin','active','15 May 2026'),
-('Tanvir','razadeveloper816@gmail.com','$2y$10$t/GHK8LM9wEm/8otU11bCeqWi3i236KBB67Kg6n8FKtB1tYK1xNjW','editor','active','15 May 2026'),
-('Abdullah','developerraza816@gmail.com','$2y$10$SwjT9yR2KBJHpIqMHaaz5OVRNXGtZ1ShbdsXw2u1e6MwjQwf4nFgq','reader','active','15 May 2026'),
-('Haseeb','haseebahmad543@gmail.com','$2y$10$3cxO5Sd9iR58urJTIbAWs.IBYjeDoGVeH2zZzzvWzc5ZPolGMtYr6','reader','suspend','15 May 2026'),
-('Abdulbasit','abdulbasit226@gmail.com','$2y$10$G.5RgdQ52mM5rDu6UyEbFOyQ80YCfsSurMm7G3JZYmobD28YwVyPm','reader','inactive','15 May 2026');
+('Ali Raza Mujahid','alirazamujahid102@gmail.com','$2y$10$0Nhuwtpa/Q3KRlnJyLC1SeEhpSSFa1ixx3Mb4MAEpOI6yZUsVKYzi','super-admin','active','15 May 2026'),
+('Shehroz Ahmad','shehrozahmad1055gmail.com','$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m','admin','active','15 May 2026'),
+('Tanvir','razadeveloper816@gmail.com','$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m','editor','active','15 May 2026'),
+('Abdullah','developerraza816@gmail.com','$2y$10$e0e8xfE1.92FxWnkwDCSPOllInyI.UZILVkeQzd42ttsXegoGd6O.','reader','active','15 May 2026'),
+('Haseeb','haseebahmad543@gmail.com','$2y$10$w5CgsnY7Ot8KzO7z9IYowuZaVcM0eaf.acrQd.UTIAyryMSwrCC1K','reader','suspend','15 May 2026'),
+('Abdulbasit','abdulbasit226@gmail.com','$2y$10$qwQECWR9pa1OG5m6yPymkOEm/Lf7BIPy.6myRKGmUaU19Le/sUdwm','reader','inactive','15 May 2026');
 
 
 

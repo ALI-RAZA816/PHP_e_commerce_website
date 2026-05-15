@@ -1,6 +1,7 @@
 <?php 
 
     include "config.php";
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $query = "SELECT * FROM products";
         $result = mysqli_query($conn, $query);
         $output = '';
@@ -38,6 +39,10 @@
             </div>";
         }
         echo $output;
+    }else{
+        header("Location: {$host_name}/admin/not-found.php");
+        exit();
+    }
 
 
 ?>

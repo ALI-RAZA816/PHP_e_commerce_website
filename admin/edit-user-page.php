@@ -12,8 +12,10 @@
                             $result = mysqli_query($conn, $query);
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)) {
-                                     $bgcolor='';
+                                    $bgcolor='';
                                     $color='';
+                                    $role_bg_color='';
+                                    $role_color='';
                                     if($row['user_role'] === 'super-admin'){
                                         $role_color = "rgb(255, 157, 35)";
                                         $role_bg_color="rgba(255, 157, 35,.20)";

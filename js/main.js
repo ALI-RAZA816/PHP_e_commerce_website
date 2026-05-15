@@ -180,6 +180,7 @@ $(document).ready(function(){
     function load_List_Products(){
         $.ajax({
             url:'script/output-list-items.php',
+            type:'POST',
             success:function(data){
                 $(".all-products-list").html(data);
             }
@@ -526,6 +527,7 @@ $(document).ready(function(){
     function users(){
         $.ajax({
             url:'script/fetch-users.php',
+            type:'POST',
             success:function(data){
                 $('.users-data').html(data);
             }
@@ -588,5 +590,5 @@ $(document).ready(function(){
                 }
             }
         })
-    })
+    });
 });

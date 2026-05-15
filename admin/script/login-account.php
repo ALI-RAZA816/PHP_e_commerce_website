@@ -26,7 +26,7 @@
             die();
         }
             
-        $row = mysqli_fetch_assoc($result);
+        
         $isValid = password_verify($LOGIN_PASSWORD, $row['password']);
         if($isValid === false){
             echo "Incorrect password";

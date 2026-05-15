@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <!-- BOOTSTRAP  -->
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -34,6 +34,18 @@
                         <li class="nav-item"><a class="nav-link pages" href="about.php">About</a></li>
                         <li class="nav-item border-bottom-0"><a class="nav-link pages" href="contact.php">Contact</a></li>
                     </ul>
+                    <?php 
+                        include "config.php";
+                        session_start();
+                        if(isset($_SESSION['role'])){
+                            if($_SESSION['role'] != 'reader'){
+                                echo " <button class='btn border rounded-5'><a href='admin/dashboard.php' class='text-decoration-none text-dark'>Admin Panel</a></button>";
+                            }
+                        }else{
+                            echo " <button class='btn border d-none rounded-5'><a href='admin/dashboard.php' class='text-decoration-none text-dark'>Admin Panel</a></button>";
+                        }
+                    ?>
+                   
                 </div>
                 <div class="col-2  d-flex justify-content-end align-items-center">
                     <a href="collection.php"><i class="fa-solid me-3 fa-magnifying-glass header-icons"></i></a>

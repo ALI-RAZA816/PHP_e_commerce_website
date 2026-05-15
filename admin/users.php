@@ -10,28 +10,50 @@
                 <p class='text-muted border-bottom pb-2'>Manage all registered accounts</p>
                 <div class="users">
                     <div class="row g-0 p-0">
+                        <?php 
+                            include "config.php";
+                            $query = "SELECT COUNT(*) AS total FROM users";
+                            $result = mysqli_query($conn, $query);
+                            $row = mysqli_fetch_assoc($result);
+                            $query1 = "SELECT COUNT(*) AS total FROM users WHERE status = 'active'";
+                            $result1 = mysqli_query($conn, $query1);
+                            $row1 = mysqli_fetch_assoc($result1);
+                            $query2 = "SELECT COUNT(*) AS total FROM users WHERE status = 'suspend'";
+                            $result2 = mysqli_query($conn, $query2);
+                            $row2 = mysqli_fetch_assoc($result2);
+                            $query3 = "SELECT COUNT(*) AS total FROM users WHERE user_role = 'admin'";
+                            $result3 = mysqli_query($conn, $query3);
+                            $row3 = mysqli_fetch_assoc($result3);
+                            $query5 = "SELECT COUNT(*) AS total FROM users WHERE user_role = 'super-admin'";
+                            $result5 = mysqli_query($conn, $query5);
+                            $row5 = mysqli_fetch_assoc($result5);
+                            $total = $row3['total'] + $row5['total'];
+                            $query4 = "SELECT COUNT(*) AS total FROM users WHERE user_role = 'editor'";
+                            $result4 = mysqli_query($conn, $query4);
+                            $row4 = mysqli_fetch_assoc($result4);
+                        ?>
                         <div class="col-md-3 mt-4 mt-md-0 px-3">
                             <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Total users</p>
-                                <h3 class='text-dark m-0 fs-3 fw-bold'>12,55</h3>
+                                <h3 class='text-dark m-0 fs-3 fw-bold'><?php echo ($row['total'] < 9) ? str_pad($row['total'], 2,"0",STR_PAD_LEFT) : $row['total'] ?></h3>
                             </div>
                         </div>
                         <div class="col-md-3 mt-4 mt-md-0 px-3">
                             <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Active users</p>
-                                <h3 class='text-success m-0 fs-3 fw-bold'>12,55</h3>
+                                <h3 class='text-success m-0 fs-3 fw-bold'><?php echo ($row1['total'] < 9) ? str_pad($row1['total'], 2,"0",STR_PAD_LEFT) : $row1['total'] ?></h3>
                             </div>
                         </div>
                         <div class="col-md-3 mt-4 mt-md-0 px-3">
                             <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Suspended</p>
-                                <h3 class='text-danger m-0 fs-3 fw-bold'>12,55</h3>
+                                <h3 class='text-danger m-0 fs-3 fw-bold'><?php echo ($row2['total'] < 9) ? str_pad($row2['total'], 2,"0",STR_PAD_LEFT) : $row2['total'] ?></h3>
                             </div>
                         </div>
                         <div class="col-md-3 mt-4 mt-md-0 px-3">
                             <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Admin/Editors</p>
-                                <h3 class='text-dark m-0 fs-3 fw-bold'>12,55</h3>
+                                <h3 class='text-dark m-0 fs-3 fw-bold'><?php echo ($total < 9) ? str_pad($total, 2,"0",STR_PAD_LEFT) : $total ?>/<?php echo ($row4['total'] < 9) ? str_pad($row4['total'], 2,"0",STR_PAD_LEFT) : $row4['total'] ?></h3>
                             </div>
                         </div>
                     </div>

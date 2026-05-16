@@ -1,3 +1,18 @@
+<?php 
+    include "config.php";
+    if(!isset($_SESSION['role']) || $_SESSION['role'] === 'reader'){
+        header("Location: {$host_name}/admin/not-found.php");
+        exit();
+    }
+    else if(  $_SESSION['role'] === 'admin'){
+            header("Location: {$host_name}/admin/orders.php");
+            exit();
+    }
+    else if(  $_SESSION['role'] === 'editor'){
+            header("Location: {$host_name}/admin/list-items.php");
+            exit();
+    }
+?>
 <div class="add-product-page py-2 ps-md-5">
     <form action="">
         <div class='mb-3 product-images'>

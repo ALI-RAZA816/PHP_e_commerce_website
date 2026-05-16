@@ -1,3 +1,11 @@
+<?php 
+    include "config.php";
+    session_start();
+    if(!isset($_SESSION['role']) || $_SESSION['role'] === 'reader'){
+            header("Location: {$host_name}/admin/not-found.php");
+            exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +33,7 @@
                 <div class="col-2">
                     <img src="./images/InsiderStats.png" class='img-fluid' alt="">
                 </div>
-                <button class='btn bg-dark text-white rounded-5'>Logout</button>
+                <button class='btn bg-dark text-white rounded-5 admin-logout'>Logout</button>
             </div>
         </nav>
     </header>

@@ -550,10 +550,10 @@ $(document).ready(function(){
                 if(data === 'User deleted'){
                     $('.error').css("top","30px");
                     $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i></i><span class='text-success fs-6'>User deleted</span>");
+                    users();
                     setTimeout(()=>{
                         $('.error').css("top","-25px");
                         $('.error').html("");
-                        users();
                     },3000);
                 }
             }
@@ -578,6 +578,7 @@ $(document).ready(function(){
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
+                        users();
                         window.location.href="http://localhost/php_e_commerce_website/admin/users.php";
                     },3000);
                 }else{
@@ -591,4 +592,25 @@ $(document).ready(function(){
             }
         })
     });
+    // http://localhost/php_e_commerce_website/admin/edit-user-page.php?editId=1
+
+    // admin logout 
+    $('.admin-logout').on('click',function(event){
+        event.preventDefault();
+        $.ajax({
+            url:'script/logout.php',
+            type:'POST',
+            success:function(data){
+                if(data === 'You logged out'){
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>You logged out</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                       window.location.href="http://localhost/php_e_commerce_website";
+                    },3000);
+                }
+            }
+        })
+    })
 });

@@ -1,4 +1,12 @@
-<?php include "header.php"?>
+<?php 
+    include "header.php";
+    include "config.php";
+
+    if($_SESSION['role'] === 'admin'){
+        header("Location: {$host_name}/admin/not-found.php");
+        exit();
+    }
+?>
 <section class='admin-page position-relative'>
     <div class="container">
         <div class="row">

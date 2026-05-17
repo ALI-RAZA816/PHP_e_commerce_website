@@ -1,38 +1,41 @@
 <?php include "header.php" ?>
 <section class='collection-page'>
-    <div class="container ">
-        <div class="row mt-5">
+    <div class="container">
+        <div class="col-12 border-bottom search-bar d-flex justify-content-center align-items-center py-2">
+            <input type="text" class='form-control search rounded-5' placeholder='Search'>
+        </div>
+        <div class="row mt-3">
             <div class="col-md-3 sideber filters">
                 <h2 class='mb-3 mb-md-5'>Filters <i class="fa-solid fa-angle-right filter-angle d-md-none"></i></h2>
                 <div id='filter-container'>
                     <div class="category border mb-3 p-3">
                         <h3>Categories</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1">Men</label>
+                            <input class="form-check-input filter_category" value='men' type="checkbox" id="Men">
+                            <label class="form-check-label" for="Men">Men</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
-                            <label class="form-check-label" for="inlineCheckbox2">Women</label>
+                            <input class="form-check-input filter_category" value='womens' type="checkbox" id="Women">
+                            <label class="form-check-label" for="Women">Women</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3">
-                            <label class="form-check-label" for="inlineCheckbox3">Kids</label>
+                            <input class="form-check-input filter_category" value='kids' type="checkbox" id="Kids">
+                            <label class="form-check-label" for="Kids">Kids</label>
                         </div>
                     </div>
                     <div class="types border p-3">
                         <h3>Type</h3>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1">Topwear</label>
+                            <input class="form-check-input filter_category" value='topwear' type="checkbox" id="Topwear">
+                            <label class="form-check-label" for="Topwear">Topwear</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
-                            <label class="form-check-label" for="inlineCheckbox2">Bottomwear</label>
+                            <input class="form-check-input filter_category" value='bottomwear' type="checkbox" id="Bottomwear">
+                            <label class="form-check-label" for="Bottomwear">Bottomwear</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3">
-                            <label class="form-check-label" for="inlineCheckbox3">Winterwear</label>
+                            <input class="form-check-input filter_category" value='winterwear' type="checkbox" id="Winterwear">
+                            <label class="form-check-label" for="Winterwear">Winterwear</label>
                         </div>
                     </div>
                 </div>
@@ -46,140 +49,7 @@
                         <option value="2">Sort by: High to Low</option>
                     </select>
                 </div>
-                <div class="row p-0 g-0 mt-5">
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                    <div class="card mb-4 col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0">
-                        <a href="product-page.php" class='text-decoration-none'>
-                            <div class='px-3'>
-                                <img src="./images/Rectangle 3608.png" class="img-fluid image" alt="...">
-                                <div class="card-body p-0 d-flex flex-column">
-                                    <span class='text-muted'>Women Round Neck Cotton Top</span>
-                                    <span class='fw-bold text-dark'>$149</span>
-                                </div>
-                            </div>
-                    </a>
-                    </div>
-                </div>
+                <div style='min-height:100vh;' class="row collection p-0 g-0 mt-5"></div>
             </div>
         </div>
     </div>

@@ -54,14 +54,18 @@
                     <span class='text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.</span>
                 </div>
             </div>
-            <div class="row gy-4">
+            <div class="row gy-4 p-0">
                 <?php 
                     include "config.php";
-                    $query1 = "SELECT * FROM products WHERE bestseller = 'bestseller' LIMIT 0, 4";
+                    $query2 = "SELECT COUNT(*) AS total FROM products WHERE bestseller = 'bestseller'";
+                    $result2 = mysqli_query($conn, $query2);
+                    $row2 = mysqli_fetch_assoc($result2);
+                    $offset = rand(0, $row2['total']);
+                    $query1 = "SELECT * FROM products WHERE bestseller = 'bestseller' LIMIT {$offset}, 6";
                     $result1 = mysqli_query($conn, $query1);
                     if(mysqli_num_rows($result1) > 0){
                         while($row1 = mysqli_fetch_assoc($result1)){
-                            echo " <div class='card col-6 col-md-4 col-lg-3 p-0 rounded-0 border-0'>
+                            echo " <div class='card col-6 col-md-4 col-lg-2 p-0 rounded-0 border-0'>
                                     <a href='product-page.php?product_id={$row1['id']}' class='text-decoration-none'>
                                         <div class='px-3'>
                                             <img src='./admin/images/product_img/{$row1['img1']}' class='img-fluid image' alt='...'>

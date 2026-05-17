@@ -452,4 +452,16 @@ body{
     width:max-content;
 }
 
+.search-bar input {
+    max-width:800px;
+    width:100%;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #efefef;
+}
+
+.search-bar input:focus{
+    border-color:#333 !important;
+}
+
 

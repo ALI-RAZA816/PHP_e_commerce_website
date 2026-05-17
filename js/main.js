@@ -188,6 +188,16 @@ $(document).ready(function(){
     }
     load_List_Products();
 
+    function collection(){
+        $.ajax({
+            url:'admin/script/collection.php',
+            success:function(data){
+                $(".collection").html(data);
+            }
+        });
+    }
+    collection();
+
     // delete product from list_items
     $(document).on('click','.list-delete-product',function(){
         var deleteId = $(this).data('product_id');
@@ -592,8 +602,7 @@ $(document).ready(function(){
             }
         })
     });
-    // http://localhost/php_e_commerce_website/admin/edit-user-page.php?editId=1
-
+    
     // admin logout 
     $('.admin-logout').on('click',function(event){
         event.preventDefault();
@@ -612,5 +621,53 @@ $(document).ready(function(){
                 }
             }
         })
-    })
+    });
+
+    // search product
+    $('.search').on('input',function(){
+       var search_value =  $(this).val();
+       $.ajax({
+            url:'admin/script/search.php',
+            type:'POST',
+            data:{
+                searchValue : search_value
+            },
+            success:function(data){
+                // if(data === 1){
+                    $(".collection").html(data);
+                // }
+            }
+       });
+    });
+
+    var filter_category = [];
+    $('.filter_category').on('change',function(){
+        if($(this).is(":checked")){
+            filter_category.push($(this).val());
+        }else{
+            var index = filter_category.indexOf($(this).val());
+            if (index !== -1) filter_category.splice(index, 1);
+        }
+        var categoryString = filter_category.join(',');
+        $.ajax({
+            url:'admin/script/filter-category.php',
+            type:'POST',
+            data:{
+                category : categoryString,
+            },
+            success:function(data){
+                $(".collection").html(data);
+            }
+        })
+    });
+    
+    // $('.sub_category').on("change",function(){
+    //     if($(this).is(":checked")){
+    //         filter_category.push($(this).val());
+    //     }else{
+    //         var index = filter_category.indexOf($(this).val());
+    //         if(index !== -1) filter_category.splice(index,1);
+    //     }
+    // })
+
 });

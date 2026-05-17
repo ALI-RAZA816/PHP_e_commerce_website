@@ -754,5 +754,146 @@ $(document).ready(function(){
                 }
             }
         })
+    });
+
+    // forgotton password
+    $('.forgotton-password').on('click',function(event){
+        event.preventDefault();
+        var resetEmail = $('.forgotton-email').val();
+        if(!$('.forgotton-email').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Email is required to reset password</span>");
+            $('.forgotton-email').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.forgotton-email').removeClass('img_error');
+            },3000);
+            return
+        }
+
+        $.ajax({
+            url:'admin/script/otp.php',
+            type:'POST',
+            data:{
+                reset_email:resetEmail
+            },
+            success:function(data){
+                if(data === 'We sent you an OTP to your Email'){
+                    $('.forgotton-email').val('');
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>We sent you an OTP to your Email</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        $('.otp-form').css({
+                        "opacity": 1,
+                        "visibility": "visible",
+                        });
+                    },3000);
+                }
+            }
+        })
+    });
+
+    // verify OTP
+    $('.verify-otp').on('click',function(event){
+        event.preventDefault();
+        var otp= $('.otp').val();
+        if(!$('.otp').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>OTP is required to reset the password</span>");
+            $('.otp').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.otp').removeClass('img_error');
+            },3000);
+            return
+        }
+
+        $.ajax({
+            url:'admin/script/verify-otp.php',
+            type:'POST',
+            data:{
+                otp:otp
+            },
+            success:function(data){
+                if(data === 'Invalid OTP'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid OTP</span>");
+                    $('.otp').addClass('img_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.otp').removeClass('img_error');
+                    },3000);
+                }
+                else if(data){
+                    $('.otp').val('');
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Verification Completed");
+                    // $('.otp-form').css({
+                    // "opacity": 0,
+                    // "visibility": "hidden",
+                    // });
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        $('.otp-form').html(data);
+                    },3000);
+                }
+            }
+        })
     })
+
+
+    // create new password 
+    $(document).on('click','.create-new-password',function(event){
+        event.preventDefault();
+        if(!$('.fetch-email').val()) return;
+        if(!$('.new-password').val()) return;
+        if(!$('.repeat-password').val()) return;
+
+        var form = $(this).closest('form')[0];
+        var formData = new FormData(form);
+        $.ajax({
+            url:'admin/script/new-password.php',
+            type:'POST',
+            data:formData,
+            contentType:false,
+            processData:false,
+            success:function(data){
+                if(data === "Password doesn't match"){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Password doesn't match</span>");
+                    $('.new-password').addClass('img_error');
+                    $('.repeat-password').addClass('img_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.new-password').removeClass('img_error');
+                        $('.repeat-password').removeClass('img_error');
+                    },3000);
+                }else if(data === 'Password changed'){
+                    $('.fetch-email').val('');
+                    $('.new-password').val('');
+                    $('.repeat-password').val('');
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Password changed</span>");
+                    $('.otp-form').css({
+                    "opacity": 0,
+                    "visibility": "hidden",
+                    });
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                         window.location.href="http://localhost/php_e_commerce_website";
+                    },5000);
+                }
+            }
+        })
+
+    })
+
 });

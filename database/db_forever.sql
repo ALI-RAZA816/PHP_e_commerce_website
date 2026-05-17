@@ -124,7 +124,8 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `user_role` varchar(100) NOT NULL DEFAULT 'reader',
   `status` varchar(100) NOT NULL DEFAULT 'active',
-  `join_date` varchar(200) NOT NULL
+  `join_date` varchar(200) NOT NULL,
+  `otp` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

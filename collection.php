@@ -44,9 +44,9 @@
             <div class='d-flex justify-content-between'>
                     <h1 class='text-muted text-uppercase'>All <span class='fw-bold text-dark'>Collections</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h1>
                     <select class="form-select sorting" aria-label="Default select example">
-                        <option selected>Sort by: Relevant</option>
-                        <option value="1">Sort by: Low to High</option>
-                        <option value="2">Sort by: High to Low</option>
+                        <option value = 'relevant'selected>Sort by: Relevant</option>
+                        <option value="low to high">Sort by: Low to High</option>
+                        <option value="high to low">Sort by: High to Low</option>
                     </select>
                 </div>
                 <div style='min-height:100vh;' class="row collection p-0 g-0 mt-5"></div>

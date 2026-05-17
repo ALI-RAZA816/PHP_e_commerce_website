@@ -661,13 +661,18 @@ $(document).ready(function(){
         })
     });
     
-    // $('.sub_category').on("change",function(){
-    //     if($(this).is(":checked")){
-    //         filter_category.push($(this).val());
-    //     }else{
-    //         var index = filter_category.indexOf($(this).val());
-    //         if(index !== -1) filter_category.splice(index,1);
-    //     }
-    // })
+    $('.sorting').on('change',function(){
+        var sorted_value = $(this).val();
+        $.ajax({
+            url:'admin/script/sort.php',
+            type:'POST',
+            data:{
+                sorted:sorted_value
+            },
+            success:function(data){
+                $(".collection").html(data);
+            }
+        });
+    });
 
 });

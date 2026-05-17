@@ -545,7 +545,6 @@ $(document).ready(function(){
     }
     users();
 
-
     // delete user 
     $(document).on('click','#delete-user-button',function(event){
         event.preventDefault();

@@ -1,19 +1,5 @@
 document.addEventListener('DOMContentLoaded',function(){
-
-    // const image = document.querySelectorAll('.images');
-    // const img_view = document.querySelectorAll('.img-view');
-    // const edit_img_icon = document.querySelectorAll('.edit-image-icon');
-
-    // image.forEach((item,index)=>{
-    //     item.addEventListener('change',function(event){
-    //         if(event.target){
-    //             let imgLink = URL.createObjectURL(item.files[0]);
-    //             img_view[index].style.backgroundImage = `url(${imgLink})`;
-    //             edit_img_icon[index].style.display ='none';
-    //         }
-    //     });
-    // });
-
+    
     const image1 = document.querySelector('#edit-image-1');
     const imge_view1 = document.querySelector('.edit-img-view1');
     image1.addEventListener('change',function(){

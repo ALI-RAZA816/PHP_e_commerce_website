@@ -64,5 +64,6 @@
     </header>
     <script src='./js/jquery.js'></script>
     <script src='./js/main.js'></script>
+    <script src='./js/imagepath.js'></script>
 </body>
 </html>

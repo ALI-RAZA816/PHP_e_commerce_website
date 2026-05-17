@@ -13,16 +13,16 @@
                 <div class="row g-0 p-0  mb-4 mb-md-0 ">
                     <div class="col-2 me-4">
                         <div class='mb-3'>
-                            <img src="./admin/images/product_img/<?php echo $row['img1'] ?>" class='img-fluid' alt="">
+                            <img src="./admin/images/product_img/<?php echo $row['img1'] ?>" class='img-fluid images' alt="">
                         </div>
                         <div class='mb-3'>
-                            <img src="./admin/images/product_img/<?php echo $row['img2'] ?>" class='img-fluid' alt="">
+                            <img src="./admin/images/product_img/<?php echo $row['img2'] ?>" class='img-fluid images' alt="">
                         </div>
                         <div class='mb-3'>
-                            <img src="./admin/images/product_img/<?php echo $row['img3'] ?>" class='img-fluid' alt="">
+                            <img src="./admin/images/product_img/<?php echo $row['img3'] ?>" class='img-fluid images' alt="">
                         </div>
                         <div>
-                            <img src="./admin/images/product_img/<?php echo $row['img4'] ?>" class='img-fluid' alt="">
+                            <img src="./admin/images/product_img/<?php echo $row['img4'] ?>" class='img-fluid images' alt="">
                         </div>
                     </div>
                     <div class="col-9 border">

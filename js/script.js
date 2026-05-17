@@ -23,6 +23,6 @@ document.addEventListener('DOMContentLoaded',function(){
         if(!user_icon.contains(event.target)){
             profile.classList.remove('show-profile')
         }
-    })
+    });
 
 });

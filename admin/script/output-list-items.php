@@ -43,6 +43,4 @@
         header("Location: {$host_name}/admin/not-found.php");
         exit();
     }
-
-
 ?>

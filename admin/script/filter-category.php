@@ -10,7 +10,7 @@
             $escaped_categories[] = "'" . mysqli_real_escape_string($conn, trim($cat)) . "'";
         }
         $category_list = implode(',', $escaped_categories);
-        $query = "SELECT * FROM products WHERE product_category IN($category_list) OR sub_category IN($category_list)";
+        $query = "SELECT * FROM products WHERE product_category IN($category_list) AND sub_category IN($category_list)";
         $result = mysqli_query($conn, $query);
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){

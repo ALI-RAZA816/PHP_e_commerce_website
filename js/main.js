@@ -639,6 +639,8 @@ $(document).ready(function(){
        });
     });
 
+
+    // sorting | relevant | high to low | low to high
     var filter_category = [];
     $('.filter_category').on('change',function(){
         if($(this).is(":checked")){
@@ -674,4 +676,83 @@ $(document).ready(function(){
         });
     });
 
+    // email send
+    $('.submit-mail').on('click',function(event){
+        event.preventDefault();
+        if(!$(".mailer-name").val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Mailer name is required</span>");
+            $('.mailer-name').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.mailer-name').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$(".mailer-email").val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Email is required</span>");
+            $('.mailer-email').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.mailer-email').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$(".mail-subject").val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Subject is required</span>");
+            $('.mail-subject').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.mail-subject').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$(".mail-content").val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Message is required</span>");
+            $('.mail-content').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.mail-content').removeClass('img_error');
+            },3000);
+            return;
+        }
+
+        var form = $(this).closest('form')[0];
+        var formData = new FormData(form);
+
+        $.ajax({
+            url:'admin/script/send.php',
+            type:'POST',
+            data:formData,
+            processData:false,
+            contentType:false,
+            success:function(data){
+                if(data === 'Invalid Email'){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid Email</span>");
+                    $('.mailer-email').addClass('img_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.mailer-email').removeClass('img_error');
+                    },3000);
+                }else if(data === 'Message sent'){
+                    $('.about-us-form').trigger('reset');
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Message has been sent. <br> We'll contact you shortly.</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                    },3000);
+                }
+            }
+        })
+    })
 });

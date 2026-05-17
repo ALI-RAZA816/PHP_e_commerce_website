@@ -13,15 +13,18 @@
             <div class="col-md-8 mt-5 mt-md-0">
                 <form action="" class='about-us-form'>
                     <div class='mb-3'>
-                        <input type="text" class='form-control rounded-0' placeholder='Enter name'>
+                        <input type="text" name='mailername' class='form-control mailer-name rounded-0' placeholder='Enter name'>
                     </div>
                     <div class='mb-3'>
-                        <input type="text" class='form-control rounded-0' placeholder='Enter email address'>
+                        <input type="text" name='maileremail' class='form-control mailer-email rounded-0' placeholder='Enter email address'>
+                    </div>
+                    <div class='mb-3'>
+                        <input type="text" name='mailsubject' class='form-control mail-subject rounded-0' placeholder='Subject'>
                     </div>
                     <div>
-                        <textarea name="" id="" class='form-control rounded-0' placeholder='Message' class='mb-3'></textarea>
+                        <textarea name="message" id="" class='form-control mail-content rounded-0' placeholder='Message' class='mb-3'></textarea>
                     </div>
-                    <button class='text-white bg-dark rounded-0 d-block w-100 btn mt-3'>Submit</button>
+                    <button type='button' class='text-white submit-mail bg-dark rounded-0 d-block w-100 btn mt-3'>Submit</button>
                 </form>
             </div>
         </div>

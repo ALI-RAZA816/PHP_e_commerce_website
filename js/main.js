@@ -843,7 +843,6 @@ $(document).ready(function(){
         })
     })
 
-
     // create new password 
     $(document).on('click','.create-new-password',function(event){
         event.preventDefault();
@@ -890,6 +889,50 @@ $(document).ready(function(){
             }
         })
 
+    });
+
+
+    // add to cart
+    $('.add-to-cart').on('click',function(event){
+        event.preventDefault();
+        if(!$('.product-size').is(":checked")){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Select product size</span>");
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+            },3000);
+            return;
+        }
+
+        var form = $(this).closest('form')[0];
+        var formData = new FormData(form);
+
+        $.ajax({
+            url:'admin/script/cart.php',
+            type:'POST',
+            data:formData,
+            contentType:false,
+            processData:false,
+            success:function(data){
+                // alert(data);
+                if(data === 'Product added to cart'){
+                    $('.error').css("top","30px");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product added to cart</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                    },5000);
+                }else if(data === "Product can't to added"){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Product can't added to cart</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                    },3000);
+                }
+            }
+        })
     })
 
 });

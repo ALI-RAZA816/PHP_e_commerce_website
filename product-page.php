@@ -43,18 +43,18 @@
                             $product_sizes = explode(',',$row['product_sizes']);
                             foreach($product_sizes as $value ){
                                 echo "  <div class='me-4 form-check form-check-inline size-selection position-relative'>
-                                            <input class='form-check-input size-input' name='size' type='radio' id='{$value}' value='{$value}'>
+                                            <input class='form-check-input product-size' name='productsize' type='radio' id='{$value}' value='{$value}'>
                                             <label class='form-check-label' for='{$value}'>{$value}</label>
                                         </div>";
                             }
                         ?>
-                        <input type="text" value='<?php echo $_GET['product_id']?>'>
+                        <input type="hidden" name='product-id' value='<?php echo $_GET['product_id']?>'>
                         <ul class="nav mt-5 border-top flex-column pt-3 ">
                             <li class="nav-item mb-2" style='font-size:15px;color:#555555;'>100% Original product</li>
                             <li class="nav-item mb-2" style='font-size:15px;color:#555555;'>Cash on delivery is available on this product.</li>
                             <li class="nav-item" style='font-size:15px;color:#555555;'>Easy return and exchange policy within 7 days.</li>
                         </ul>
-                        <button type='button' class='bg-dark text-white text-uppercase btn btn-dark rounded-0 mt-5' style='height:50px;'>Add to cart</button>
+                        <button type='button' class='bg-dark text-white text-uppercase btn btn-dark rounded-0 mt-5 add-to-cart' style='height:50px;'>Add to cart</button>
                     </form>
                 </div>
             </div>

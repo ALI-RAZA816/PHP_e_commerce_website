@@ -1,4 +1,10 @@
-<?php include "header.php" ?>
+<?php 
+    include "header.php";
+    // if(!isset($_SESSION['role'])){
+    //     header("Location: {$host_name}/admin/not-found.php");
+    //     die();
+    // }
+?>
 <section class='forgotton-password-page'>
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center" style='height:100vh;'>
@@ -14,9 +20,10 @@
         </div>
     </div>
 </section>
-<section>
+<section class='form-otp'>
+    <i class='fa-solid fa-xmark modalbox-cross text-white fs-4' style='position:absolute;top:30px;right:30px;z-index:99;'></i>
      <div class="container">
-        <div class="row otp-form d-flex justify-content-center align-items-center">
+        <div class="row vh-100 otp-form d-flex justify-content-center align-items-center">
             <div class="col-md-4 bg-white rounded-2 p-3">
                 <h3 class='text-dark text-capitlize text-center mb-4'>Verify Your Email<i class="fa-solid fa-minus"></i>
                 <p class='text-muted fs-6 mt-2'>Enter the OTP you received via email to proceed.</p></h3>

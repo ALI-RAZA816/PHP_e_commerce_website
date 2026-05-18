@@ -6,11 +6,16 @@
     use PHPMailer\PHPMailer\Exception;
 
     include "config.php";
+    if($_SERVER['REQUEST_METHOD'] === 'GET'){
+        header("Location: {$host_name}/admin/not-found.php");
+        die();
+    }
 
     $NAME = $_POST['mailername'];
     $EMAIL = $_POST['maileremail'];
     $SUBJECT = $_POST['mailsubject'];
     $MESSAGE = $_POST['message'];
+    
     if(!filter_var($EMAIL, FILTER_VALIDATE_EMAIL)){
         echo "Invalid Email";
         die();

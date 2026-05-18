@@ -1,6 +1,10 @@
 <?php 
 
     include "config.php";
+    if($_SERVER['REQUEST_METHOD'] === 'GET'){
+        header("Location: {$host_name}/admin/not-found.php");
+        die();
+    }
     $output = '';
     if($_POST['sorted'] === 'relevant'){
         $query = "SELECT * FROM products ORDER BY id DESC";

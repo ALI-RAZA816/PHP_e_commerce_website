@@ -786,10 +786,10 @@ $(document).ready(function(){
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
-                        $('.otp-form').css({
-                        "opacity": 1,
-                        "visibility": "visible",
-                        });
+                        $('.form-otp').css({
+                            "opacity":1,
+                            "visibility":"visible"
+                        })
                     },3000);
                 }
             }
@@ -833,10 +833,6 @@ $(document).ready(function(){
                     $('.otp').val('');
                     $(".error").css("top","30px");
                     $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Verification Completed");
-                    // $('.otp-form').css({
-                    // "opacity": 0,
-                    // "visibility": "hidden",
-                    // });
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
@@ -880,15 +876,15 @@ $(document).ready(function(){
                     $('.new-password').val('');
                     $('.repeat-password').val('');
                     $(".error").css("top","30px");
-                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Password changed</span>");
-                    $('.otp-form').css({
-                    "opacity": 0,
-                    "visibility": "hidden",
+                    $('.form-otp').css({
+                        "opacity":0,
+                        "visibility":"hidden"
                     });
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Password changed</span>");
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
-                         window.location.href="http://localhost/php_e_commerce_website";
+                        window.location.href="http://localhost/php_e_commerce_website";
                     },5000);
                 }
             }

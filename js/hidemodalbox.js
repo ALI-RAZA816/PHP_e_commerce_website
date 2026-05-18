@@ -1,7 +1,8 @@
 $(document).ready(function(){
-    $('.otp-form').on('click',function(event){
-        if (event.target === this) {
-            $(this).addClass('hide'); // or .css('display', 'none')
-        }
-    })
-})
+    $('.modalbox-cross').on('click',function(event){
+        $('.form-otp').css({
+            "opacity":0,
+            "visibility":"hidden"
+        });
+    });
+});

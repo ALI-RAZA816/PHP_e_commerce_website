@@ -12,17 +12,26 @@
         $USER_ROLE = $_POST['role'];
         $USER_STATUS = $_POST['status'];
         
-        if(isset($row['user_role'])){
-            if($row['user_role'] != $USER_ROLE){
-                session_start();
-                session_unset();
-                session_destroy();
-            }
-        }
+        // if(isset($row['user_role'])){
+        //     if($row['user_role'] != $USER_ROLE){
+        //         session_start();
+        //         session_unset();
+        //         session_destroy();
+        //         // $_SESSION['role'] = '';
+        //     }
+        // }
 
         $query = "UPDATE users SET name = '{$USER_NAME}', email = '{$USER_EMAIL}', user_role = '{$USER_ROLE}', status='{$USER_STATUS}' WHERE id = {$EDIT_USER_ID}";
         $result = mysqli_query($conn, $query);
         if($result){
+            // if(isset($row['user_role'])){
+            //     if($row['user_role'] != $USER_ROLE){
+            //         session_start();
+            //         session_unset();
+            //         session_destroy();
+            //         // $_SESSION['role'] = '';
+            //     }
+            // }
             echo "User updated";
         }else{
             echo mysqli_error($conn);

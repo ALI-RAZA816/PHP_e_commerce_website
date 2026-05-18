@@ -1,7 +1,13 @@
 <?php 
 
     include "config.php";
+    if($_SERVER['REQUEST_METHOD'] === 'GET'){
+        header("Location: {$host_name}/admin/not-found.php");
+        die();
+    }
+
     $OTP = mysqli_real_escape_string($conn, $_POST['otp']);
+    if(!$OTP) die();
     $query = "SELECT * FROM users WHERE otp = {$OTP}";
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) === 0){

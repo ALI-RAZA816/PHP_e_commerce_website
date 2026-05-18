@@ -1,14 +1,16 @@
-<?php 
-
-
-?><?php
+<?php
     //Import PHPMailer classes into the global namespace
     //These must be at the top of your script, not inside a function
+    include "config.php";
+    if($_SERVER['REQUEST_METHOD'] === 'GET'){
+        header("Location: {$host_name}/admin/not-found.php");
+        die();
+    }
+    
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    include "config.php";
     $OTP = mysqli_real_escape_string($conn, rand(10000, 50000));
     $EMAIL = $_POST['reset_email'];
     if(!filter_var($EMAIL, FILTER_VALIDATE_EMAIL)){

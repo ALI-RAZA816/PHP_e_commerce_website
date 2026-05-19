@@ -917,7 +917,7 @@ $(document).ready(function(){
 
         var form = $(this).closest('form')[0];
         var formData = new FormData(form);
-
+// shehrozahmad1055gmail.com
         $.ajax({
             url:'admin/script/cart.php',
             type:'POST',
@@ -960,9 +960,7 @@ $(document).ready(function(){
                 quantity:quantity,
                 productId:product_id
             },
-            success:function(data){
-                alert(data);
-            }
+            success:function(data){}
         });
     })
 

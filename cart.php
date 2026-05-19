@@ -11,7 +11,7 @@
                 <div class="col-md-8">
                     <?php 
                         include "config.php";
-                        // $query = "SELECT * FROM cart WHERE user = '{$_SESSION['name']}'";
+                        if(isset($_SESSION['name'])){
                         $query = "SELECT * FROM products LEFT JOIN cart ON products.id = cart.product_id WHERE cart.user = '{$_SESSION['name']}'";
                         $result = mysqli_query($conn, $query);
                         if(mysqli_num_rows($result) > 0){
@@ -30,6 +30,7 @@
                                         <i class='fa-regular fa-trash-can cart-trash' style='color:#3a3a3a;cursor:pointer;'></i>
                                     </div>";
                             }
+                        }
                         }else{
                             echo "<div class='d-flex flex-column justify-content-center align-items-center' style='height:80vh;'>
                                     <i class='fa-solid fa-box' style='color:#efefef;font-size:5rem;'></i>

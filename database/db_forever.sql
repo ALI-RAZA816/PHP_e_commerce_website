@@ -6,7 +6,7 @@ USE db_forever1;
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2026 at 08:01 AM
+-- Generation Time: May 19, 2026 at 07:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -115,7 +115,10 @@ ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
--- USERS TABLE STRUCTNRE 
+
+--
+-- Table structure for table `users`
+--
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
@@ -132,13 +135,12 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_role`, `status`, `join_date`) VALUES
-(1, 'Ali Raza Mujahid', 'alirazamujahid102@gmail.com', '$2y$10$0Nhuwtpa/Q3KRlnJyLC1SeEhpSSFa1ixx3Mb4MAEpOI6yZUsVKYzi', 'super-admin', 'active', '15 May 2026'),
-(2, 'Shehroz Ahmad', 'shehrozahmad1055gmail.com', '$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m', 'admin', 'active', '15 May 2026'),
-(3, 'Tanvir', 'razadeveloper816@gmail.com', '$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m', 'editor', 'active', '15 May 2026'),
-(4, 'Abdullah', 'developerraza816@gmail.com', '$2y$10$e0e8xfE1.92FxWnkwDCSPOllInyI.UZILVkeQzd42ttsXegoGd6O.', 'reader', 'active', '15 May 2026'),
-(5, 'Haseeb', 'haseebahmad543@gmail.com', '$2y$10$w5CgsnY7Ot8KzO7z9IYowuZaVcM0eaf.acrQd.UTIAyryMSwrCC1K', 'reader', 'suspend', '15 May 2026'),
-(6, 'Abdulbasit', 'abdulbasit226@gmail.com', '$2y$10$qwQECWR9pa1OG5m6yPymkOEm/Lf7BIPy.6myRKGmUaU19Le/sUdwm', 'reader', 'inactive', '15 May 2026');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_role`, `status`, `join_date`, `otp`) VALUES
+(1, 'Ali Raza Mujahid', 'alirazamujahid102@gmail.com', '$2y$10$svzhsFSjHkKGSOkCttrZreOPL0KOJMoWCJZu.VXGYcyd9sTHo8Kuq', 'super-admin', 'active', '15 May 2026', 48981),
+(2, 'Shehroz Ahmad', 'shehrozahmad1055gmail.com', '$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m', 'super-admin', 'active', '15 May 2026', NULL),
+(3, 'Tanvir', 'razadeveloper816@gmail.com', '$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m', 'editor', 'active', '15 May 2026', 11598),
+(4, 'Abdullah', 'developerraza816@gmail.com', '$2y$10$e0e8xfE1.92FxWnkwDCSPOllInyI.UZILVkeQzd42ttsXegoGd6O.', 'reader', 'active', '15 May 2026', NULL),
+(5, 'Haseeb', 'haseebahmad543@gmail.com', '$2y$10$w5CgsnY7Ot8KzO7z9IYowuZaVcM0eaf.acrQd.UTIAyryMSwrCC1K', 'admin', 'active', '15 May 2026', NULL);
 
 --
 -- Indexes for dumped tables
@@ -161,9 +163,53 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `size` varchar(100) NOT NULL,
+  `quantity` int(11) DEFAULT 1,
+  `price` int(11) NOT NULL,
+  `user` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `product_id`, `size`, `quantity`, `price`, `user`) VALUES
+(23, 43, 'M', 15, 75, 'Ali Raza Mujahid'),
+(24, 40, 'XXL', 17, 88, 'Ali Raza Mujahid'),
+(25, 16, 'XXL', 8, 33, 'Shehroz Ahmad');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 
 

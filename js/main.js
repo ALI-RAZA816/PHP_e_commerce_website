@@ -902,6 +902,27 @@ $(document).ready(function(){
     }
     total_items();
 
+    // cart items
+    function cart_items(){
+        $.ajax({
+            url:'admin/script/cart-items.php',
+            success:function(data){
+                $('.cart-items').html(data);
+            }
+        });
+    };
+    cart_items();
+
+    // cart total
+     function cart_total(){
+        $.ajax({
+            url:'admin/script/cart-total.php',
+            success:function(data){
+                $('.calculations').html(data);
+            }
+        });
+    };
+    cart_total();
     // add to cart
     $('.add-to-cart').on('click',function(event){
         event.preventDefault();
@@ -917,7 +938,6 @@ $(document).ready(function(){
 
         var form = $(this).closest('form')[0];
         var formData = new FormData(form);
-// shehrozahmad1055gmail.com
         $.ajax({
             url:'admin/script/cart.php',
             type:'POST',
@@ -927,6 +947,7 @@ $(document).ready(function(){
             success:function(data){
                 if(data === 'Product added to cart'){
                     total_items();
+                    cart_items();
                     $('.error').css("top","30px");
                     $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product added to cart</span>");
                     setTimeout(()=>{
@@ -949,7 +970,7 @@ $(document).ready(function(){
 
 
     // update quantity
-    $('.quantity').on('change',function(event){
+    $(document).on('change','.quantity',function(event){
         var quantity = $(this).val();
         var product_id = $(this).attr('id');
 
@@ -960,8 +981,40 @@ $(document).ready(function(){
                 quantity:quantity,
                 productId:product_id
             },
-            success:function(data){}
+            success:function(data){
+                cart_items();
+                cart_total();
+                total_items();
+            }
         });
-    })
+    });
 
+    // delete product from cart
+    $(document).on('click','.cart-trash', function(){
+        var deleteId = $(this).attr('id');
+        
+        $.ajax({
+            url:'admin/script/delete-cart.php',
+            type:'POST',
+            data:{
+                delete_id:deleteId
+            },
+            success:function(data){
+                if(data === "Product deleted from cart"){
+                    $(".error").css("top","30px");
+                    $('.form-otp').css({
+                        "opacity":0,
+                        "visibility":"hidden"
+                    });
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product deleted from cart</span>");
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        total_items();
+                        cart_items();
+                    },5000);
+                }
+            }
+        })
+    })
 });

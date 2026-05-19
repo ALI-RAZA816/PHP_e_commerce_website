@@ -891,6 +891,16 @@ $(document).ready(function(){
 
     });
 
+    // total cart item
+    function total_items(){
+        $.ajax({
+            url:'admin/script/total-items.php',
+            success:function(data){
+                $('.total-item').html(data);
+            }
+        })
+    }
+    total_items();
 
     // add to cart
     $('.add-to-cart').on('click',function(event){
@@ -915,8 +925,8 @@ $(document).ready(function(){
             contentType:false,
             processData:false,
             success:function(data){
-                // alert(data);
                 if(data === 'Product added to cart'){
+                    total_items();
                     $('.error').css("top","30px");
                     $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Product added to cart</span>");
                     setTimeout(()=>{
@@ -930,9 +940,30 @@ $(document).ready(function(){
                         $('.error').css("top","-25px");
                         $('.error').html("");
                     },3000);
+                }else if(data === "Create Account"){
+                    window.location.href="http://localhost/php_e_commerce_website/signup.php";
                 }
             }
         })
+    });
+
+
+    // update quantity
+    $('.quantity').on('change',function(event){
+        var quantity = $(this).val();
+        var product_id = $(this).attr('id');
+
+        $.ajax({
+            url:'admin/script/update-quantity.php',
+            type:'POST',
+            data:{
+                quantity:quantity,
+                productId:product_id
+            },
+            success:function(data){
+                alert(data);
+            }
+        });
     })
 
 });

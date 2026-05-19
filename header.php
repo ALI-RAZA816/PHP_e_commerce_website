@@ -56,7 +56,7 @@
                             <p class='mb-1 text-muted'><a href="" class='text-decoration-none text-dark logout'>Logout</a></p>
                         </div>
                     </div>
-                    <a href="cart.php"><i class="fa-solid fa-bag-shopping header-icons"></i></a>
+                    <a href="cart.php" class='position-relative text-decoration-none'><i class="fa-solid fa-bag-shopping header-icons"></i><span class='total-item text-dark'>0</span></a>
                     <i class="fa-solid fa-bars-staggered ms-3 nav-bars"></i>
                 </div>
             </div>

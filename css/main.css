@@ -227,6 +227,20 @@ body{
     overflow: hidden;
 }
 
+.total-item{
+    position: absolute;
+    top:10px;
+    right:-8px;
+    height: 20px;
+    width:20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    background-color: #fff;
+    display: inline-block;
+    font-size: 14px;
+}
+
 
 .single-order .title,
 .single-order .price{

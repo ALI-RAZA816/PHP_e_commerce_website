@@ -8,7 +8,7 @@
         </div>
         <div class="orders" style='min-height:100vh;margin-bottom:5rem;'>
             <div class="row delivery-information align-items-start">
-                <div class="col-md-6 stripe">
+                <!-- <div class="col-md-6">
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
                             <input type="text" class='form-control rounded-0' placeholder='First name'>
@@ -61,8 +61,8 @@
                     <div>
                         <input type="text" class='form-control rounded-0' placeholder='CV Code'>
                     </div>
-                </div>
-                <div class="col-md-6 cash-on-delivery">
+                </div> -->
+                <div class="col-md-6">
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
                             <input type="text" class='form-control rounded-0' placeholder='First name'>
@@ -108,14 +108,6 @@
                     </div>
                     <h6 class='text-muted text-uppercase mt-5 mb-3'>Payment <span class='fw-bold text-dark'>Method</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h6>
                     <div class='methods d-flex justify-content-between'>
-                        <label for="method1" class='border px-3 py-1 w-100 '>
-                           <div class="form-check">
-                                <input class="form-check-input" value='stripe' type="radio" name="payment-method" id="method1">
-                                <label class="form-check-label" for="method1">
-                                    <img src="./images/stripe_logo.png" style='height:20px;width:50px;object-fit:cover;' alt="">
-                                </label>
-                            </div>
-                        </label>
                         <label for="method3" class='border px-3 py-1  w-100'>
                            <div class="form-check">
                                 <input class="form-check-input" type="radio" value='cashondelivery' name="payment-method" id="method2" checked>
@@ -131,5 +123,4 @@
         </div>
     </div>
 </section>
-<script src='./js/payment-form.js'></script>
 <?php include "footer.php" ?>

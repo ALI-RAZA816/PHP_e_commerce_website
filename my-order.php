@@ -8,20 +8,42 @@
         </div>
         <div class="orders" style='min-height:100vh;margin-bottom:5rem;'>
             <div class="row cart-products align-items-start">
-                <div class="col-md-12">
-                    <div class="d-flex align-items-center justify-content-between border-top border-bottom py-2 single-order">
-                        <div class='d-flex'>
-                            <div class='cart-img me-3'>
-                                <img src="./images/Rectangle 3634.png" class='img-fluid' alt="">
-                            </div>
-                            <div>
-                                <p class='title mb-2'>Men Round Neck Pure Cotton T-shirt</p>
-                                <p><span class='price mb-0'>$139</span><span class='size ms-5'>L</span></p>
-                            </div>
-                        </div>
-                        <div><i class="fa-regular fa-circle-dot text-success me-2"></i><span class='text-muted'>Ready to ship</span></div>
-                    </div>
-                </div>
+                <?php
+                    
+                    include "config.php";
+                    $query = "SELECT * FROM orders WHERE username = '{$_SESSION['name']}'";
+                    $result = mysqli_query($conn, $query);
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo "<div class='col-md-12'>
+                                    <div class='d-md-flex align-items-center justify-content-between border-top border-bottom py-2 single-order'>
+                                        <div class='d-flex'>
+                                            <div class='cart-img me-3'>
+                                                <img src='./admin/images/product_img/{$row['image']}' class='img-fluid' alt=''>
+                                            </div>
+                                            <div>
+                                                <p class='title mb-2'>{$row['title']}</p>
+                                                <p><span class='price mb-0'><span>$</span>{$row['unitprice']}</span><span class='size ms-5'>{$row['size']}</span></p>
+                                            </div>
+                                            <div class='ms-5'>
+                                                <p class='d-flex flex-column'>
+                                                <span class='price mb-0'>Quantity: {$row['quantity']}</span>
+                                                <span>Total Price: {$row['totalprice']}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div><i class='fa-regular fa-circle-dot text-success me-2'></i><span class='text-muted text-capitalize'>{$row['order_status']}</div>
+                                    </div>
+                                </div>";
+                        }
+                    }else{
+                        echo "<div class='d-flex flex-column justify-content-center align-items-center' style='height:80vh;'>
+                                <i class='fa-solid fa-box' style='color:#efefef;font-size:5rem;'></i>
+                                <h5 class='m-0 mt-2 text-muted'>No Orders</h5>
+                            </div>";
+                    }
+                ?>
+                
             </div>
         </div>
     </div>

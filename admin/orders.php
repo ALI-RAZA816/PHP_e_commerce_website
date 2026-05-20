@@ -19,17 +19,16 @@
                         <?php 
                             include "config.php";
                             $query = "SELECT * FROM orders";
-                            
                             $result = mysqli_query($conn, $query);
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
                                     echo "<div class='col-12 border p-4 mb-3'>
                                                 <div class='row p-0 g-0 d-flex justify-content-betweem'>
                                                     <div class='col-3 col-md-1 mb-3 mb-md-0'>
-                                                        <img src='./images/Rectangle 3608.png' class='img-fluid' alt=''>
+                                                        <img src='./images/product_img/{$row['image']}' class='img-fluid' alt=''>
                                                     </div>
                                                     <div class ='col-md-4 px-md-4 mb-3 mb-md-0'>
-                                                        <p class='product-title mb-1 text-muted'>Men Tapered Fit Flat-Front Trousers x 1 L</p>
+                                                        <p class='product-title mb-1 text-muted'>{$row['title']}</p>
                                                         <p class='name fw-bold text-muted mb-1'>{$row['first_name']}</p>
                                                         <p class='street mb-0 text-muted'>{$row['street']}</p>
                                                         <p class='city country state zip-code mb-0 text-muted'>{$row['state']}, {$row['country']}, {$row['city']}, {$row['zip_code']}</p>
@@ -37,6 +36,7 @@
                                                     </div>
                                                     <div class ='col-md-3 px-md-4 mb-3 mb-md-0'>
                                                         <p class='text-muted mb-1'>Items:{$row['quantity']}</p>
+                                                        <p class='text-muted mb-1'>Size: {$row['size']}</p>
                                                         <p class='mb-0 text-muted'>Method:{$row['pay_method']}</p>
                                                         <p class='mb-0 text-muted'>Payment:{$row['status']}</p>
                                                         <p class='mb-0 text-muted'>Date:{$row['order_date']}</p>

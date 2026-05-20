@@ -18,7 +18,6 @@
 </head>
 <body>
     <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
-        <i class="fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger"></i><span class='text-danger fs-6'>Image is required</span>
     </div>
     <header class='border-bottom'>
         <nav class="navbar py-3">

@@ -65,36 +65,36 @@
                 <div class="col-md-6">
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
-                            <input type="text" class='form-control rounded-0' placeholder='First name'>
+                            <input type="text" class='form-control p_name rounded-0' placeholder='First name'>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class='form-control rounded-0' placeholder='Last name'>
+                            <input type="text" class='form-control p_lastname rounded-0' placeholder='Last name'>
                         </div>
                     </div>
                     <div class='mb-3'>
-                        <input type="text" class='form-control rounded-0' placeholder='Email Address'>
+                        <input type="text" class='form-control rounded-0 p_address' placeholder='Email Address'>
                     </div>
                     <div class='mb-3'>
-                        <input type="text" class='form-control rounded-0' placeholder='Street'>
+                        <input type="text" class='form-control p_street rounded-0' placeholder='Street'>
                     </div>
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
-                            <input type="text" class='form-control rounded-0' placeholder='City'>
+                            <input type="text" class='form-control p_city rounded-0' placeholder='City'>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class='form-control rounded-0' placeholder='State'>
+                            <input type="text" class='form-control p_state rounded-0' placeholder='State'>
                         </div>
                     </div>
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
-                            <input type="text" class='form-control rounded-0' placeholder='Zip Code'>
+                            <input type="text" class='form-control p_zipcode rounded-0' placeholder='Zip Code'>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class='form-control rounded-0' placeholder='Country'>
+                            <input type="text" class='form-control p_country rounded-0' placeholder='Country'>
                         </div>
                     </div>
                     <div>
-                        <input type="text" class='form-control rounded-0' placeholder='Phone'>
+                        <input type="text" class='form-control p_phone rounded-0' placeholder='Phone'>
                     </div>
                 </div>
                 <div class="col-md-6 px-md-5 mt-4 mt-md-0">
@@ -110,14 +110,14 @@
                     <div class='methods d-flex justify-content-between'>
                         <label for="method3" class='border px-3 py-1  w-100'>
                            <div class="form-check">
-                                <input class="form-check-input" type="radio" value='cashondelivery' name="payment-method" id="method2" checked>
+                                <input class="form-check-input" type="radio" value='COD' name="payment-method" id="method2" checked>
                                 <label class="form-check-label text-nowrap text-uppercase" for="method2" style='font-size:14px;'>
                                     Cash on Delivery
                                 </label>
                             </div>
                         </label>
                     </div>
-                    <button class='btn rounded-0 mt-4 d-block w-100 btn-dark text-white text-uppercase'>Place Order</button>
+                    <button class='btn rounded-0 mt-4 d-block w-100 btn-dark text-white text-uppercase place-order'>Place Order</button>
                 </div>
             </div>
         </div>

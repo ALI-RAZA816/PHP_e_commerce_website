@@ -1016,5 +1016,152 @@ $(document).ready(function(){
                 }
             }
         })
-    })
+    });
+
+    $('.place-order').on('click',function(event){
+
+        if(!$('.p_name').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide first name</span>");
+            $('.p_name').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_name').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$('.p_lastname').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide last name</span>");
+            $('.p_lastname').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_lastname').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$('.p_address').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide address</span>");
+            $('.p_address').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_address').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$('.p_street').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide street address</span>");
+            $('.p_street').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_street').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$('.p_city').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide city name</span>");
+            $('.p_city').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_city').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$('.p_state').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide state name</span>");
+            $('.p_state').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_state').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$('.p_zipcode').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide city zipcode </span>");
+            $('.p_zipcode').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_zipcode').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$('.p_country').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide country name</span>");
+            $('.p_country').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_country').removeClass('img_error');
+            },3000);
+            return;
+        }
+        if(!$('.p_phone').val()){
+            $('.error').css("top","30px");
+            $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Provide phone number</span>");
+            $('.p_phone').addClass('img_error');
+            setTimeout(()=>{
+                $('.error').css("top","-25px");
+                $('.error').html("");
+                $('.p_phone').removeClass('img_error');
+            },3000);
+            return;
+        }
+
+        $.ajax({
+            url:'admin/script/place-order.php',
+            type:'POST',
+            data:{
+                name:$('.p_name').val(),
+                lastname:$('.p_lastname').val(),
+                address:$('.p_address').val(),
+                street:$('.p_street').val(),
+                city:$('.p_city').val(),
+                state:$('.p_state').val(),
+                zipcode:$('.p_zipcode').val(),
+                country:$('.p_country').val(),
+                phone:$('.p_phone').val(),
+                paymethod:$('#method2').val()
+            },
+            success:function(data){
+               if(data === "Order placed"){
+                 $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i></i><span class='text-success fs-6'>Order placed</span>");
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                    },3000);
+                };
+            }
+
+        })
+    });
+
+    $('.order-status').on('change',function(){
+        var order_status = $(this).val(); 
+        var order_id = $(this).attr('id');
+        $.ajax({
+            url:'script/order-status.php',
+            type:'POST',
+            data:{
+                orderstatus:order_status,
+                order_id:order_id
+            },
+            success:function(data){
+                
+            }
+        });
+    });
 });

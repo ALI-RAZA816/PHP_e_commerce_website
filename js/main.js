@@ -968,7 +968,6 @@ $(document).ready(function(){
         })
     });
 
-
     // update quantity
     $(document).on('change','.quantity',function(event){
         var quantity = $(this).val();
@@ -1001,6 +1000,9 @@ $(document).ready(function(){
             },
             success:function(data){
                 if(data === "Product deleted from cart"){
+                    cart_items();
+                    cart_total();
+                    total_items();
                     $(".error").css("top","30px");
                     $('.form-otp').css({
                         "opacity":0,
@@ -1010,8 +1012,6 @@ $(document).ready(function(){
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
-                        total_items();
-                        cart_items();
                     },5000);
                 }
             }

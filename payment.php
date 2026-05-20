@@ -8,7 +8,61 @@
         </div>
         <div class="orders" style='min-height:100vh;margin-bottom:5rem;'>
             <div class="row delivery-information align-items-start">
-                <div class="col-md-6">
+                <div class="col-md-6 stripe">
+                    <div class="row g-0 p-0 mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
+                            <input type="text" class='form-control rounded-0' placeholder='First name'>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class='form-control rounded-0' placeholder='Last name'>
+                        </div>
+                    </div>
+                    <div class='mb-3'>
+                        <input type="text" class='form-control rounded-0' placeholder='Email Address'>
+                    </div>
+                    <div class='mb-3'>
+                        <input type="text" class='form-control rounded-0' placeholder='Street'>
+                    </div>
+                    <div class="row g-0 p-0 mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
+                            <input type="text" class='form-control rounded-0' placeholder='City'>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class='form-control rounded-0' placeholder='State'>
+                        </div>
+                    </div>
+                    <div class="row g-0 p-0 mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
+                            <input type="text" class='form-control rounded-0' placeholder='Zip Code'>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class='form-control rounded-0' placeholder='Country'>
+                        </div>
+                    </div>
+                    <div class='mb-3'>
+                        <input type="text" class='form-control rounded-0' placeholder='Phone'>
+                    </div>
+                    <div class="row g-0 p-0 mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
+                            <input type="text" class='form-control rounded-0' placeholder='Amount'>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class='form-control rounded-0' placeholder='Card Number'>
+                        </div>
+                    </div>
+                    <div class="row g-0 p-0 mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
+                            <input type="number" class='form-control rounded-0' placeholder='Month'>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class='form-control rounded-0' placeholder='Year'>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="text" class='form-control rounded-0' placeholder='CV Code'>
+                    </div>
+                </div>
+                <div class="col-md-6 cash-on-delivery">
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
                             <input type="text" class='form-control rounded-0' placeholder='First name'>
@@ -54,26 +108,18 @@
                     </div>
                     <h6 class='text-muted text-uppercase mt-5 mb-3'>Payment <span class='fw-bold text-dark'>Method</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h6>
                     <div class='methods d-flex justify-content-between'>
-                        <label for="method1" class='border px-3 py-1'>
+                        <label for="method1" class='border px-3 py-1 w-100 '>
                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment-method" id="method1">
+                                <input class="form-check-input" value='stripe' type="radio" name="payment-method" id="method1">
                                 <label class="form-check-label" for="method1">
-                                    <img src="./images/stripe_logo.png" style='height:20px;width:100%;object-fit:cover;' alt="">
+                                    <img src="./images/stripe_logo.png" style='height:20px;width:50px;object-fit:cover;' alt="">
                                 </label>
                             </div>
                         </label>
-                        <label for="method2" class='border  px-3 py-1'>
+                        <label for="method3" class='border px-3 py-1  w-100'>
                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment-method" id="method2">
-                                <label class="form-check-label" for="method2">
-                                    <img src="./images/razorpay_logo.png" style='height:20px;width:100%;object-fit:cover;' alt="">
-                                </label>
-                            </div>
-                        </label>
-                        <label for="method3" class='border px-3 py-1'>
-                           <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment-method" id="method3">
-                                <label class="form-check-label text-nowrap text-uppercase" for="method3" style='font-size:14px;'>
+                                <input class="form-check-input" type="radio" value='cashondelivery' name="payment-method" id="method2" checked>
+                                <label class="form-check-label text-nowrap text-uppercase" for="method2" style='font-size:14px;'>
                                     Cash on Delivery
                                 </label>
                             </div>
@@ -85,4 +131,5 @@
         </div>
     </div>
 </section>
+<script src='./js/payment-form.js'></script>
 <?php include "footer.php" ?>

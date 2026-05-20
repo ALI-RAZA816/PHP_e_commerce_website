@@ -492,4 +492,8 @@ body{
     backdrop-filter: blur(5px);
 }
 
+.stripe{
+    display: none;
+}
+
 

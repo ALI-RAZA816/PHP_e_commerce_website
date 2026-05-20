@@ -2,7 +2,7 @@
 
     include "config.php";
     $SHIPPING_FEE = 2;
-    $query = "SELECT *, quantity * price AS total FROM cart";
+    $query = "SELECT SUM(quantity * price) AS total FROM cart";
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);

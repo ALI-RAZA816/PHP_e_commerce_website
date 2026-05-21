@@ -1136,7 +1136,18 @@ $(document).ready(function(){
                 paymethod:$('#method2').val()
             },
             success:function(data){
+                alert(data);
                if(data === "Order placed"){
+                $('.p_name').val()
+                $('.p_lastname').val()
+                $('.p_address').val()
+                $('.p_street').val()
+                $('.p_city').val()
+                $('.p_state').val()
+                $('.p_zipcode').val()
+                $('.p_country').val()
+                $('.p_phone').val()
+                $('#method2').val()
                  $('.error').css("top","30px");
                     $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i></i><span class='text-success fs-6'>Order placed</span>");
                     setTimeout(()=>{

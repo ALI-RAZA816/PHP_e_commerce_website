@@ -1,7 +1,7 @@
 <?php 
 
     include "config.php";
-    $SHIPPING_FEE = 2;
+    $SHIPPING_FEE = 1;
     $query = "SELECT SUM(quantity * price) AS total FROM cart";
     $result = mysqli_query($conn, $query);
     if(mysqli_num_rows($result) > 0){

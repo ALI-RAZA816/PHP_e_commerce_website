@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <!-- BOOTSTRAP  -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <!-- MAIN CSS FILE  -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+    <!-- FONTAWESOME CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src='./js/script.js'></script>
+</head>
+<body>
+    <div class='container'>
+        <div class="row p-0 g-0">
+            <p class='m-1 p-0'>Your order confirmation__Forever.com</p>
+            <div class="col-6 p-0 g-0 rounded-3 bg-white border invoice">
+                <div class='d-flex py-3 px-3 rounded-top-2 header align-items-center justify-content-between'>
+                    <img src="./images/InsiderStats.png" height='25px' width='120px' alt="">
+                    <span class='text-uppercase rounded-2 px-2 border fw-bold text-muted'>Invoice</span>
+                </div>
+                <div class='px-5 py-3'>
+                    <p class='text-success fw-bold mt-3 mb-2' style='font-size:14px;'><i class="fa-solid fa-circle me-1" style='font-size:12px;'></i>Payment pending</p>
+                    <h3 class='fs-4'>Thanks for your order, Alex!</h3>
+                    <p>We've received your order and your order is being prepared. You'll get a shipping update once it's on the way.</p>
+                </div> 
+                <div class='d-flex px-5 border-bottom border-top py-3 justify-content-between'>
+                    <div>
+                        <p class='mb-0 text-uppercase' style='font-size:14px;'>Date</p>
+                        <p class='mb-0 fw-bold'>May 19, 2026</p>
+                    </div>
+                    <div>
+                        <p class='mb-0 text-uppercase' style='font-size:14px;'>Date</p>
+                        <p class='mb-0 fw-bold'>May 19, 2026</p>
+                    </div>
+                </div>
+                <div class="row px-5 border-bottom g-0">
+                    <p class='my-2 p-0 text-uppercase' style='font-size:14px;'>Items Ordered</p>
+                    <div class='col-12 table-responsive'>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="col-6 text-uppercase fw-normal text-muted" style='font-size:14px;'>Product</th>
+                                    <th class="col-2 text-uppercase fw-normal text-muted" style='font-size:14px;'>QTY</th>
+                                    <th class="col-2 text-uppercase fw-normal text-muted" style='font-size:14px;'>Unit Price</th>
+                                    <th class="col-2 text-uppercase fw-normal text-muted" style='font-size:14px;'>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class='align-middle'>
+                                    <th>
+                                        <p class='m-0 '>Sony WH-1000XM6</p>
+                                        <p class='m-0 fw-normal'>M</p>
+                                    </th>
+                                    <td>1</td>
+                                    <td>$55</td>
+                                    <td>$55</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-12 px-5 my-3 calculations">
+                        <p class='mb-2 fw-bold d-flex justify-content-between border-bottom pb-2'><span>Subtotal</span><span>$60.00</span></p>
+                        <p class='mb-2 fw-bold d-flex justify-content-between border-bottom pb-2'><span>Shipping Fee</span><span>$1.00</span></p>
+                        <p class='mb-2 d-flex justify-content-between border-bottom pb-2'><span class='fw-bold'>Total</span><span>$00.00</span></p>
+                    </div>
+                </div>
+                <div class="row px-4 py-3 g-0 footer">
+                    <div class='d-flex justify-content-between'>
+                        <p class='fw-bold mb-0 text-uppercase'>Forever</p>
+                        <div class='d-flex'>
+                            <p class='text-capitalize me-3 mb-0'>Return</p>
+                            <p class='text-capitalize me-3 mb-0'>Support</p>
+                            <p class='text-capitalize mb-0'>Unsubscribe</p>
+                        </div>
+                    </div>
+                    <p class='mb-0 mt-2'>Questions about your order? Reply to this email or visit our help center at shopnova.com/help. This invoice was generated automatically — please keep it for your records.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

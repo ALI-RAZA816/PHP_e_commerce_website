@@ -497,3 +497,22 @@ body{
 }
 
 
+.invoice .header{
+    background-color: #FFDAD6;
+}
+
+.invoice span{
+    font-size: 15px;
+    display: inline-block;
+    border-color:#a3a3a3 !important;
+}
+
+.invoice .footer{
+    background-color: #F5F4ED;
+}
+
+.invoice .footer p{
+    font-size: 14px;
+}
+
+

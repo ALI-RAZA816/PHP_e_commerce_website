@@ -41,7 +41,7 @@
 
             //Recipients
             $mail->setFrom('razadeveloper816@gmail.com', 'FOREVER');
-            $mail->addAddress('');     //Add a recipient
+            $mail->addAddress("{$EMAIL}");     //Add a recipient
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML

@@ -83,7 +83,7 @@
 
                     //Recipients
                     $mail->setFrom('razadeveloper816@gmail.com', 'FOREVER');
-                    $mail->addAddress('alirazamujahid102@gmail.com', 'Ali Raza');     //Add a recipient
+                    $mail->addAddress("{$ADDRESS}", "{$NAME} {$LAST_NAME}");     //Add a recipient
                     //Content
                     $mail->isHTML(true);                                  //Set email format to HTML
                     $mail->Subject = 'Forever: Order';

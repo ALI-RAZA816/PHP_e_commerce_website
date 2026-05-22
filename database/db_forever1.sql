@@ -1,0 +1,255 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 21, 2026 at 05:18 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+CREATE DATABASE `db_forever1`;
+USE db_forever1;
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `db_forever1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `size` varchar(100) NOT NULL,
+  `quantity` int(11) DEFAULT 1,
+  `price` int(11) NOT NULL,
+  `user` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `product_id`, `size`, `quantity`, `price`, `user`) VALUES
+(57, 31, 'M', 5, 90, 'Ali Raza Mujahid'),
+(58, 29, 'M', 3, 100, 'Ali Raza Mujahid'),
+(59, 13, 'M', 4, 45, 'Ali Raza Mujahid'),
+(60, 23, 'M', 2, 105, 'Abdullah'),
+(61, 30, 'L', 1, 150, 'Abdullah'),
+(62, 26, 'XXL', 13, 50, 'Abdullah');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `productid` int(11) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `image` varchar(100) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `size` varchar(10) DEFAULT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `email_address` varchar(100) NOT NULL,
+  `street` varchar(500) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `zip_code` int(11) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `unitprice` int(11) DEFAULT NULL,
+  `totalprice` int(11) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `status` varchar(50) DEFAULT 'Pending',
+  `pay_method` varchar(50) DEFAULT NULL,
+  `track_id` varchar(300) DEFAULT NULL,
+  `order_date` varchar(50) DEFAULT NULL,
+  `order_status` varchar(100) DEFAULT 'order placed'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `productid`, `title`, `image`, `quantity`, `size`, `first_name`, `last_name`, `email_address`, `street`, `city`, `state`, `zip_code`, `country`, `phone`, `unitprice`, `totalprice`, `username`, `status`, `pay_method`, `track_id`, `order_date`, `order_status`) VALUES
+(27, 42, 'Boy Round Neck Pure Cotton T-shirt', '1778907221-Rectangle 3634.png', 1, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'aaaaaaaaaaa', 453115, 'Pakistan', '03007994674', 99, 99, 'Ali Raza Mujahid', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
+(28, 31, 'Men Round Neck Pure Cotton T-shirt', '1778906526-Rectangle 3619.png', 5, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'sdfffffffff', 453115, 'Pakistan', '03007994674', 90, 450, 'Ali Raza Mujahid', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
+(29, 29, 'Girls Round Neck Cotton Top', '1778906394-Gemini_Generated_Image_1z4edl1z4edl1z4es.png', 3, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'sdfffffffff', 453115, 'Pakistan', '03007994674', 100, 450, 'Ali Raza Mujahid', 'Pending', 'COD', NULL, '20/05/2026', 'packing'),
+(30, 13, 'Boy Round Neck Pure Cotton T-shirt', '1778904862-ChatGPT Image May 14, 2026, 12_39_41 PMdsdf.png', 4, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'sdfffffffff', 453115, 'Pakistan', '03007994674', 45, 450, 'Ali Raza Mujahid', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
+(31, 23, 'Men Slim Fit Relaxed Denim Jacket', '1778905875-ChatGPT Image May 15, 2026, 06_24_55 PMdsf.png', 2, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'ddfgdfg', 453115, 'Pakistan', '03007994674', 105, 210, 'Abdullah', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
+(32, 30, 'Girls Round Neck Cotton Top', '1778906459-Gemini_Generated_Image_w7r9iow7r9iow7r9df.png', 1, 'L', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'ddfgdfg', 453115, 'Pakistan', '03007994674', 150, 210, 'Abdullah', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
+(33, 26, ' Women Round Neck Cotton Top', '1778906152-ChatGPT Image May 15, 2026, 06_52_50 PM.png', 13, 'XXL', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'ddfgdfg', 453115, 'Pakistan', '03007994674', 50, 210, 'Abdullah', 'Pending', 'COD', NULL, '20/05/2026', 'order placed');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `product_title` varchar(200) NOT NULL,
+  `product_description` text NOT NULL,
+  `product_category` varchar(100) NOT NULL,
+  `sub_category` varchar(100) NOT NULL,
+  `product_price` int(100) NOT NULL,
+  `product_sizes` varchar(200) NOT NULL,
+  `bestseller` varchar(100) DEFAULT NULL,
+  `img1` text NOT NULL,
+  `img2` text NOT NULL,
+  `img3` text NOT NULL,
+  `img4` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `product_title`, `product_description`, `product_category`, `sub_category`, `product_price`, `product_sizes`, `bestseller`, `img1`, `img2`, `img3`, `img4`) VALUES
+(1, '\r\nWomen Zip-Front Relaxed Fit Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'topwear', 68, 'S,M,L,XL,XXL', NULL, '1778902400-ChatGPT Image May 14, 2026, 01_05_32 PM.png', '1778902400-ChatGPT Image May 14, 2026, 01_06_38 ADE.png', '1778902400-ChatGPT Image May 14, 2026, 01_06_38 PM.png', '1778902400-ChatGPT Image May 14, 2026, 01_08_06 PM.png'),
+(2, 'Women Palazzo Pants with Waist Belt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'bottomwear', 25, 'S,M,L,XL,XXL', NULL, '1778904263-ChatGPT Image May 14, 2026, 01_14_07 PM.png', '1778904263-ChatGPT Image May 14, 2026, 01_14_07 PMsdfsdf.png', '1778904264-ChatGPT Image May 14, 2026, 01_16_52 PM.png', '1778904264-ChatGPT Image May 14, 2026, 01_18_03 PM.png'),
+(3, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 45, 'S,M,L,XL,XXL', NULL, '1778904323-ChatGPT Image May 14, 2026, 01_21_14 PM.png', '1778904323-ChatGPT Image May 14, 2026, 01_22_19 PM.png', '1778904323-ChatGPT Image May 14, 2026, 01_24_16 PM.png', '1778904323-ChatGPT Image May 14, 2026, 01_24_16 PMsdf.png'),
+(4, ' Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 78, 'S,M,L,XL,XXL', 'bestseller', '1778904367-ChatGPT Image May 14, 2026, 01_26_39 PM.png', '1778904367-ChatGPT Image May 14, 2026, 01_29_04 PM.png', '1778904367-ChatGPT Image May 14, 2026, 01_29_04 PMsdf.png', '1778904367-ChatGPT Image May 14, 2026, 01_31_03 PM.png'),
+(5, 'Men Tapered Fit Flat-Front Trousers', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 66, 'S,M,L,XL,XXL', 'bestseller', '1778904405-ChatGPT Image May 14, 2026, 10_43_57 AM.png', '1778904405-ChatGPT Image May 14, 2026, 10_43_57 AMdsf.png', '1778904405-ChatGPT Image May 14, 2026, 10_44_44 AM.png', '1778904405-ChatGPT Image May 14, 2026, 10_46_25 AM.png'),
+(6, 'Girls Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 25, 'S,M,L,XL,XXL', NULL, '1778904491-ChatGPT Image May 14, 2026, 10_47_38 AM.png', '1778904491-ChatGPT Image May 14, 2026, 10_47_38 AMsd.png', '1778904491-ChatGPT Image May 14, 2026, 10_48_30 AM.png', '1778904491-ChatGPT Image May 14, 2026, 10_54_59 AM.png'),
+(7, 'Men Tapered Fit Flat-Front Trousers', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'bottomwear', 22, 'S,M,L,XL,XXL', NULL, '1778904543-ChatGPT Image May 14, 2026, 12_01_58 PM.png', '1778904543-ChatGPT Image May 14, 2026, 12_03_22 PM.png', '1778904543-ChatGPT Image May 14, 2026, 12_05_53 PM.png', '1778904543-ChatGPT Image May 14, 2026,ssdf 12_01_58 PM.png'),
+(8, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 33, 'S,M,L,XL,XXL', 'bestseller', '1778904586-ChatGPT Image May 14, 2026, 12_07_21 PM.png', '1778904586-ChatGPT Image May 14, 2026, 12_07_21 PMsdf.png', '1778904586-ChatGPT Image May 14, 2026, 12_08_46 PM.png', '1778904586-ChatGPT Image May 14, 2026, 12_10_01 PM.png'),
+(9, 'Men Tapered Fit Flat-Front Trousers', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'bottomwear', 55, 'S,M,L,XL,XXL', NULL, '1778904648-ChatGPT Image May 14, 2026, 12_12_14 PM.png', '1778904648-ChatGPT Image May 14, 2026, 12_13_39 PM.png', '1778904648-ChatGPT Image May 14, 2026, 12_13_39 PMsdf.png', '1778904648-ChatGPT Image May 14, 2026, 12_15_38 PM.png'),
+(10, 'Girls Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 75, 'S,M,L,XL,XXL', 'bestseller', '1778904715-ChatGPT Image May 14, 2026, 12_18_40 PM.png', '1778904715-ChatGPT Image May 14, 2026, 12_18_40 PMsdf (2).png', '1778904715-ChatGPT Image May 14, 2026, 12_18_40 PMsdf.png', '1778904715-ChatGPT Image May 14, 2026, 12_20_12 PM.png'),
+(11, 'Men Tapered Fit Flat-Front Trousers', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'bottomwear', 80, 'S,M,L,XL,XXL', NULL, '1778904764-ChatGPT Image May 14, 2026, 12_21_39 PM.png', '1778904764-ChatGPT Image May 14, 2026, 12_21_39 PMsdf.png', '1778904764-ChatGPT Image May 14, 2026, 12_24_07 PM.png', '1778904764-ChatGPT Image May 14, 2026, 12_26_14 PM.png'),
+(12, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 100, 'S,M,L,XL,XXL', NULL, '1778904808-ChatGPT Image May 14, 2026, 12_28_21 PM.png', '1778904808-ChatGPT Image May 14, 2026, 12_30_38 PM.png', '1778904808-ChatGPT Image May 14, 2026, 12_32_08 PM.png', '1778904808-ChatGPT Image May 14, 2026, 12_32_08 PMsdfsdf.png'),
+(13, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 45, 'S,M,L,XL,XXL', NULL, '1778904862-ChatGPT Image May 14, 2026, 12_39_41 PMdsdf.png', '1778904862-ChatGPT Image May 14, 2026, 12_36_56 PM.png', '1778904862-ChatGPT Image May 14, 2026, 12_38_20 PM.png', '1778904862-ChatGPT Image May 14, 2026, 12_39_41 PM.png'),
+(14, ' Women Palazzo Pants with Waist Belt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'bottomwear', 125, 'S,M,L,XL,XXL', 'bestseller', '1778904944-ChatGPT Image May 14, 2026, 12_42_41 PM.png', '1778904944-ChatGPT Image May 14, 2026, 12_44_22 PM.png', '1778904944-ChatGPT Image May 14, 2026, 12_44_22 PMsdf.png', '1778904944-ChatGPT Image May 14, 2026, 12_46_06 PM.png'),
+(15, 'Men Slim Fit Relaxed Denim Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'winterwear', 150, 'S,M,L,XL,XXL', 'bestseller', '1778905060-ChatGPT Image May 15, 2026, 05_37_13 PM.png', '1778905060-ChatGPT Image May 15, 2026, 05_37_13 PMsdf.png', '1778905060-ChatGPT Image May 15, 2026, 05_37_13 PMsdfsdf.png', '1778905060-ChatGPT Image May 15, 2026, 05_38_48 PM.png'),
+(16, ' Women Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'topwear', 33, 'S,M,L,XL,XXL', 'bestseller', '1778905113-ChatGPT Image May 15, 2026, 05_41_50 PMsdfds.png', '1778905113-ChatGPT Image May 15, 2026, 05_41_50 PM.png', '1778905113-ChatGPT Image May 15, 2026, 05_43_12 PM.png', '1778905113-ChatGPT Image May 15, 2026, 05_45_55 PM.png'),
+(17, 'Women Zip-Front Relaxed Fit Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'topwear', 22, 'S,M,L,XL,XXL', NULL, '1778905166-ChatGPT Image May 15, 2026, 05_47_32 PMsdfsdf.png', '1778905166-ChatGPT Image May 15, 2026, 05_47_32 PM.png', '1778905166-ChatGPT Image May 15, 2026, 05_49_12 PM.png', '1778905166-ChatGPT Image May 15, 2026, 05_50_44 PM.png'),
+(18, 'Women Zip-Front Relaxed Fit Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'winterwear', 89, 'S,M,L,XL,XXL', NULL, '1778905225-ChatGPT Image May 15, 2026, 05_56_59 PMsdf.png', '1778905225-ChatGPT Image May 15, 2026, 05_52_28 PM.png', '1778905225-ChatGPT Image May 15, 2026, 05_56_59 PM.png', '1778905225-ChatGPT Image May 15, 2026, 05_58_55 PM.png'),
+(19, 'Men Slim Fit Relaxed Denim Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'winterwear', 55, 'S,M,L,XL,XXL', 'bestseller', '1778905309-ChatGPT Image May 15, 2026, 06_01_37 PMsdfdsf.png', '1778905309-ChatGPT Image May 15, 2026, 06_01_37 PM.png', '1778905309-ChatGPT Image May 15, 2026, 06_03_20 PM.png', '1778905309-ChatGPT Image May 15, 2026, 06_07_17 PM.png'),
+(20, 'Men Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 77, 'S,M,L,XL,XXL', NULL, '1778905382-ChatGPT Image May 15, 2026, 06_10_44 PMsdff.png', '1778905382-ChatGPT Image May 15, 2026, 06_09_01 PM.png', '1778905382-ChatGPT Image May 15, 2026, 06_10_44 PM.png', '1778905382-ChatGPT Image May 15, 2026, 06_12_25 PM.png'),
+(21, 'Women Zip-Front Relaxed Fit Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'winterwear', 99, 'S,M,L,XL,XXL', NULL, '1778905446-ChatGPT Image May 15, 2026, 06_17_10 PM.png', '1778905446-ChatGPT Image May 15, 2026, 06_14_06 PM.png', '1778905446-ChatGPT Image May 15, 2026, 06_15_25 PM.png', '1778905446-ChatGPT Image May 15, 2026, 06_15_25 PMdsf.png'),
+(22, 'Men Slim Fit Relaxed Denim Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 33, 'S,M,L,XL,XXL', NULL, '1778905795-ChatGPT Image May 15, 2026, 06_22_07 PM.png', '1778905795-ChatGPT Image May 15, 2026, 06_19_51 PM.png', '1778905795-ChatGPT Image May 15, 2026, 06_22_07 PM (1).png', '1778905795-ChatGPT Image May 15, 2026, 06_23_18 PM.png'),
+(23, 'Men Slim Fit Relaxed Denim Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'winterwear', 105, 'S,M,L,XL,XXL', 'bestseller', '1778905875-ChatGPT Image May 15, 2026, 06_24_55 PMdsf.png', '1778905875-ChatGPT Image May 15, 2026, 06_24_55 PM.png', '1778905875-ChatGPT Image May 15, 2026, 06_32_18 PM.png', '1778905875-ChatGPT Image May 15, 2026, 06_27_01 PM.png'),
+(24, 'Women Zip-Front Relaxed Fit Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'winterwear', 60, 'S,M,L,XL,XXL', 'bestseller', '1778906002-ChatGPT Image May 15, 2026, 06_41_10 PM.png', '1778906002-ChatGPT Image May 15, 2026, 06_36_58 PM.png', '1778906002-ChatGPT Image May 15, 2026, 06_39_41 PM.png', '1778906002-ChatGPT Image May 15, 2026, 06_41_10 PM.png'),
+(25, 'Men Slim Fit Relaxed Denim Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'winterwear', 80, 'S,M,L,XL,XXL', NULL, '1778906066-ChatGPT Image May 15, 2026, 06_51_34 PM.png', '1778906066-ChatGPT Image May 15, 2026, 06_43_47 PM.png', '1778906066-ChatGPT Image May 15, 2026, 06_49_16 PM.png', '1778906066-ChatGPT Image May 15, 2026, 06_49_16 PMsdf.png'),
+(26, ' Women Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'topwear', 50, 'S,M,L,XL,XXL', NULL, '1778906152-ChatGPT Image May 15, 2026, 06_52_50 PM.png', '1778906152-Rectangle 3608.png', '1778906152-ChatGPT Image May 15, 2026, 06_52_50 PM.png', '1778906152-Rectangle 3608.png'),
+(27, 'Girls Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 130, 'S,M,L,XL,XXL', NULL, '1778906220-ChatGPT Image May 15, 2026, 12_25_35 AM.png', '1778906220-ChatGPT Image May 15, 2026, 12_22_44 AM.png', '1778906220-ChatGPT Image May 15, 2026, 12_24_15 AM.png', '1778906220-ChatGPT Image May 15, 2026, 12_24_15 AMsdfsdf.png'),
+(28, ' Women Zip-Front Relaxed Fit Jacket', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'winterwear', 55, 'S,M,L,XL,XXL', NULL, '1778906339-ChatGPT Image May 15, 2026, 12_27_13 AMsdf.png', '1778906339-ChatGPT Image May 15, 2026, 12_27_13 AM.png', '1778906339-ChatGPT Image May 15, 2026, 12_28_29 AM.png', '1778906339-ChatGPT Image May 15, 2026, 12_29_48 AM.png'),
+(29, 'Girls Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 100, 'S,M,L,XL,XXL', NULL, '1778906394-Gemini_Generated_Image_1z4edl1z4edl1z4es.png', '1778906394-Gemini_Generated_Image_1z4edl1z4edl1z4e.png', '1778906394-Gemini_Generated_Image_3dzfgj3dzfgj3dzf.png', '1778906394-Gemini_Generated_Image_3dzfgj3dzfgj3dzfdsf.png'),
+(30, 'Girls Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'topwear', 150, 'S,M,L,XL,XXL', 'bestseller', '1778906459-Gemini_Generated_Image_w7r9iow7r9iow7r9df.png', '1778906459-Gemini_Generated_Image_4jlyiu4jlyiu4jly.png', '1778906459-Gemini_Generated_Image_w7r9iow7r9iow7r9.png', '1778906459-Gemini_Generated_Image_w7r9iow7r9iow7r9sdf.png'),
+(31, 'Men Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 90, 'S,M,L,XL,XXL', NULL, '1778906526-Rectangle 3619.png', '1778906526-p_img2_4.png', '1778906526-p_img2_3.png', '1778906526-p_img2_2.png'),
+(32, 'Kid Tapered Slim Fit Trouser', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'bottomwear', 66, 'S,M,L,XL,XXL', NULL, '1778906594-p_img43.png', '1778906594-p_img43.png', '1778906594-p_img43.png', '1778906594-p_img43.png'),
+(33, 'Kid Tapered Slim Fit Trouser', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'bottomwear', 75, 'S,M,L,XL,XXL', NULL, '1778906657-p_img47.png', '1778906657-p_img47.png', '1778906657-p_img47.png', '1778906657-p_img47.png'),
+(34, 'Kid Tapered Slim Fit Trouser', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'bottomwear', 66, 'S,M,L,XL,XXL', NULL, '1778906715-p_img49.png', '1778906715-p_img49.png', '1778906715-p_img49.png', '1778906715-p_img49.png'),
+(35, 'Kid Tapered Slim Fit Trouser', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'kids', 'bottomwear', 25, 'S,M,L,XL,XXL', NULL, '1778906776-p_img50.png', '1778906776-p_img50.png', '1778906776-p_img50.png', '1778906776-p_img50.png'),
+(36, 'Women Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'topwear', 40, 'S,M,L,XL,XXL', NULL, '1778906840-Rectangle 3609.png', '1778906840-Rectangle 3609.png', '1778906840-Rectangle 3609.png', '1778906840-Rectangle 3609.png'),
+(37, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 65, 'S,M,L,XL,XXL', 'bestseller', '1778906892-Rectangle 3611.png', '1778906892-Rectangle 3611.png', '1778906892-Rectangle 3611.png', '1778906892-Rectangle 3611.png'),
+(38, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 35, 'S,M,L,XL,XXL', NULL, '1778906974-Rectangle 3613.png', '1778906974-Rectangle 3613.png', '1778906974-Rectangle 3613.png', '1778906974-Rectangle 3613.png'),
+(39, 'Women Round Neck Cotton Top', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'womens', 'topwear', 25, 'S,M,L,XL,XXL', NULL, '1778907029-Rectangle 3615.png', '1778907029-Rectangle 3615.png', '1778907029-Rectangle 3615.png', '1778907029-Rectangle 3615.png'),
+(40, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 88, 'S,M,L,XL,XXL', NULL, '1778907093-Rectangle 3616.png', '1778907093-Rectangle 3616.png', '1778907093-Rectangle 3616.png', '1778907093-Rectangle 3616.png'),
+(41, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 48, 'S,M,L,XL,XXL', NULL, '1778907166-Rectangle 3617.png', '1778907166-Rectangle 3617.png', '1778907166-Rectangle 3617.png', '1778907166-Rectangle 3617.png'),
+(42, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 99, 'S,M,L,XL,XXL', NULL, '1778907221-Rectangle 3634.png', '1778907221-Rectangle 3634.png', '1778907221-Rectangle 3634.png', '1778907221-Rectangle 3634.png'),
+(43, 'Boy Round Neck Pure Cotton T-shirt', 'An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.\r\n\r\nE-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.', 'men', 'topwear', 75, 'S,M,L,XL,XXL', NULL, '1778907290-Rectangle 3635.png', '1778907290-Rectangle 3635.png', '1778907290-Rectangle 3635.png', '1778907290-Rectangle 3635.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `user_role` varchar(100) NOT NULL DEFAULT 'reader',
+  `status` varchar(100) NOT NULL DEFAULT 'active',
+  `join_date` varchar(200) NOT NULL,
+  `otp` int(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_role`, `status`, `join_date`, `otp`) VALUES
+(1, 'Ali Raza Mujahid', 'alirazamujahid102@gmail.com', '$2y$10$svzhsFSjHkKGSOkCttrZreOPL0KOJMoWCJZu.VXGYcyd9sTHo8Kuq', 'super-admin', 'active', '15 May 2026', 48981),
+(2, 'Shehroz Ahmad', 'shehrozahmad1055gmail.com', '$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m', 'super-admin', 'active', '15 May 2026', NULL),
+(3, 'Tanvir', 'razadeveloper816@gmail.com', '$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m', 'editor', 'active', '15 May 2026', 11598),
+(4, 'Abdullah', 'developerraza816@gmail.com', '$2y$10$e0e8xfE1.92FxWnkwDCSPOllInyI.UZILVkeQzd42ttsXegoGd6O.', 'reader', 'active', '15 May 2026', NULL),
+(5, 'Haseeb', 'haseebahmad543@gmail.com', '$2y$10$w5CgsnY7Ot8KzO7z9IYowuZaVcM0eaf.acrQd.UTIAyryMSwrCC1K', 'admin', 'active', '15 May 2026', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

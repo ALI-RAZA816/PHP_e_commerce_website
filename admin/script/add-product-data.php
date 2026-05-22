@@ -9,6 +9,15 @@
         $SUB_CATEGORY = mysqli_real_escape_string($conn, $_POST['sub_category']);
         $PRODUCT_PRICE = mysqli_real_escape_string($conn, $_POST['product_price']);
         $PRODUCT_SIZE = mysqli_real_escape_string($conn, $_POST['product_size']);
+
+        if(filter_var($PRODUCT_TITLE, FILTER_SANITIZE_STRING)){
+            echo "Invalid type string";
+            die();
+        }
+        if(filter_var($PRODUCT_DESCRIPTION, FILTER_SANITIZE_STRING)){
+            echo "Invalid type string";
+            die();
+        }
         
         function upload_image_1(){
             

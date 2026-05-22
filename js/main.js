@@ -134,7 +134,27 @@ $(document).ready(function(){
             contentType:false,
             processData:false,
             success:function(data){
-                if(data === 'File size must be 3MB or less'){
+                if(data === "Invalid type string"){
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid type string</span>");
+                    $('.title').addClass('img_error');
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        $('.title').removeClass('img_error');
+                    },3000);
+                }
+                if(data === "Invalid type string"){
+                    $(".error").css("top","30px");
+                    $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid type string</span>");
+                    $('.description').addClass('img_error');
+                    setTimeout(()=>{
+                        $(".error").css("top","-25px");
+                        $(".error").html("");
+                        $('.description').removeClass('img_error');
+                    },3000);
+                }
+                else if(data === 'File size must be 3MB or less'){
                     $(".error").css("top","30px");
                     $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>File size must be 3MB or less</span>");
                     setTimeout(()=>{
@@ -208,13 +228,14 @@ $(document).ready(function(){
                 delete_Id:deleteId
             },
             success:function(data){
+                // alert(data);
                 if(data === 'Product deleted'){
                     $('.error').css("top","30px");
                     $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i></i><span class='text-success fs-6'>Product deleted</span>");
+                    load_List_Products();
                     setTimeout(()=>{
                         $('.error').css("top","-25px");
                         $('.error').html("");
-                        load_List_Products();
                     },3000);
                 }else{
                     $('.error').css("top","30px");
@@ -1136,18 +1157,17 @@ $(document).ready(function(){
                 paymethod:$('#method2').val()
             },
             success:function(data){
-                alert(data);
                if(data === "Order placed"){
-                $('.p_name').val()
-                $('.p_lastname').val()
-                $('.p_address').val()
-                $('.p_street').val()
-                $('.p_city').val()
-                $('.p_state').val()
-                $('.p_zipcode').val()
-                $('.p_country').val()
-                $('.p_phone').val()
-                $('#method2').val()
+                $('.p_name').val('')
+                $('.p_lastname').val('')
+                $('.p_address').val('')
+                $('.p_street').val('')
+                $('.p_city').val('')
+                $('.p_state').val('')
+                $('.p_zipcode').val('')
+                $('.p_country').val('')
+                $('.p_phone').val('')
+                $('#method2').val('')
                  $('.error').css("top","30px");
                     $('.error').html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i></i><span class='text-success fs-6'>Order placed</span>");
                     setTimeout(()=>{

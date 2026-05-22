@@ -101,6 +101,11 @@
                                                 </div>
                                             </div>";
                                 }
+                            }else{
+                                echo "<div class='d-flex flex-column justify-content-center align-items-center' style='height:80vh;'>
+                                        <i class='fa-solid fa-box' style='color:#efefef;font-size:5rem;'></i>
+                                        <h5 class='m-0 mt-2 text-muted'>No Orders</h5>
+                                    </div>";
                             }
                         ?>
                 </div>

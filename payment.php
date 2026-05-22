@@ -1,4 +1,14 @@
-<?php include "header.php" ?>
+<?php 
+    include "header.php";
+    include "config.php";
+
+    $query = "SELECT * FROM cart";
+    $result = mysqli_query($conn, $query);
+    if(mysqli_num_rows($result) === 0){
+        header("Location: {$host_name}/cart.php");
+        die();
+    }
+ ?>
 <section class="cart-section">
     <div class="container">
         <div class="row">
@@ -117,7 +127,7 @@
                             </div>
                         </label>
                     </div>
-                    <button class='btn rounded-0 mt-4 d-block w-100 btn-dark text-white text-uppercase place-order'>Place Order</button>
+                    <button type='button' class='btn rounded-0 mt-4 d-block w-100 btn-dark text-white text-uppercase place-order'>Place Order</button>
                 </div>
             </div>
         </div>

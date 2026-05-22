@@ -134,27 +134,7 @@ $(document).ready(function(){
             contentType:false,
             processData:false,
             success:function(data){
-                if(data === "Invalid type string"){
-                    $(".error").css("top","30px");
-                    $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid type string</span>");
-                    $('.title').addClass('img_error');
-                    setTimeout(()=>{
-                        $(".error").css("top","-25px");
-                        $(".error").html("");
-                        $('.title').removeClass('img_error');
-                    },3000);
-                }
-                if(data === "Invalid type string"){
-                    $(".error").css("top","30px");
-                    $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid type string</span>");
-                    $('.description').addClass('img_error');
-                    setTimeout(()=>{
-                        $(".error").css("top","-25px");
-                        $(".error").html("");
-                        $('.description').removeClass('img_error');
-                    },3000);
-                }
-                else if(data === 'File size must be 3MB or less'){
+                if(data === 'File size must be 3MB or less'){
                     $(".error").css("top","30px");
                     $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>File size must be 3MB or less</span>");
                     setTimeout(()=>{
@@ -414,7 +394,16 @@ $(document).ready(function(){
                 password:password,
             },
             success:function(data){
-                if(data === 'Account Created'){
+                if(data === "Invalid Email"){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid Email</span>");
+                    $('.email').addClass('field_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.email').removeClass('field_error');
+                    },3000);
+                }else if(data === 'Account Created'){
                     $(".name").val('');
                     $(".email").val('');
                     $(".password").val('');
@@ -484,7 +473,16 @@ $(document).ready(function(){
                 login_password:login_password,
             },
             success:function(data){
-                  if(data === 'Login successfull'){
+                  if(data === "Invalid Email"){
+                    $('.error').css("top","30px");
+                    $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid Email</span>");
+                    $('.login-email').addClass('field_error');
+                    setTimeout(()=>{
+                        $('.error').css("top","-25px");
+                        $('.error').html("");
+                        $('.login-email').removeClass('field_error');
+                    },3000);
+                  }else if(data === 'Login successfull'){
                     $('.login-form').trigger('reset');
                     $(".error").css("top","30px");
                     $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Login successfull</span>");
@@ -755,6 +753,7 @@ $(document).ready(function(){
             processData:false,
             contentType:false,
             success:function(data){
+                alert(data);
                 if(data === 'Invalid Email'){
                     $('.error').css("top","30px");
                     $('.error').html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Invalid Email</span>");

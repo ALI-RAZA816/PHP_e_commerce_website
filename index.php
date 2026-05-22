@@ -60,7 +60,7 @@
                     $query2 = "SELECT COUNT(*) AS total FROM products WHERE bestseller = 'bestseller'";
                     $result2 = mysqli_query($conn, $query2);
                     $row2 = mysqli_fetch_assoc($result2);
-                    $offset = rand(0, $row2['total']);
+                    $offset = rand(2, $row2['total']);
                     $query1 = "SELECT * FROM products WHERE bestseller = 'bestseller' LIMIT {$offset}, 6";
                     $result1 = mysqli_query($conn, $query1);
                     if(mysqli_num_rows($result1) > 0){

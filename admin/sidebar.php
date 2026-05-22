@@ -1,6 +1,6 @@
 <?php 
     include "config.php";
-  if(!isset($_SESSION['role']) || $_SESSION['role'] === 'reader'){
+    if(!isset($_SESSION['role']) || $_SESSION['role'] === 'reader'){
         header("Location: {$host_name}/admin/not-found.php");
         exit();
     }

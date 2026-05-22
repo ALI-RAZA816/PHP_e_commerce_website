@@ -6,6 +6,11 @@
 
         $LOGIN_EMAIL = mysqli_real_escape_string($conn, $_POST['login_email']);
         $LOGIN_PASSWORD = $_POST['login_password'];
+
+        if(!filter_var($LOGIN_EMAIL, FILTER_VALIDATE_EMAIL)){
+            echo "Invalid Email";
+            die();
+        }
         
         $query = "SELECT * FROM users WHERE email = '{$LOGIN_EMAIL}'";
         $result = mysqli_query($conn, $query);

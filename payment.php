@@ -1,13 +1,6 @@
 <?php 
     include "header.php";
-    include "config.php";
-
-    $query = "SELECT * FROM cart";
-    $result = mysqli_query($conn, $query);
-    if(mysqli_num_rows($result) === 0){
-        header("Location: {$host_name}/cart.php");
-        die();
-    }
+  
  ?>
 <section class="cart-section">
     <div class="container">

@@ -39,7 +39,7 @@
                             $result4 = mysqli_query($conn, $query4);
                             $row4 = mysqli_fetch_assoc($result4);
                         ?>
-                        <div class="col-md-3 mt-4 mt-md-0 px-3">
+                        <div class="col-md-3 mt-4 mt-md-0 pe-3">
                             <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Total users</p>
                                 <h3 class='text-dark m-0 fs-3 fw-bold'><?php echo ($row['total'] < 9) ? str_pad($row['total'], 2,"0",STR_PAD_LEFT) : $row['total'] ?></h3>
@@ -57,7 +57,7 @@
                                 <h3 class='text-danger m-0 fs-3 fw-bold'><?php echo ($row2['total'] < 9) ? str_pad($row2['total'], 2,"0",STR_PAD_LEFT) : $row2['total'] ?></h3>
                             </div>
                         </div>
-                        <div class="col-md-3 mt-4 mt-md-0 px-3">
+                        <div class="col-md-3 mt-4 mt-md-0 ps-3">
                             <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Admin/Editors</p>
                                 <h3 class='text-dark m-0 fs-3 fw-bold'><?php echo ($total < 9) ? str_pad($total, 2,"0",STR_PAD_LEFT) : $total ?>/<?php echo ($row4['total'] < 9) ? str_pad($row4['total'], 2,"0",STR_PAD_LEFT) : $row4['total'] ?></h3>

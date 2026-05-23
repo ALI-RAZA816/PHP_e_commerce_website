@@ -1,4 +1,6 @@
-<?php include "header.php" ?>
+<?php 
+    include "header.php";
+?>
 <section class="cart-section">
     <div class="container">
         <div class="row">
@@ -17,7 +19,7 @@
                             <p class='mb-2 d-flex justify-content-between border-bottom pb-2'><span>Shipping Fee</span><span>$1.00</span></p>
                             <p class='mb-2 d-flex justify-content-between border-bottom pb-2'><span class='fw-bold'>Total</span><span>$00.00</span></p> -->
                         </div>
-                        <a href="payment.php" class='text-decoration-none'><button class='btn rounded-0 d-block w-100 btn-dark text-white text-uppercase'>Proceed to Checkout</button></a>
+                        <a href="payment.php" class='text-decoration-none'><button class='btn rounded-0 d-block w-100 btn-dark text-white text-uppercase ' >Proceed to Checkout</button></a>
                     </div>
                 </div>
             </div>

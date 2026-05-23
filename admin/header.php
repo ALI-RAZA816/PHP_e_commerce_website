@@ -38,6 +38,5 @@
     </header>
     <script src='../js/jquery.js'></script>
     <script src='../js/main.js'></script>
-    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 </body>
 </html>

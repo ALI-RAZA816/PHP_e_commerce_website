@@ -17,7 +17,7 @@
     $COUNTRY = mysqli_real_escape_string($conn, $_POST['country']);
     $PHONE = mysqli_real_escape_string($conn, $_POST['phone']);
     $PAY_METHOD = mysqli_real_escape_string($conn, $_POST['paymethod']);
-    $DATE = date('d F Y'); 
+    $DATE = date("d F Y"); 
     $deliveryDate = new DateTime();
     $deliveryDate->modify('+4 days');
     $format_date = $deliveryDate->format('d F Y');

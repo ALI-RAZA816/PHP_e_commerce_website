@@ -11,7 +11,7 @@
     $orders = basename($_SERVER['PHP_SELF']) === "orders.php" ? "active-link" : '';
     $users = basename($_SERVER['PHP_SELF']) === "users.php" ? "active-link" : '';
 ?>
-<div class='sidebar border-end py-2 overflow-hidden vh-100'>
+<div class='sidebar border-end py-2 overflow-hidden h-100'>
     <ul class="nav flex-column">
         <?php 
             if($_SESSION['role'] === 'super-admin'){

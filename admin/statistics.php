@@ -1,201 +1,226 @@
-<?php include "header.php"?>
+<?php 
+    include "header.php";
+    include "config.php";
+    if(!isset($_SESSION['role']) || $_SESSION['role'] === 'editor' || $_SESSION['role'] === 'admin'){
+        header("Location: {$host_name}/admin/not-found.php");
+        exit();
+    }
+?>
 <section class='dashboard-page position-relative'>
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <?php include "sidebar.php" ?>
+                <?php 
+                    include "sidebar.php";
+                    $query = "SELECT *, SUM(totalprice) AS revenue FROM orders WHERE order_status = 'deliverd'";
+                    $result = mysqli_query($conn, $query);
+                    $revenue = mysqli_fetch_assoc($result);
+                    $query1 = "SELECT COUNT(order_status) AS place_orders FROM orders WHERE order_status = 'order placed'";
+                    $result1 = mysqli_query($conn, $query1);
+                    $placeOrder = mysqli_fetch_assoc($result1);
+                    $query2 = "SELECT COUNT(user_role) AS customer FROM users WHERE user_role = 'reader'";
+                    $result2 = mysqli_query($conn, $query2);
+                    $customers = mysqli_fetch_assoc($result2);
+                    $query3 = "SELECT COUNT(order_status) AS c_order FROM orders WHERE order_status = 'cancelled'";
+                    $result3 = mysqli_query($conn, $query3);
+                    $cancelledOrder = mysqli_fetch_assoc($result3);
+                 ?>
             </div>
             <div class="col-10">
                 <div class="row g-0 mt-4 p-0">
-                    <div class="col-md-3 mt-4 mt-md-0 pe-3">
+                    <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 pe-md-3">
                         <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'><i class="fa-solid fa-money-bills fs-6 me-2"></i>Revenue</p>
-                            <h3 class='text-success m-0 fs-3 fw-bold'>$84,200</h3>
+                            <h3 class='text-success m-0 fs-3 fw-bold'>$ <?php echo $revenue['revenue'] ?></h3>
                         </div>
                     </div>
-                    <div class="col-md-3 mt-4 mt-md-0 px-3">
+                    <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 px-lg-3">
                         <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'><i class="fa-solid fa-cart-shopping fs-6 me-2"></i>Orders</p>
-                            <h3 class='text-warning m-0 fs-3 fw-bold'>$84,200</h3>
+                            <h3 class='text-warning m-0 fs-3 fw-bold'><?php echo $placeOrder['place_orders'] ?></h3>
                         </div>
                     </div>
-                    <div class="col-md-3 mt-4 mt-md-0 px-3">
+                    <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 pe-md-3 px-lg-3">
                         <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'><i class="fa-solid fa-user-group fs-6 me-2"></i>Customers</p>
-                            <h3 class='text-primary m-0 fs-3 fw-bold'>$84,200</h3>
+                            <h3 class='text-primary m-0 fs-3 fw-bold'><?php echo $customers['customer'] ?></h3>
                         </div>
                     </div>
-                    <div class="col-md-3 mt-4 mt-md-0 ps-3">
+                    <div class="col-md-6 col-lg-3 mt-4 mt-lg-0  ps-lg-3">
                         <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'><i class="fa-solid fa-ban fs-6 me-2"></i>Cancelled</p>
-                            <h3 class='text-danger m-0 fs-3 fw-bold'>$84,200</h3>
+                            <h3 class='text-danger m-0 fs-3 fw-bold'><?php echo $cancelledOrder['c_order'] ?></h3>
                         </div>
                     </div>
                 </div>
                 <div class="row g-0 p-0">
-                    <div class="col-8 mt-5">
-                        <div class='pe-4'>
-                        <?php
-    
-                            $dataPoints1 = array(
-                                array("label"=> "2010", "y"=> 36.12),
-                                array("label"=> "2011", "y"=> 34.87),
-                                array("label"=> "2012", "y"=> 40.30),
-                                array("label"=> "2013", "y"=> 35.30),
-                                array("label"=> "2014", "y"=> 39.50),
-                                array("label"=> "2015", "y"=> 50.82),
-                                array("label"=> "2016", "y"=> 74.70)
-                            );
-                            $dataPoints2 = array(
-                                array("label"=> "2010", "y"=> 64.61),
-                                array("label"=> "2011", "y"=> 70.55),
-                                array("label"=> "2012", "y"=> 72.50),
-                                array("label"=> "2013", "y"=> 81.30),
-                                array("label"=> "2014", "y"=> 63.60),
-                                array("label"=> "2015", "y"=> 69.38),
-                                array("label"=> "2016", "y"=> 98.70)
-                            );
-                        
+                    <div class="col-lg-8 mt-5">
+                        <?php 
+                            $query5 = "SELECT SUM(totalprice) AS revenue, DATE_FORMAT(order_date, '%M %Y') AS month_label 
+                                    FROM orders 
+                                    WHERE order_status = 'deliverd' 
+                                    GROUP BY month_label";
+                            $result5 = mysqli_query($conn, $query5);
+                            $dataPoints = array();
+                            if(mysqli_num_rows($result5) > 0){
+                                while($row5 = mysqli_fetch_assoc($result5)){
+                                    $dataPoints[] = array("y" => $row5['revenue'],"label" => $row5['month_label']);
+                                }
+                            }
+            
                         ?>
-                        <script>
-                         window.onload = function () {
-                            
-                            var chart = new CanvasJS.Chart("chartContainer", {
-                                animationEnabled: true,
-                                theme: "light2",
-                                title:{
-                                    text: "Revenue vs Orders"
-                                },
-                                axisY:{
-                                    includeZero: true
-                                },
-                                legend:{
-                                    cursor: "pointer",
-                                    verticalAlign: "center",
-                                    horizontalAlign: "right",
-                                    itemclick: toggleDataSeries
-                                },
-                                data: [{
-                                    type: "column",
-                                    name: "Revenue",
-                                    indexLabel: "{y}",
-                                    yValueFormatString: "$#0.##",
-                                    showInLegend: true,
-                                    dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
-                                },{
-                                    type: "column",
-                                    name: "Orders",
-                                    indexLabel: "{y}",
-                                    yValueFormatString: "$#0.##",
-                                    showInLegend: true,
-                                    dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
-                                }]
-                            });
-                            chart.render();
-                            
-                            function toggleDataSeries(e){
-                                if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                                    e.dataSeries.visible = false;
-                                }
-                                else{
-                                    e.dataSeries.visible = true;
-                                }
+                        <div class='pe-lg-4'>
+                            <script>
+                                window.onload = function() {
+                                
+                                var chart = new CanvasJS.Chart("chartContainer", {
+                                    animationEnabled: true,
+                                    title:{
+                                        text: "Revenue"
+                                    },
+                                    axisX: {
+                                        title: "Month",
+                                        labelAngle: -30,          // Rotates labels to avoid overlap
+                                        interval: 1,              // Shows every month label
+                                        labelFontSize: 12
+                                    },
+                                    axisY: {
+                                        title: "Revenue (in USD)",
+                                        includeZero: true,
+                                        prefix: "$",
+                                        suffix:  "k"
+                                    },
+                                    data: [{
+                                        type: "column",
+                                        yValueFormatString: "$#,##0K",
+                                        indexLabel: "{y}",
+                                        indexLabelPlacement: "inside",
+                                        indexLabelFontWeight: "bolder",
+                                        indexLabelFontColor: "white",
+                                        showInLegend: true,
+                                        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                                    }]
+                                });
                                 chart.render();
-                            }
-                            
-                            }
-                        </script>
+                                
+                                }
+                            </script>
                         <div id="chartContainer" class='bg-white rounded-3 p-2 py-3' style="height: 370px; width: 100%;box-shadow:0 0 10px 1px #efefef;"></div>
+                        <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
                     </div>
                     </div>
-                    <div class="col-4 mt-5 bg-white rounded-3 p-2 px-3" style="box-shadow:0 0 10px 1px #efefef;">
+                    <div class="col-lg-4 mt-5 bg-white rounded-3 p-2 px-3" style="box-shadow:0 0 10px 1px #efefef;">
                         <p class='fw-bold'>Recent Orders</p>
                         <div>
-                            <div class='d-flex justify-content-between border-bottom py-2'>
-                                <div>
-                                    <p class='mb-0 fw-bold' style='font-size:14px; line-height:15px;'>#ORD-8841</p>
-                                    <p class='mb-0' style='font-size:14px; line-height:15px;'>SaraK</p>
-                                </div>
-                                <div>
-                                    <p class='mb-0 fw-bold' style='font-size:14px; line-height:15px;'>$120</p>
-                                    <p class='mb-0 text-success' style='font-size:14px; line-height:15px;'>Delivered</p>
-                                </div>
-                            </div>
-                            <div class='d-flex justify-content-between border-bottom py-2'>
-                                <div>
-                                    <p class='mb-0 fw-bold' style='font-size:14px; line-height:15px;'>#ORD-8841</p>
-                                    <p class='mb-0' style='font-size:14px; line-height:15px;'>SaraK</p>
-                                </div>
-                                <div>
-                                    <p class='mb-0 fw-bold' style='font-size:14px; line-height:15px;'>$120</p>
-                                    <p class='mb-0 text-success' style='font-size:14px; line-height:15px;'>Delivered</p>
-                                </div>
-                            </div>
-                            <div class='d-flex justify-content-between border-bottom py-2'>
-                                <div>
-                                    <p class='mb-0 fw-bold' style='font-size:14px; line-height:15px;'>#ORD-8841</p>
-                                    <p class='mb-0' style='font-size:14px; line-height:15px;'>SaraK</p>
-                                </div>
-                                <div>
-                                    <p class='mb-0 fw-bold' style='font-size:14px; line-height:15px;'>$120</p>
-                                    <p class='mb-0 text-success' style='font-size:14px; line-height:15px;'>Delivered</p>
-                                </div>
-                            </div>
+                            <?php 
+                                $query6 = "SELECT * FROM orders ORDER BY id DESC LIMIT 0,7";
+                                $result6 = mysqli_query($conn, $query6);
+                                if(mysqli_num_rows($result6) > 0){
+                                    while($row6 = mysqli_fetch_assoc($result6)){
+                                        echo "<div class='d-flex justify-content-between border-bottom py-2'>
+                                                <div>
+                                                    <p class='mb-0 fw-bold' style='font-size:14px; line-height:15px;'>#ORD-00{$row6['id']}</p>
+                                                    <p class='mb-0' style='font-size:14px; line-height:15px;'>{$row6['username']}</p>
+                                                </div>
+                                                <div>
+                                                    <p class='mb-0 fw-bold' style='font-size:14px;text-align:right; line-height:15px;'><span>$</span>{$row6['unitprice']}</p>
+                                                    <p class='mb-0 text-success text-capitalize' style='font-size:14px; line-height:15px;'>{$row6['order_status']}</p>
+                                                </div>
+                                            </div>";
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4 bg-white py-2 rounded-3 " style="box-shadow:0 0 10px 1px #efefef;">
+                <div class="row mt-4 bg-white p-4 rounded-3 " style="box-shadow:0 0 10px 1px #efefef;">
                     <p class='fw-bold mb-0'>Order Status</p>
-                    <div class='col-12' >
+                    <div class='col-12'>
+                        <?php 
+                            $query7 = "SELECT AVG(id) AS average FROM orders WHERE order_status = 'deliverd'";
+                            $result7 = mysqli_query($conn, $query7);
+                            $row7 = mysqli_fetch_assoc($result7);
+                            $deliver_avg = ceil($row7['average']);
+
+                            $query8 = "SELECT AVG(id) AS packing FROM orders WHERE order_status = 'packing'";
+                            $result8 = mysqli_query($conn, $query8);
+                            $row8 = mysqli_fetch_assoc($result8);
+                            $packing_avg = ceil($row8['packing']);
+
+                            $query9 = "SELECT AVG(id) AS shipped FROM orders WHERE order_status = 'shipped'";
+                            $result9 = mysqli_query($conn, $query9);
+                            $row9 = mysqli_fetch_assoc($result9);
+                            $shipping_avg = ceil($row9['shipped']);
+
+                            $query10 = "SELECT AVG(id) AS out_delivered FROM orders WHERE order_status = 'out for delivery'";
+                            $result10 = mysqli_query($conn, $query10);
+                            $row10 = mysqli_fetch_assoc($result10);
+                            $outdelivery_avg = ceil($row10['out_delivered']);
+
+                            $query11 = "SELECT AVG(id) AS cancelled FROM orders WHERE order_status = 'cancelled'";
+                            $result11 = mysqli_query($conn, $query11);
+                            $row11 = mysqli_fetch_assoc($result11);
+                            $cancelled_avg = ceil($row11['cancelled']);
+                        ?>
                         <div class='mb-3 border-bottom py-2'>
                             <div class='d-flex justify-content-between'>
                                 <div class='d-flex align-items-center'>
-                                    <i class="fa-solid fa-truck me-1 text-muted" style='font-size:14px;'></i>
-                                    <p class='mb-0 text-muted'>Delivery</p>
+                                    <i class="fa-solid fa-truck me-1 text-success" style='font-size:14px;'></i>
+                                    <p class='mb-0 text-success'>Delivered</p>
                                 </div>
-                                <p class='mb-0 fw-bold'>68%</p>
+                                <p class='mb-0 fw-bold'><?php echo $deliver_avg ?>%</p>
                             </div>
-                            <div class='rounded-2 bg-success' style='height:5px;width:100%;'></div>
+                            <div class='w-100 border rounded-2'>
+                                <div class='rounded-2 bg-success' style='height:5px;width:<?php echo $deliver_avg ?>%;'></div>
+                            </div>
                         </div>
                         <div class='mb-3 border-bottom py-2'>
                             <div class='d-flex justify-content-between'>
                                 <div class='d-flex align-items-center'>
-                                    <i class="fa-solid fa-truck me-1 text-muted" style='font-size:14px;'></i>
-                                    <p class='mb-0 text-muted'>Delivery</p>
+                                    <i class="fa-brands fa-space-awesome me-1 text-warning" style='font-size:14px;'></i>
+                                    <p class='mb-0 text-warning'>Packing</p>
                                 </div>
-                                <p class='mb-0 fw-bold'>68%</p>
+                                <p class='mb-0 fw-bold'><?php echo $packing_avg ?>%</p>
                             </div>
-                            <div class='rounded-2 bg-success' style='height:5px;width:100%;'></div>
+                            <div class='w-100 border rounded-2'>
+                                <div class='rounded-2 bg-warning' style='height:5px;width:<?php echo $packing_avg ?>%;'></div>
+                            </div>
                         </div>
                         <div class='mb-3 border-bottom py-2'>
                             <div class='d-flex justify-content-between'>
                                 <div class='d-flex align-items-center'>
-                                    <i class="fa-solid fa-truck me-1 text-muted" style='font-size:14px;'></i>
-                                    <p class='mb-0 text-muted'>Delivery</p>
+                                    <i class="fa-solid fa-ship me-1 text-info" style='font-size:14px;'></i>
+                                    <p class='mb-0 text-info'>Shipping</p>
                                 </div>
-                                <p class='mb-0 fw-bold'>68%</p>
+                                <p class='mb-0 fw-bold'><?php echo $shipping_avg ?>%</p>
                             </div>
-                            <div class='rounded-2 bg-success' style='height:5px;width:100%;'></div>
+                            <div class='w-100 border rounded-2'>
+                                <div class='rounded-2 bg-info' style='height:5px;width:<?php echo $shipping_avg ?>%;'></div>
+                            </div>
                         </div>
                         <div class='mb-3 border-bottom py-2'>
                             <div class='d-flex justify-content-between'>
                                 <div class='d-flex align-items-center'>
-                                    <i class="fa-solid fa-truck me-1 text-muted" style='font-size:14px;'></i>
-                                    <p class='mb-0 text-muted'>Delivery</p>
+                                    <i class="fa-solid fa-truck-fast me-1 text-muted" style='font-size:14px;'></i>
+                                    <p class='mb-0 text-muted'>Out for delivery</p>
                                 </div>
-                                <p class='mb-0 fw-bold'>68%</p>
+                                <p class='mb-0 fw-bold'><?php echo $outdelivery_avg ?>%</p>
                             </div>
-                            <div class='rounded-2 bg-success' style='height:5px;width:100%;'></div>
+                            <div class='w-100 border rounded-2'>
+                                <div class='rounded-2 bg-secondary' style='height:5px;width:<?php echo $outdelivery_avg ?>%;'></div>
+                            </div>
                         </div>
                         <div class='mb-3 border-bottom py-2'>
                             <div class='d-flex justify-content-between'>
                                 <div class='d-flex align-items-center'>
-                                    <i class="fa-solid fa-truck me-1 text-muted" style='font-size:14px;'></i>
-                                    <p class='mb-0 text-muted'>Delivery</p>
+                                    <i class="fa-solid fa-ban me-1 text-danger" style='font-size:14px;'></i>
+                                    <p class='mb-0 text-danger'>Cancelled</p>
                                 </div>
-                                <p class='mb-0 fw-bold'>68%</p>
+                                <p class='mb-0 fw-bold'><?php echo $cancelled_avg ?>%</p>
                             </div>
-                            <div class='rounded-2 bg-success' style='height:5px;width:100%;'></div>
+                            <div class='w-100 border rounded-2'>
+                                <div class='rounded-2 bg-danger' style='height:5px;width:<?php echo $cancelled_avg ?>%;'></div>
+                            </div>
                         </div>
                     </div>
                 </div>

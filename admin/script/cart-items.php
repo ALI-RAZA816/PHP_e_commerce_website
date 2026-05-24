@@ -7,7 +7,7 @@
     $output = '';
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
-            $output .= "<div class='d-flex align-items-center justify-content-between border-top border-bottom py-2 single-order'>
+            $output .= "<div data-aos='fade-up' class='mb-2 d-flex bg-white align-items-center justify-content-between rounded-3 px-2 py-2 single-order' style='box-shadow:0 0 10px 1px #33333321;'>
                     <div class='d-flex'>
                         <div class='cart-img me-3'>
                             <img src='./admin/images/product_img/{$row['img1']}' class='img-fluid' alt=''>

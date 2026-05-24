@@ -9,8 +9,8 @@
                 <h5 class='text-muted text-uppercase'>Delivery<span class='fw-bold text-dark'>Information</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h5>
             </div>
         </div>
-        <div class="orders" style='min-height:100vh;margin-bottom:5rem;'>
-            <div class="row delivery-information align-items-start">
+        <div class="orders">
+            <div class="row overflow-hidden bg-white rounded-3 py-4 delivery-information align-items-start" style='box-shadow:0 0 10px 1px #33333321;'>
                 <!-- <div class="col-md-6">
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
@@ -65,7 +65,7 @@
                         <input type="text" class='form-control rounded-0' placeholder='CV Code'>
                     </div>
                 </div> -->
-                <div class="col-md-6">
+                <div class="col-md-6"  data-aos="fade-right">
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">
                             <input type="text" class='form-control p_name rounded-0' placeholder='First name'>
@@ -100,7 +100,7 @@
                         <input type="text" class='form-control p_phone rounded-0' placeholder='Phone'>
                     </div>
                 </div>
-                <div class="col-md-6 px-md-5 mt-4 mt-md-0">
+                <div class="col-md-6 px-md-5 mt-4 mt-md-0"  data-aos="fade-left">
                     <div class="cart-total">
                         <h5 class='text-muted text-uppercase'>Cart <span class='fw-bold text-dark'>Totals</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h5>
                         <div class="calculations">
@@ -124,6 +124,20 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+        <div class="col-md-6 col-lg-6 text-center" style='margin:10rem 0;'>
+            <h2>Subscribe now & get 20% off</h2>
+            <p class='text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+            <div class="subscription d-flex">
+                <input type="text" placeholder='Enter your email address' class='form-control rounded-0'>
+                <button class='text-white bg-dark btn rounded-0 text-uppercase'>Subscribe</button>
+            </div>
+        </div>
+    </div>
     </div>
 </section>
 <?php include "footer.php" ?>

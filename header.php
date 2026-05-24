@@ -15,17 +15,18 @@
     <!-- FONTAWESOME CDN  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src='./js/script.js'></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
     </div>
-    <header class='border-bottom'>
-        <nav class="navbar py-3">
+    <header data-aos="fade-down" class='bg-white rounded-bottom-5 py-3' style='position:sticky;top:0px;left:0;z-index:9;box-shadow:0 0 10px 1px #33333321;'>
+        <nav class="navbar p-0">
             <div class="container">
-                <div class="col-2">
+                <div class="col-1">
                     <img src="./images/InsiderStats.png" class='img-fluid' alt="">
                 </div>
-                <div class="col-6 d-flex justify-content-center align-items-center">
+                <div class="col-7 d-flex justify-content-center align-items-center">
                     <ul class="nav header-nav-tab" id='header-nav-tabs'>
                         <i class='fa-solid fa-xmark nav-tab-cross'></i>
                         <li class="nav-item"><a class="nav-link pages" href="index.php">Home</a></li>
@@ -70,5 +71,16 @@
     <script src='./js/jquery.js'></script>
     <script src='./js/main.js'></script>
     <script src='./js/imagepath.js'></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+           // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 120, // values from 0 to 3000, with step 50ms
+            duration: 1000, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: true, // whether animation should happen only once - while scrolling down
+        });
+    </script>
 </body>
 </html>

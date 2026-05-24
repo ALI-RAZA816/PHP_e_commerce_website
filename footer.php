@@ -1,6 +1,7 @@
-<footer>
+<footer class='bg-white pt-5 rounded-top-5' style='box-shadow:0 0 10px 1px #33333321;'>
     <div class="container">
-        <div class="row p-0">
+        <div class="row p-0" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
             <div class="col-lg-6 col-sm-9">
                 <img src="./images/InsiderStats.png" class='img-fluid mb-3' alt="">
                 <p class='text-muted fs-6'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>

@@ -8,8 +8,10 @@
 ?>
 <section class='dashboard-page position-relative'>
     <div class="container">
-        <div class="row">
-            <div class="col-2">
+        <div class="row mt-5">
+            <div class="col-3 " data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                 <?php 
                     include "sidebar.php";
                     $query = "SELECT *, SUM(totalprice) AS revenue FROM orders WHERE order_status = 'deliverd'";
@@ -26,8 +28,9 @@
                     $cancelledOrder = mysqli_fetch_assoc($result3);
                  ?>
             </div>
-            <div class="col-10">
-                <div class="row g-0 mt-4 p-0">
+            <div  class="col-9 ">
+                <div data-aos="fade-up"
+                data-aos-duration="1000" class="row bg-white rounded-3 g-0 mt-4 p-3 py-4" style='box-shadow:0 0 10px 1px #33333321;'>
                     <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 pe-md-3">
                         <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'><i class="fa-solid fa-money-bills fs-6 me-2"></i>Revenue</p>
@@ -53,7 +56,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row g-0 p-0">
+                <div data-aos="fade-up"
+     data-aos-duration="3000" class="row bg-white rounded-3 g-0 p-3 mt-4" style='box-shadow:0 0 10px 1px #33333321;'>
                     <div class="col-lg-8 mt-5">
                         <?php 
                             $query5 = "SELECT SUM(totalprice) AS revenue, DATE_FORMAT(order_date, '%M %Y') AS month_label 
@@ -109,7 +113,7 @@
                         <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
                     </div>
                     </div>
-                    <div class="col-lg-4 mt-5 bg-white rounded-3 p-2 px-3" style="box-shadow:0 0 10px 1px #efefef;">
+                    <div class="col-lg-4 mt-5 bg-white rounded-3 p-2 px-3" style='box-shadow:0 0 10px 1px #33333321;'>
                         <p class='fw-bold'>Recent Orders</p>
                         <div>
                             <?php 
@@ -133,7 +137,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4 bg-white p-4 rounded-3 " style="box-shadow:0 0 10px 1px #efefef;">
+                <div data-aos="fade-up"
+     data-aos-duration="3000" class="row mt-4 bg-white p-4 rounded-3 " style='box-shadow:0 0 10px 1px #33333321;'>
                     <p class='fw-bold mb-0'>Order Status</p>
                     <div class='col-12'>
                         <?php 

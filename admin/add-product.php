@@ -13,7 +13,9 @@
             exit();
     }
 ?>
-<div class="add-product-page py-2 ps-md-5">
+<div data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" class="add-product-page bg-white rounded-3 py-3 px-4" style='box-shadow:0 0 10px 1px #33333321;'>
     <form action="">
         <div class='mb-3 product-images'>
             <p class='text-muted mb-2 text'>Upload Image</p>

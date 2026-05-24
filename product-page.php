@@ -8,8 +8,8 @@
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_assoc($result)){
         ?>
-        <div class="row mt-5">
-            <div class="col-md-6">
+        <div class="row mt-5 overflow-hidden bg-white py-3 rounded-3" style='box-shadow:0 0 10px 1px #33333321;'>
+            <div class="col-md-6" data-aos="fade-right">
                 <div class="row g-0 p-0  mb-4 mb-md-0 ">
                     <div class="col-2 me-4">
                         <div class='mb-3'>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" data-aos="fade-left">
                 <div class='product-detail'>
                     <h1 class='product-title text-dark fs-3'><?php echo $row['product_title'] ?></h1>
                     <span class='product-price fs-4'>$<?php echo $row['product_price'] ?></span>
@@ -63,7 +63,7 @@
 </section>
 <section class='product-description'>
     <div class="container">
-        <div class="row my-5">
+        <div data-aos="fade-up" class="row py-3 mt-5 bg-white rounded-3"  style='box-shadow:0 0 10px 1px #33333321;'>
             <div class="col-12">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item rounded-0" role="presentation"><button style='width:120px;' class="nav-link rounded-0 border text-dark active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Description</button></li>
@@ -87,8 +87,8 @@
 ?>
 <section class='related-products' style='margin-bottom:10rem;'>
     <div class="container mb-5">
-        <div class="row text-center my-5" style='margin:8rem 0;'>
-            <div class="col-12" style='margin:5rem 0;'>
+        <div class="row text-center">
+            <div class="col-12" style='margin:8rem 0;'>
                 <h1 class='text-muted text-uppercase fs-2'>Related <span class='fw-bold text-dark'>Products</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h1>
                 <span class='text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the.</span>
             </div>
@@ -97,15 +97,14 @@
                     $query2 = "SELECT COUNT(*)  AS total FROM products";
                     $result2 = mysqli_query($conn, $query2);
                     $row = mysqli_fetch_assoc($result2);
-                    $offset = rand(0, $row['total']);
-                    $query1 = "SELECT * FROM products LIMIT {$offset}, 6";
+                    $query1 = "SELECT * FROM products LIMIT 3, 4";
                     $result1 = mysqli_query($conn, $query1);
                     if(mysqli_num_rows($result1) > 0){
                         while($row1 = mysqli_fetch_assoc($result1)){
                 ?>
-                    <div class="card col-6 col-md-3 mb-5 mb-lg-0 col-lg-2 p-0 rounded-0 border-0">
+                    <div data-aos='zoom-in-up' class="card bg-transparent col-6 col-md-4 col-lg-3 px-2 border-0">
                         <a href="product-page.php?product_id=<?php echo $row1['id'] ?>" class='text-decoration-none'>
-                            <div class='px-3'>
+                            <div class='d-flex flex-column justify-content-center align-items-center rounded-3 px-3 py-3 bg-white' style='box-shadow:0 0 10px 1px #33333321;'>
                                 <img src="./admin/images/product_img/<?php echo $row1['img1'] ?>" class="img-fluid image" alt="...">
                                 <div class="card-body p-0 d-flex flex-column">
                                     <span class='text-muted d-inline-block'style='font-size:14px;text-align:left;'><?php echo $row1['product_title'] ?></span>

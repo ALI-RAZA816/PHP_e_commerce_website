@@ -9,11 +9,14 @@
 ?>
 <section class='admin-page position-relative'>
     <div class="container">
-        <div class="row">
-            <div class="col-2">
+        <div class="row mt-5">
+            <div class="col-3 " data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                 <?php include "sidebar.php" ?>
             </div>
-            <div class="col-10 py-2">
+            <div data-aos="fade-left"
+     data-aos-duration="1500" class="col-9 py-2 rounded-3 bg-white" style='box-shadow:0 0 10px 1px #33333321;'>
                 <p class='text-muted'>All Product List</p>
                 <div class="all-products-list">
                     <!-- <table class="table">

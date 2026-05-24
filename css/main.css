@@ -11,8 +11,10 @@ body{
     /* font-family: "Prata", serif; */
     font-family: "Outfit", sans-serif;
     overflow-x: hidden;
-    background-color: #fff;
+    background-color: #E8EDF2;
 }
+
+
 
 /* header  */
 .nav-bars,
@@ -373,7 +375,7 @@ body{
 .error{
     position: fixed;
     top:-25px;
-    z-index: 99;
+    z-index: 9999;
     left: 50%;
     transition: top .50s ease;
     transform: translate(-50%,-50%);

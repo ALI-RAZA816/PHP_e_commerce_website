@@ -1,11 +1,11 @@
 <?php include "header.php"?>
 <section class='admin-page position-relative'>
     <div class="container">
-        <div class="row">
-            <div class="col-2">
+        <div class="row mt-5">
+            <div class="col-3">
                 <?php include "sidebar.php" ?>
             </div>
-            <div class="col-10">
+            <div class="col-9">
                 <?php include "add-product.php" ?>
             </div>
         </div>

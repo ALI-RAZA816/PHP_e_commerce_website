@@ -1,16 +1,16 @@
 <?php include "header.php" ?>
 <section class='about-us'>
-    <div class="container">
+    <div  class="container bg-white mt-5 pb-3 rounded-3" style='box-shadow:0 0 10px 1px #33333321;'>
         <div class="row">
             <div class="col-12">
-                <h4 class='text-muted text-uppercase text-center my-5'>About <span class='fw-bold text-dark'>Us</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h4>
+                <h4 class='text-muted text-uppercase text-center my-4'>About <span class='fw-bold text-dark'>Us</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h4>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row px-3 overflow-hidden">
+            <div class="col-md-4" data-aos="fade-right">
                 <img src="./images/about_img.png" class='img-fluid' alt="">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8" data-aos="fade-left">
                 <p class='text-muted' style='text-align:justify;'>Forever was born out of a passion for innovation and a desire to revolutionize the way people shop online. Our journey began with a simple idea: to provide a platform where customers can easily discover, explore, and purchase a wide range of products from the comfort of their homes.</p>
 
                 <p class='text-muted' style='text-align:justify;'>Since our inception, we've worked tirelessly to curate a diverse selection of high-quality products that cater to every taste and preference. From fashion and beauty to electronics and home essentials, we offer an extensive collection sourced from trusted brands and suppliers.</p>
@@ -30,17 +30,23 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 p-5 border">
-                <p class='mb-4 fw-bold text-uppercase'>Quality Assurance:</p>
-                <p class='m-0 text-muted'>We meticulously select and vet each product to ensure it meets our stringent quality standards.</p>
+            <div data-aos='zoom-in-up' class="col-md-4 p-1">
+                <div class='bg-white p-5 rounded-3 h-100' style='box-shadow:0 0 10px 1px #33333321;'>
+                    <p class='mb-4 fw-bold text-uppercase'>Quality Assurance:</p>
+                    <p class='m-0 text-muted'>We meticulously select and vet each product to ensure it meets our stringent quality standards.</p>
+                </div>
             </div>
-            <div class="col-md-4 p-5 border">
-                <p class='mb-4 fw-bold text-uppercase'>Convenience:</p>
-                <p class='m-0 text-muted'>With our user-friendly interface and hassle-free ordering process, shopping has never been easier.</p>
+            <div data-aos='zoom-in-up' class="col-md-4 p-1">
+                <div class='bg-white p-5 rounded-3 h-100' style='box-shadow:0 0 10px 1px #33333321;'>
+                    <p class='mb-4 fw-bold text-uppercase'>Convenience:</p>
+                    <p class='m-0 text-muted'>With our user-friendly interface and hassle-free ordering process, shopping has never been easier.</p>
+                </div>
             </div>
-            <div class="col-md-4 p-5 border">
-                <p class='mb-4 fw-bold text-uppercase'>Exceptional Customer Service:</p>
-                <p class='m-0 text-muted'>Our team of dedicated professionals is here to assist you the way, ensuring your satisfaction is our top priority.</p>
+            <div data-aos='zoom-in-up' class="col-md-4 p-1">
+                <div class='bg-white p-5 rounded-3 h-100' style='box-shadow:0 0 10px 1px #33333321;'>
+                    <p class='mb-4 fw-bold text-uppercase'>Exceptional Customer Service:</p>
+                    <p class='m-0 text-muted'>Our team of dedicated professionals is here to assist you the way, ensuring your satisfaction is our top priority.</p>
+                </div>
             </div>
         </div>
         <div class="row d-flex justify-content-center">

@@ -7,8 +7,8 @@
 ?>
 <section class='forgotton-password-page'>
     <div class="container">
-        <div class="row d-flex justify-content-center align-items-center" style='height:100vh;'>
-            <div class="col-md-4">
+        <div data-aos="zoom-in" class="row d-flex justify-content-center align-items-center" style='height:100vh;'>
+            <div class="col-md-4 bg-white rounded-3 py-4" style='box-shadow:0 0 10px 1px #33333321;'>
                 <h3 class='text-dark text-capitlize text-center mb-4'>Reset Password<i class="fa-solid fa-minus"></i>
                 <p class='text-muted fs-6 mt-2'>We'll send you a secure reset link</p></h3>
                 <form action="">

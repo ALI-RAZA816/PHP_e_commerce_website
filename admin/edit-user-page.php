@@ -8,11 +8,13 @@
 ?>
 <section class='admin-page position-relative'>
     <div class="container">
-        <div class="row">
-            <div class="col-2">
+        <div class="row mt-5">
+            <div class="col-3" data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                 <?php include "sidebar.php" ?>
             </div>
-            <div class="col-10 py-2">
+            <div class="col-9 py-2">
                   <?php 
                             include "config.php";
                             $query = "SELECT * FROM users WHERE id = {$_GET['editId']}";

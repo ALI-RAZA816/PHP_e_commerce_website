@@ -9,12 +9,12 @@
 <section class='admin-page position-relative'>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-3" data-aos="fade-right"
+            <div class="col-3 border-end" data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine">
                 <?php include "sidebar.php" ?>
             </div>
-            <div class="col-9 py-2 bg-white rounded-3" style='box-shadow:0 0 10px 1px #33333321;'>
+            <div class="col-9 py-2 bg-white" >
                 <p class='text-muted'>Order Page</p>
                 <div class="row overflow-hidden p-0 g-0">
                     

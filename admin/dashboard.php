@@ -2,7 +2,7 @@
 <section class='admin-page position-relative'>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-3">
+            <div class="col-3 border-end">
                 <?php include "sidebar.php" ?>
             </div>
             <div class="col-9">

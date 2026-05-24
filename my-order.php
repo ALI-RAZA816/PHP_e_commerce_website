@@ -17,7 +17,7 @@
                         $result = mysqli_query($conn, $query);
                         if(mysqli_num_rows($result) > 0){
                             while($row = mysqli_fetch_assoc($result)){
-                                echo "<div data-aos='fade-up' data-aos-duration='1500'  data-aos-offset='300' class='col-md-12 mb-2 bg-white rounded-3 'style='box-shadow:0 0 10px 1px #33333321;'>
+                                echo "<div data-aos='fade-up' data-aos-duration='1500'  data-aos-offset='300' class='col-md-12 mb-2 bg-white border-top border-bottom'>
                                         <div class='d-md-flex align-items-center justify-content-between py-2 single-order'>
                                             <div class='d-flex'>
                                                 <div class='cart-img me-3'>

@@ -20,7 +20,7 @@
 <body>
     <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
     </div>
-    <header data-aos="fade-down" class='bg-white rounded-bottom-5 py-3' style='position:sticky;top:0px;left:0;z-index:9;box-shadow:0 0 10px 1px #33333321;'>
+    <header data-aos="fade-down" class='bg-white py-3' style='position:sticky;top:0px;left:0;z-index:9;box-shadow:0 0 10px 1px #33333321;'>
         <nav class="navbar p-0">
             <div class="container">
                 <div class="col-1">

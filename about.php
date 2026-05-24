@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
 <section class='about-us'>
-    <div  class="container bg-white mt-5 pb-3 rounded-3" style='box-shadow:0 0 10px 1px #33333321;'>
+    <div  class="container bg-white mt-5 pb-3">
         <div class="row">
             <div class="col-12">
                 <h4 class='text-muted text-uppercase text-center my-4'>About <span class='fw-bold text-dark'>Us</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h4>

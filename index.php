@@ -1,14 +1,14 @@
 <?php include "header.php" ?>
 <main>
     <section class='header-section'>
-        <div class="container py-3 mt-4 bg-white rounded-4" style='box-shadow:0 0 10px 1px #33333321;'>
+        <div class="container mt-4 border">
             <div class="row overflow-hidden p-0 g-0">
                 <div data-aos="fade-right" class="col-sm-6 d-flex flex-column text-center text-sm-left py-sm-0 py-5 justify-content-sm-center align-items-sm-start ps-sm-5">
                     <span class='text-uppercase'><i class="fa-solid fa-minus" style='color:#2A2A2A'></i>Our bestseller</span>
                     <h2 style='font-family: "Prata", serif;' class='my-2 fs-1'>Latest Arrival</h2>
                     <span class='text-uppercase'>Shop Now<i class="fa-solid fa-minus" style='color:#2A2A2A'></i></span>
                 </div>
-                <div data-aos="fade-left" class="col-sm-6">
+                <div data-aos="fade-left" class="col-sm-6 p-0">
                     <img src="./images/header_img.png" class='img-fluid hero-image rounded-end' alt="">
                 </div>
             </div>
@@ -31,8 +31,8 @@
                         while($row = mysqli_fetch_assoc($result)){
                             echo " <div data-aos='zoom-in-up' class='card bg-transparent col-6 col-md-4 col-lg-3 px-2 border-0'>
                                     <a href='product-page.php?product_id={$row['id']}' class='text-decoration-none'>
-                                        <div class='d-flex flex-column justify-content-center align-items-center rounded-3 px-2 py-3 bg-white' style='box-shadow:0 0 10px 1px #33333321;'>
-                                            <img src='./admin/images/product_img/{$row['img1']}' class='img-fluid image rounded' alt='...'>
+                                        <div class='d-flex border flex-column justify-content-center align-items-center px-2 py-3 bg-white'>
+                                            <img src='./admin/images/product_img/{$row['img1']}' class='img-fluid image' alt='...'>
                                             <div class='card-body p-0 d-flex flex-column'>
                                                 <span class='text-muted '>{$row['product_title']}</span>
                                                 <span class='fw-bold text-dark'><span>$</span>{$row['product_price']}</span>
@@ -66,8 +66,8 @@
                         while($row1 = mysqli_fetch_assoc($result1)){
                             echo " <div data-aos='zoom-in-up' class='card bg-transparent col-6 col-md-4 col-lg-3 px-2 border-0'>
                                     <a href='product-page.php?product_id={$row1['id']}' class='text-decoration-none'>
-                                        <div class='d-flex flex-column justify-content-center align-items-center rounded-3 px-3 py-3 bg-white' style='box-shadow:0 0 10px 1px #33333321;'>
-                                            <img src='./admin/images/product_img/{$row1['img1']}' class='img-fluid image rounded' alt='...'>
+                                        <div class='d-flex flex-column justify-content-center align-items-center border px-3 py-3 bg-white'>
+                                            <img src='./admin/images/product_img/{$row1['img1']}' class='img-fluid image' alt='...'>
                                             <div class='card-body p-0 d-flex flex-column'>
                                                 <span class='text-muted '>{$row1['product_title']}</span>
                                                 <span class='fw-bold text-dark'><span>$</span>{$row1['product_price']}</span>
@@ -83,7 +83,7 @@
     </section>
     <section class="support-section">
         <div class="container">
-            <div data-aos='zoom-in-up' class='row bg-white rounded-4 py-5' style='margin:8rem 0;box-shadow:0 0 10px 1px #33333321;'>
+            <div data-aos='zoom-in-up' class='row bg-white rounded-4 py-5' style='margin:8rem 0;'>
                 <div class="col-sm-6 mt-5 mt-sm-0 col-lg-4 d-flex flex-column justify-content-center align-items-center">
                     <img src="./images/exchange_icon.png" style='height:50px;width:50px;' class='img-fluid mb-3' alt="">
                     <span class='text-dark fw-bold'>Easy Exchange Policy</span>

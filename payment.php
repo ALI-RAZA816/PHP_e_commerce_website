@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="orders">
-            <div class="row overflow-hidden bg-white rounded-3 py-4 delivery-information align-items-start" style='box-shadow:0 0 10px 1px #33333321;'>
+            <div class="row overflow-hidden bg-white rounded-3 py-4 delivery-information align-items-start">
                 <!-- <div class="col-md-6">
                     <div class="row g-0 p-0 mb-3">
                         <div class="col-md-6 mb-3 mb-md-0 pe-md-3">

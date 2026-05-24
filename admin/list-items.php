@@ -10,13 +10,13 @@
 <section class='admin-page position-relative'>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-3 " data-aos="fade-right"
+            <div class="col-3 border-end " data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine">
                 <?php include "sidebar.php" ?>
             </div>
-            <div data-aos="fade-left"
-     data-aos-duration="1500" class="col-9 py-2 rounded-3 bg-white" style='box-shadow:0 0 10px 1px #33333321;'>
+            <div data-aos="fade-up"
+     data-aos-duration="1500" class="col-9 py-2 bg-white">
                 <p class='text-muted'>All Product List</p>
                 <div class="all-products-list">
                     <!-- <table class="table">

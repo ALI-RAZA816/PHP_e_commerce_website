@@ -9,14 +9,14 @@
 <section class='admin-page position-relative'>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-3 " data-aos="fade-right"
+            <div class="col-3 border-end" data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine">
                 <?php include "sidebar.php" ?>
             </div>
             <div class="col-9 py-2">
                 <div class="users">
-                    <div data-aos="fade-up" data-aos-offset='300' class="row g-0 p-3 rounded-3 bg-white " style='box-shadow:0 0 10px 1px #33333321;'>
+                    <div data-aos="fade-up" data-aos-offset='300' class="row g-0 p-3 bg-white ">
                         <h5 class='text-muted fw-bold fs-4 mb-0'>Users</h5>
                         <p class='text-muted border-bottom pb-2'>Manage all registered accounts</p>
                         <?php 
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div data-aos="fade-up" data-aos-offset='300' class="row g-0 vh-100 p-3 bg-white mt-4 rounded-3" style='box-shadow:0 0 10px 1px #33333321;'>
+                    <div data-aos="fade-up" data-aos-offset='300' class="row g-0 vh-100 p-3 bg-white mt-4">
                         <div class="col-12 border p-0 rounded-3 border-bottom-0 table-responsive users-data">
                             <!-- <table class="table m-0">
                                 <thead>

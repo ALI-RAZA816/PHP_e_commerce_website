@@ -9,7 +9,7 @@
 <section class='dashboard-page position-relative'>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-3 " data-aos="fade-right"
+            <div class="col-3 border-end " data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine">
                 <?php 
@@ -30,7 +30,7 @@
             </div>
             <div  class="col-9 ">
                 <div data-aos="fade-up"
-                data-aos-duration="1000" class="row bg-white rounded-3 g-0 mt-4 p-3 py-4" style='box-shadow:0 0 10px 1px #33333321;'>
+                data-aos-duration="1000" class="row bg-white g-0 mt-4 p-3 py-4" >
                     <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 pe-md-3">
                         <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'><i class="fa-solid fa-money-bills fs-6 me-2"></i>Revenue</p>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div data-aos="fade-up"
-     data-aos-duration="3000" class="row bg-white rounded-3 g-0 p-3 mt-4" style='box-shadow:0 0 10px 1px #33333321;'>
+     data-aos-duration="3000" class="row bg-white g-0 p-3 mt-4">
                     <div class="col-lg-8 mt-5">
                         <?php 
                             $query5 = "SELECT SUM(totalprice) AS revenue, DATE_FORMAT(order_date, '%M %Y') AS month_label 

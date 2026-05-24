@@ -1,4 +1,4 @@
-<footer class='bg-white pt-5 rounded-top-5' style='box-shadow:0 0 10px 1px #33333321;'>
+<footer class='bg-white pt-5'>
     <div class="container">
         <div class="row p-0" data-aos="fade-up"
      data-aos-anchor-placement="center-bottom">

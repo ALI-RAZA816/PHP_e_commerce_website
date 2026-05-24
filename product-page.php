@@ -8,7 +8,7 @@
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_assoc($result)){
         ?>
-        <div class="row mt-5 overflow-hidden bg-white py-3 rounded-3" style='box-shadow:0 0 10px 1px #33333321;'>
+        <div class="row mt-5 overflow-hidden bg-white py-3">
             <div class="col-md-6" data-aos="fade-right">
                 <div class="row g-0 p-0  mb-4 mb-md-0 ">
                     <div class="col-2 me-4">
@@ -63,7 +63,7 @@
 </section>
 <section class='product-description'>
     <div class="container">
-        <div data-aos="fade-up" class="row py-3 mt-5 bg-white rounded-3"  style='box-shadow:0 0 10px 1px #33333321;'>
+        <div data-aos="fade-up" class="row py-3 mt-5 bg-white rounded-3" >
             <div class="col-12">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item rounded-0" role="presentation"><button style='width:120px;' class="nav-link rounded-0 border text-dark active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Description</button></li>
@@ -104,7 +104,7 @@
                 ?>
                     <div data-aos='zoom-in-up' class="card bg-transparent col-6 col-md-4 col-lg-3 px-2 border-0">
                         <a href="product-page.php?product_id=<?php echo $row1['id'] ?>" class='text-decoration-none'>
-                            <div class='d-flex flex-column justify-content-center align-items-center rounded-3 px-3 py-3 bg-white' style='box-shadow:0 0 10px 1px #33333321;'>
+                            <div class='d-flex flex-column justify-content-center align-items-center border px-3 py-3 bg-white'>
                                 <img src="./admin/images/product_img/<?php echo $row1['img1'] ?>" class="img-fluid image" alt="...">
                                 <div class="card-body p-0 d-flex flex-column">
                                     <span class='text-muted d-inline-block'style='font-size:14px;text-align:left;'><?php echo $row1['product_title'] ?></span>

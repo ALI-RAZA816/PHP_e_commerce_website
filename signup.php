@@ -2,7 +2,7 @@
 <section class='signup-page'>
     <div class="container">
         <div data-aos="zoom-in" class="row d-flex justify-content-center">
-            <div class="col-md-4 bg-white rounded-3 py-4" style='margin-top:5rem;box-shadow:0 0 10px 1px #33333321;'>
+            <div class="col-md-4 bg-white py-4" style='margin-top:5rem;'>
                 <h3 class='text-dark text-capitlize text-center mb-4'>Sign Up<i class="fa-solid fa-minus"></i></h3>
                 <form>
                     <input type="text" class='form-control name rounded-0 border mb-3' name='name' placeholder='Name'>

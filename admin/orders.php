@@ -56,7 +56,7 @@
                                                             <option value='cancelled'>Cancelled</option>";
                                                         }
                                                         else if($row['order_status'] === 'packing'){
-                                                              echo " <optionvalue='order placed'>Order placed</optionvalue=>
+                                                              echo " <option value='order placed'>Order placed</option>
                                                             <option  selected  value='packing'>Packing</option>
                                                             <option value='shipped'>Shipped</option>
                                                             <option value='out for delivery'>Out for delivery</option>
@@ -64,7 +64,7 @@
                                                             <option value='cancelled'>Cancelled</option>";
                                                         }
                                                         else if($row['order_status'] === 'shipped'){
-                                                              echo " <optionvalue='order placed'>Order placed</optionvalue=>
+                                                              echo " <option value='order placed'>Order placed</option>
                                                             <option value='packing'>Packing</option>
                                                             <option selected value='shipped'>Shipped</option>
                                                             <option value='out for delivery'>Out for delivery</option>
@@ -72,7 +72,7 @@
                                                             <option value='cancelled'>Cancelled</option>";
                                                         }
                                                         else if($row['order_status'] === 'out for delivery'){
-                                                              echo " <optionvalue='order placed'>Order placed</optionvalue=>
+                                                              echo " <option value='order placed'>Order placed</option>
                                                             <option value='packing'>Packing</option>
                                                             <option  value='shipped'>Shipped</option>
                                                             <option selected value='out for delivery'>Out for delivery</option>
@@ -80,7 +80,7 @@
                                                             <option value='cancelled'>Cancelled</option>";
                                                         }
                                                         else if($row['order_status'] === 'deliverd'){
-                                                              echo " <optionvalue='order placed'>Order placed</optionvalue=>
+                                                              echo " <option value='order placed'>Order placed</option>
                                                             <option value='packing'>Packing</option>
                                                             <option value='shipped'>Shipped</option>
                                                             <option value='out for delivery'>Out for delivery</option>
@@ -88,7 +88,7 @@
                                                             <option value='cancelled'>Cancelled</option>";
                                                         }
                                                         else if($row['order_status'] === 'cancelled'){
-                                                              echo " <optionvalue='order placed'>Order placed</optionvalue=>
+                                                              echo " <option value='order placed'>Order placed</option>
                                                             <option value='packing'>Packing</option>
                                                             <option  value='shipped'>Shipped</option>
                                                             <option value='out for delivery'>Out for delivery</option>

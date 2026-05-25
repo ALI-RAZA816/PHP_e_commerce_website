@@ -176,6 +176,8 @@
                                                 </div>
                                             </div>";
                                     }
+                                }else{
+                                    echo "No recent orders";
                                 }
                             ?>
                         </div>

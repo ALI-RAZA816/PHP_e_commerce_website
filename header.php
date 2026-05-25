@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="./css/utilities.css">
     <!-- FONTAWESOME CDN  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src='./js/script.js'></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -71,6 +70,7 @@
     <script src='./js/jquery.js'></script>
     <script src='./js/main.js'></script>
     <script src='./js/imagepath.js'></script>
+    <script src='./js/script.js'></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

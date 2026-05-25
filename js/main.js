@@ -943,6 +943,7 @@ $(document).ready(function(){
         });
     };
     cart_total();
+    
     // add to cart
     $('.add-to-cart').on('click',function(event){
         event.preventDefault();

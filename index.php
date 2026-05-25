@@ -9,7 +9,7 @@
                     <span class='text-uppercase'>Shop Now<i class="fa-solid fa-minus" style='color:#2A2A2A'></i></span>
                 </div>
                 <div data-aos="fade-left" class="col-sm-6 p-0">
-                    <img src="./images/header_img.png" class='img-fluid hero-image rounded-end' alt="">
+                    <img src="./images/header_img.png" class='img-fluid hero-image' alt="">
                 </div>
             </div>
         </div>

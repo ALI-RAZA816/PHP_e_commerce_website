@@ -4,7 +4,7 @@
      data-aos-anchor-placement="center-bottom">
             <div class="col-lg-6 col-sm-9">
                 <img src="./images/InsiderStats.png" class='img-fluid mb-3' alt="">
-                <p class='text-muted fs-6'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p class='text-muted fs-6'>Forever was born out of a passion for innovation and a desire to revolutionize the way people shop online. Our journey began with a simple idea: to provide a platform where customers can easily discover, explore, and purchase a wide range of products from the comfort of their homes.</p>
             </div>
             <div class="col-lg-3 col-sm-3 p-0 ps-2 px-sm-0 mt-5 mt-sm-0">
                 <h2 class='text-uppercase fs-5 mb-3 fw-bold text-muted'>Company</h2>

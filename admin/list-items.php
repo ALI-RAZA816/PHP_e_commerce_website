@@ -10,9 +10,7 @@
 <section class='admin-page position-relative'>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-3 border-end " data-aos="fade-right"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine">
+            <div class="col-3 border-end ">
                 <?php include "sidebar.php" ?>
             </div>
             <div data-aos="fade-up"

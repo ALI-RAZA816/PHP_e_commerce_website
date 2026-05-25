@@ -17,6 +17,18 @@
                         $result = mysqli_query($conn, $query);
                         if(mysqli_num_rows($result) > 0){
                             while($row = mysqli_fetch_assoc($result)){
+                               $textColor = '';
+                                if($row['order_status'] === 'deliverd'){
+                                    $textColor = 'success';
+                                }else if($row['order_status'] === 'packing'){
+                                    $textColor = 'warning';
+                                }else if($row['order_status'] === 'shipped'){
+                                    $textColor = 'info';
+                                }else if($row['order_status'] === 'out of delivery'){
+                                    $textColor = 'secondary';
+                                }else if($row['order_status'] === 'cancelled'){
+                                    $textColor = 'danger';
+                                }
                                 echo "<div data-aos='fade-up' data-aos-duration='1500'  data-aos-offset='300' class='col-md-12 mb-2 bg-white border-top border-bottom'>
                                         <div class='d-md-flex align-items-center justify-content-between py-2 single-order'>
                                             <div class='d-flex'>
@@ -34,7 +46,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div><i class='fa-regular fa-circle-dot text-success me-2'></i><span class='text-muted text-capitalize'>{$row['order_status']}</div>
+                                            <div><i class='fa-regular fa-circle-dot text-{$textColor} me-2'></i><span class='text-{$textColor} text-capitalize'>{$row['order_status']}</div>
                                         </div>
                                     </div>";
                             }

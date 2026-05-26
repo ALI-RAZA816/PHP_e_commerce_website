@@ -19,11 +19,11 @@
 <body>
     <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
     </div>
-    <header data-aos="fade-down" class='bg-white py-3' style='position:sticky;top:0px;left:0;z-index:9;box-shadow:0 0 10px 1px #33333321;'>
+    <header data-aos="fade-down" class='py-3' style='position:sticky;top:0px;left:0;z-index:9;'>
         <nav class="navbar p-0">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="col-1">
-                    <img src="./images/InsiderStats.png" class='img-fluid' alt="">
+                    <h2 class='website-name'>FOREVER</h2>
                 </div>
                 <div class="col-7 d-flex justify-content-center align-items-center">
                     <ul class="nav header-nav-tab" id='header-nav-tabs'>
@@ -61,7 +61,7 @@
                             ?>
                         </div>
                     </div>
-                    <a href="cart.php" class='position-relative text-decoration-none'><i class="fa-solid fa-bag-shopping header-icons"></i><span class='total-item text-dark'>0</span></a>
+                    <a href="cart.php" class='position-relative text-decoration-none'><i class="fa-solid fa-bag-shopping header-icons"></i><span class='total-item text-white'>0</span></a>
                     <i class="fa-solid fa-bars-staggered ms-3 nav-bars"></i>
                 </div>
             </div>

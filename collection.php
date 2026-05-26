@@ -1,14 +1,28 @@
 <?php include "header.php" ?>
-<section class='collection-page' style='margin-bottom:5rem;'>
+<section class='collection-page'>
     <div class="container p-0">
-        <div class="col-12 bg-white mt-4 rounded-3 py-2 border-bottom search-bar d-flex justify-content-center align-items-center">
-            <input type="text" class='form-control search rounded-5' placeholder='Search'>
+        <div class="row">
+            <div data-aos="fade-left" class="col-md-12 rounded-3">
+                <div class='d-flex flex-column flex-md-row  bg-white collection-header my-5 justify-content-between align-items-center'>
+                    <h1 class='text-uppercase mb-0 text-nowrap'>All <span class='fw-bold'>Collections</span><i class="fa-solid fa-minus"></i></h1>
+                    <div class='d-flex flex-column flex-md-row '>
+                        <div class='me-md-3 mb-3 mb-md-0 search-box d-flex border-bottom justify-content-between border-top-0 border-end-0 border-start-0 align-items-center'>
+                            <input type="text" class='form-control border-0 mb-0 rounded-0 search' placeholder='Search'>
+                            <i class='fa-solid fa-magnifying-glass text-muted'></i>
+                        </div>
+                        <select class="form-select border-bottom border-top-0 border-end-0 border-start-0 sorting" aria-label="Default select example">
+                            <option value = 'relevant'selected>Sort by: Relevant</option>
+                            <option value="low to high">Sort by: Low to High</option>
+                            <option value="high to low">Sort by: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row mt-3" >
+        <div class="row">
             <div data-aos="fade-right" class="col-md-3 bg-white py-3 rounded-3 sideber filters">
-                <h2 class='mb-3 mb-md-3'>Filters <i class="fa-solid fa-angle-right filter-angle d-md-none"></i></h2>
-                <div id='filter-container'>
-                    <div class="category border rounded-3 mb-3 p-3">
+                <div id='filter-container' class='d-flex d-md-block '>
+                    <div class="category me-5 me-md-none mb-3 p-3">
                         <h3>Categories</h3>
                         <div class="form-check">
                             <input class="form-check-input filter_category" value='men' type="checkbox" id="Men">
@@ -23,7 +37,7 @@
                             <label class="form-check-label" for="Kids">Kids</label>
                         </div>
                     </div>
-                    <div class="types border rounded-3 p-3">
+                    <div class="types p-3">
                         <h3>Type</h3>
                         <div class="form-check">
                             <input class="form-check-input filter_category" value='topwear' type="checkbox" id="Topwear">
@@ -40,16 +54,8 @@
                     </div>
                 </div>
             </div>
-            <div data-aos="fade-left" class="col-md-9 products rounded-3" style='margin-bottom:8rem;'>
-                <div class='d-flex bg-white rounded-3 px-3 py-2 justify-content-between'>
-                        <h1 class='text-muted text-uppercase mb-0'>All <span class='fw-bold text-dark'>Collections</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h1>
-                        <select class="form-select rounded-3 sorting" aria-label="Default select example">
-                            <option value = 'relevant'selected>Sort by: Relevant</option>
-                            <option value="low to high">Sort by: Low to High</option>
-                            <option value="high to low">Sort by: High to Low</option>
-                        </select>
-                </div>
-                <div  style='min-height:100vh;' class="row bg-white rounded-3 collection p-3 g-0 mt-3" ></div>
+            <div  style='min-height:100vh;margin-bottom:6rem;' class="col-md-9 bg-white rounded-3 p-3 g-0" >
+                <div class='collection row p-0 g-0'></div>
             </div>
         </div>
     </div>

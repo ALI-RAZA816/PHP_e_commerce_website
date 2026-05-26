@@ -29,19 +29,19 @@
                                 }else if($row['order_status'] === 'cancelled'){
                                     $textColor = 'danger';
                                 }
-                                echo "<div data-aos='fade-up' data-aos-duration='1500'  data-aos-offset='300' class='col-md-12 mb-2 bg-white border-top border-bottom'>
+                                echo "<div data-aos='fade-up' data-aos-duration='1500'  data-aos-offset='300' class='my-orders col-md-12 mb-2 border-bottom'>
                                         <div class='d-md-flex align-items-center justify-content-between py-2 single-order'>
                                             <div class='d-flex'>
                                                 <div class='cart-img me-3'>
                                                     <img src='./admin/images/product_img/{$row['image']}' class='img-fluid' alt=''>
                                                 </div>
                                                 <div>
-                                                    <p class='title mb-2'>{$row['title']}</p>
-                                                    <p><span class='price mb-0'><span>$</span>{$row['unitprice']}</span><span class='size ms-5'>{$row['size']}</span></p>
+                                                    <p class='title fs-5 mb-2'>{$row['title']}</p>
+                                                    <p><span class='price fs-5 mb-0'><span>$</span>{$row['unitprice']}</span><span class='size ms-5'>{$row['size']}</span></p>
                                                 </div>
                                                 <div class='ms-5'>
                                                     <p class='d-flex flex-column'>
-                                                    <span class='price mb-0'>Quantity: {$row['quantity']}</span>
+                                                    <span class='price fs-5 mb-0'>Quantity: {$row['quantity']}</span>
                                                     <span>Total Price:<span>$</span>{$row['totalprice']}</span>
                                                     </p>
                                                 </div>

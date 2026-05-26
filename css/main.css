@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
 
 *{
     margin: 0;
@@ -9,14 +11,27 @@
 
 body{
     /* font-family: "Prata", serif; */
-    font-family: "Outfit", sans-serif;
+    /* font-family: "Outfit", sans-serif; */
+     font-family: "Playfair", serif;
     overflow-x: hidden;
+    /* background-color: #FFF8F5; */
     background-color: #fff;
 }
 
 
-
 /* header  */
+
+header{
+    background-color: #FFF8F5;
+}
+
+header .website-name{
+    color: #064E38;
+    text-transform: uppercase;
+    font-size: 2.5rem; 
+    margin-bottom: 0;
+}
+
 .nav-bars,
 .nav-tab-cross{
     font-size: 1.3rem;
@@ -25,8 +40,115 @@ body{
     display: none !important;
 }
 
-.footer-links,
 .pages{
+    color: #2A2A2A;
+    font-size: 18px;
+    font-family: "Outfit", sans-serif;
+}
+
+.pages:hover,
+.pages:focus{
+    color:#064E38;
+}
+
+.hero-section h1{
+    color:#064E38;
+    font-family: "Prata", serif;
+    font-size:4rem;
+    font-weight:bold;
+    margin: 1rem 0;
+}
+
+.hero-section span{
+    color:#2a2a2a7e;
+    font-weight:bold;
+    font-family: "Outfit", sans-serif;
+}
+
+.card img,
+.choose-us-box,
+.about-us img,
+.header-section img{
+    cursor: pointer;
+    transition: .20s ease;
+}
+
+.about-us img:hover,
+.card:hover img,
+.choose-us-box:hover,
+.header-section img:hover{
+    transform: scale(1.03);
+}
+
+.latest-collection-section .container-fluid,
+.best-seller-section .container-fluid{
+    padding: 7rem 0;
+}
+
+.collection-text,
+.best-seller-text{
+    margin-bottom:3.5rem;
+}
+
+.collection-text h1,
+.best-seller-text h1{
+    font-size: 3rem;
+    color: #064E38;
+}
+
+.best-seller-text span,
+.collection-text span{
+    font-family: "Outfit", sans-serif;
+}
+
+.best-seller-section .card .price,
+.best-seller-section .card .title,
+.latest-collection-section .card .price,
+.latest-collection-section .card .title{
+    font-size:17px;
+}
+
+.support{
+    padding:6rem 0 !important; 
+    background-color: #FAF2EE;
+}
+
+.subscribe{
+    margin:9rem 0 !important; 
+    /* background-color:#FFF8F5; */
+}
+
+.subscribe h2{
+    color:#064E38;
+    font-size:2.5rem;
+}
+.subscribe p{
+    color:#064E38;
+}
+
+.subscription button:hover,
+.subscription button{
+    background-color:#064E38;
+}
+
+.footer{
+    padding:8rem 0 4rem 0;
+    background-color: #E9E1DD;
+     font-family: "Outfit", sans-serif;
+}
+
+.footer .website-name{
+    color: #064E38;
+    text-transform: uppercase;
+    font-size: 2.5rem; 
+    margin-bottom:3rem;
+}
+
+.footer .container-fluid img{
+    margin-bottom: 6rem;
+}
+
+.footer-links{
     color: #2A2A2A;
     font-size: 16px;
     text-transform: uppercase;
@@ -36,16 +158,19 @@ body{
     font-size: 15px !important;
     text-transform: capitalize;
 }
+.links h2,
+.detail h2 {
+    color: #064E38;
+}
 
-.pages:focus,
+
 .footer-links:focus,
-.footer-links:hover,
-.pages:hover{
-    color: #2A2A2A;
+.footer-links:hover{
+    color: #064E38;
 }
 
 .header-icons{
-    color: #3a3a3a;
+    color: #064E38;
     font-size: 20px;
     cursor: pointer;
 }
@@ -75,12 +200,23 @@ body{
     width: 150px;
     padding:.5rem;
     transition: .20s ease-in-out;
-    background-color: #efefef;
+    background-color: #FFF8F5;
+    border-radius: 5px;
+    border: 1px solid #b1b1b1;
 }
 
 /* header responsive  */
 
 @media screen and (max-width:992px) {
+
+    
+    .collection-header h1{
+        font-size:2rem !important;
+    }
+    .hero-section h1{
+        font-size:2.5rem;
+    }
+
     .nav-bars{
         display: block !important;
     }
@@ -126,13 +262,48 @@ body{
 
 /* collection page | filters-sidebar */
 
-.products > div > h1{
-    font-size: 1.8rem;
-}
 
 @media  screen and (max-width:768px) {
+    .collection-header > div{
+        width:100% ;
+    }
+
+    .sorting{
+        width:100% !important;
+    }
+
     .products > div > h1{
         font-size: 1.2rem;
+    }
+
+     #filter-container{
+        height:0;
+    }
+
+    .collection-text h1,
+    .best-seller-text h1{
+        font-size: 2rem;
+        color: #064E38;
+    }
+
+    .subscribe h2{
+        font-size:2rem;
+    }
+    
+    
+}
+
+@media screen and (max-width:575px) {
+    .overlay h1{
+        font-size: 2.3rem !important;
+    }
+
+    .hero-section span{
+        text-align: center;
+    }
+    .hero-section h1{
+        font-size: 2.8rem;
+        text-align: center;
     }
 }
 
@@ -162,13 +333,6 @@ body{
     transition: height .50s ease-in-out;
 }
 
-@media screen and (max-width:768px) {
-    #filter-container{
-        height:0;
-    }
-    
-}
-
 .category h3,
 .types h3{
     margin-bottom: 1rem;
@@ -188,6 +352,39 @@ body{
     border: 1px solid #efefef;
 }
 
+.search{
+    width:100%;
+    max-width:250px;
+    font-family: "Outfit", sans-serif;
+}
+
+.search:focus{
+    box-shadow: none !important;
+}
+
+.collection-header h1{
+    color: #064E38;
+    font-size:3rem;
+    
+}
+
+.category h3,
+.types h3{
+    font-size:15px;
+    font-weight:bold;
+    color: #064E38;
+    font-family: "Outfit", sans-serif;
+}
+
+.category label,
+.types label{
+    font-family: "Outfit", sans-serif;
+}
+
+.collection .card .price,
+.collection .card .title{
+    color: #064E38;
+}
 
 /* product page  */
 
@@ -223,10 +420,30 @@ body{
 
 /* cart page  */
 
+
+.cart-section{
+    background-color: #FFF8F5;
+}
+
 .cart-img{
     height:80px;
     width:70px;
     overflow: hidden;
+}
+
+.my-orders .cart-img,
+.cart-item .cart-img{
+    height:130px;
+    width:120px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.my-orders .cart-img img,
+.cart-item .cart-img img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
 }
 
 .total-item{
@@ -238,7 +455,7 @@ body{
     border-radius: 100%;
     text-align: center;
     line-height: 20px;
-    background-color: #fff;
+    background-color: #064E38;
     display: inline-block;
     font-size: 14px;
 }
@@ -265,6 +482,11 @@ body{
     box-shadow: none !important;
 }
 
+.cart-total a button:hover,
+.cart-total a button{
+    background-color: #064E38;
+}
+
 .calculations p{
     color: #3a3a3a;
 }
@@ -281,9 +503,135 @@ body{
 .about-us-form textarea{
     height:250px;
 }
-.delivery-information input:focus,
-.about-us-form textarea:focus,
+
+.about-us-hero .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    color:white;
+    background-color:rgba(0, 0, 0,.25);
+}
+
+.overlay h1{
+    font-family: "Prata", serif;
+    font-size:4rem;
+    font-weight:bold;
+}
+
+.overlay p{
+    font-size:1.2rem;
+    color:#fff;
+}
+
+.contact-us,
+.choose-us{
+    padding: 6rem 0;
+    background-color: #FAF2EE;
+}
+
+.choose-us .choose-us-box{
+    background-color: #FFF8F5;
+}
+
+.choose-us .choose-use-text{
+    font-size: 15px;
+    color: #a3a3a3;
+}
+
+.choose-us-box:hover i{
+    background-color: #064E38;
+    color: #fff;
+}
+
+.choose-us-box i{
+    height:45px;
+    width:45px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+    color: #064E38;
+    margin-bottom: 1rem;
+    background-color: #FAF2EE;
+    transition: .20s ease;
+}
+
+
+.choose-us-box p:first-of-type{
+    color: #064E38;
+    font-size: 1.3rem;
+}
+
+.about-us{
+    padding: 6rem 0;
+    background-color: #FFF8F5;
+}
+.about-box-right h1{
+    color: #064E38;
+    font-size:3rem;
+}
+
+.about-box-right span:nth-child(5){
+    color: #064E38;
+    font-size:1.2rem;
+}
+
+.about-box-right p{
+    font-size: 17px;
+    font-family: "Outfit", sans-serif;
+}
+
+.contact-us h4{
+    color: #064E38;
+    font-size: 2.5rem;
+}
+
+.contact-us p{
+    font-size: 16px;
+}
+
+.about-us-form input::placeholder-shown{
+    color: #a3a3a3 !important;
+}
+
 .about-us-form input:focus{
+    outline: none !important;
+    box-sizing: none !important;
+    border-color:#3a3a3a !important;
+    background-color: transparent;
+}
+
+.about-us-form textarea:focus{
+    border-color:#3a3a3a !important;
+}
+
+.about-us-form textarea{
+    height: 100px;
+    font-family: "Outfit", sans-serif;
+}
+
+.about-us-form input{
+    height:45px;
+    font-family: "Outfit", sans-serif;
+    background-color: transparent;
+}
+
+.about-us-form button:hover{
+    transform: scale(1.02);
+    background-color: #064E38;
+}
+
+.about-us-form button{
+    height:50px;
+    border-radius: 5px;
+    background-color: #064E38;
+    color:#fff;
+    transition: .20s ease;
+}
+
+.delivery-information input:focus{
     border-color:#3a3a3a;
 }
 
@@ -466,18 +814,6 @@ body{
 
 .personal-information .form button{
     width:max-content;
-}
-
-.search-bar input {
-    max-width:800px;
-    width:100%;
-    outline: none !important;
-    box-shadow: none !important;
-    background-color: #efefef;
-}
-
-.search-bar input:focus{
-    border-color:#333 !important;
 }
 
 .form-otp{

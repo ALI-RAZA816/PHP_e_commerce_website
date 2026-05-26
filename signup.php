@@ -15,20 +15,8 @@
         </div>
     </div>
 </section>
-<section>
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-        <div class="col-md-6 col-lg-6 text-center" style='margin:10rem 0;'>
-            <h2>Subscribe now & get 20% off</h2>
-            <p class='text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-            <div class="subscription d-flex">
-                <input type="text" placeholder='Enter your email address' class='form-control rounded-0'>
-                <button class='text-white bg-dark btn rounded-0 text-uppercase'>Subscribe</button>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
+
+<?php include "subscription.php" ?>
 <script src='./js/jquery.js'></script>
 <script src='./js/main.js'></script>
 <?php include "footer.php" ?>

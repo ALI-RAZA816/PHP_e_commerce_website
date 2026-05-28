@@ -27,13 +27,16 @@
     visibility: visible !important;
 }
 
+/* color: #064E38; */
+
 .active-link{
-    background-color: #FFEBF5 !important;
-    border-color: #C586A5 !important;
+    background-color:  #064E38 !important;
+    color:#fff !important;
 }
 
 .img_error,
 .field_error{
     border-color:#dc3545 !important;
 }
+
 

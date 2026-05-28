@@ -108,6 +108,9 @@ header .website-name{
     font-size:17px;
 }
 
+.signup-page,
+.login-page,
+.forgotton-password-page,
 .support{
     padding:6rem 0 !important; 
     background-color: #FAF2EE;
@@ -158,6 +161,7 @@ header .website-name{
     font-size: 15px !important;
     text-transform: capitalize;
 }
+
 .links h2,
 .detail h2 {
     color: #064E38;
@@ -208,8 +212,7 @@ header .website-name{
 /* header responsive  */
 
 @media screen and (max-width:992px) {
-
-    
+ 
     .collection-header h1{
         font-size:2rem !important;
     }
@@ -390,10 +393,16 @@ header .website-name{
 
 .product-title{
     color: #3D3D3D;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Outfit", sans-serif;
 }
 
 .product-description{
-    color: #555555;
+     color: #3D3D3D;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Outfit", sans-serif;
 }
 
 .size-selection input{
@@ -641,11 +650,47 @@ header .website-name{
     font-family: "Prata", serif;
 }
 
+.signup-form h3,
+.form-container h3,
+.forgotton-form h3,
+.new-passwords h3,
+.login-form h3{
+    color:#064E38;
+    font-size: 2.5rem;
+}
+
+.signup-form p,
+.new-passwords p,
+.forgotton-form p,
+.form-container p,
+.login-form p{
+   font-family: "Outfit", sans-serif; 
+}
+
 .signup-page form input,
 .login-page form input{
     box-shadow: none !important;
     outline: none;
 }
+
+.signup-form label,
+.forgotton-form label,
+.login-form label{
+    font-family: "Outfit", sans-serif;
+}
+
+.signup-form #create-account,
+.form-container .verify-otp,
+.new-passwords .create-new-password,
+.forgotton-form .forgotton-password,
+.login-form .login{
+    background: #064E38;
+}
+
+.signup-form p span a{
+    color: #064E38 !important;
+}
+
 .signup-page form input:focus,
 .login-page form input:focus{
     border-color: #2A2A2A !important;
@@ -654,8 +699,9 @@ header .website-name{
 /* admin add-product-page  */
 
 .add-product-page .image{
-    height: 80px;
-    width: 80px;
+    height:150px;
+    /* height: 80px;
+    width: 80px; */
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -690,6 +736,12 @@ header .website-name{
     display: none;
 }
 
+.product-size p{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Outfit", sans-serif;
+}
+
 .product-size label{
     height: 40px;
     width: 40px;
@@ -698,14 +750,25 @@ header .website-name{
     line-height: 40px;
     position: absolute;
     font-size: 15px;
+    border-radius: 5px;
     cursor: pointer;
     border: 1px solid #dddddd;
-    background-color: #efefef;
+}
+
+.product-size label:hover{
+   border-color: #064E38;
 }
 
 .product-size input:checked + label{
-    border-color:rgba(250, 199, 207, 0.733) ;
-    background-color: rgba(250, 199, 207, 0.733);
+    border-color:#064E38;
+    background-color: #064E38;
+    color:#fff;
+}
+
+.bestseller-check label{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Outfit", sans-serif;
 }
 
 .img-view1,
@@ -767,6 +830,9 @@ header .website-name{
 .personal-information input{
     box-shadow: none !important;
     outline: none !important;
+    height:45px !important;
+    font-family: "Outfit", sans-serif;
+    background-color: #FFF8F5;
 }
 
 .roles .supers-admin p:first-of-type{
@@ -779,8 +845,8 @@ header .website-name{
 }
 
 .roles .role-selection:checked + label{
-    border-color: rgba(0, 0, 255, 0.534) !important;
-    background-color: rgba(0, 0, 255,.20);
+    border-color:#064E38 !important;
+    background-color:rgba(6, 78, 56,.20) !important;
 }
 
 .status .actives p,
@@ -796,24 +862,28 @@ header .website-name{
 }
 
 .active-selection:checked + label{
-    border-color:green !important;
-    color:green;
-    background-color: rgba(0, 128, 0,.40);
+    border-color:#064E38 !important;
+    color:#064E38;
+    background-color: rgba(0, 128, 0, .20) !important;
 }
 
 .inactive-selection:checked + label{
     border-color: #333 !important;
     color:#333;
-    background-color:#33333333;
+    background-color:#33333333 !important;
 }
 .suspend-selection:checked + label{
     border-color: red !important;
     color:rgba(255, 0, 0, 0.664);
-    background-color:rgba(255, 0, 0, 0.363);
+    background-color:rgba(255, 0, 0, 0.363) !important;
 }
 
 .personal-information .form button{
     width:max-content;
+}
+
+.personal-information form label{
+    font-family: "Outfit", sans-serif;
 }
 
 .form-otp{
@@ -845,6 +915,7 @@ header .website-name{
     border-color:#a3a3a3 !important;
 }
 
+.sidebar,
 .invoice .footer{
     background-color: #F5F4ED;
 }
@@ -852,5 +923,198 @@ header .website-name{
 .invoice .footer p{
     font-size: 14px;
 }
+
+
+/* dashboard  */
+
+.sidebar > h2{
+    font-size: 2rem;
+    color: #064E38;
+}
+
+.sidebar > p{
+    font-size: 15px;
+    font-family: "Outfit", sans-serif;
+}
+
+.sidebar li{
+    font-family: "Outfit", sans-serif;
+}
+.sidebar li a{
+    padding: .7rem .4rem;
+}
+
+.sidebar li a:hover{
+    background-color: #E6DEDA;
+}
+
+.dashboard-cards i{
+    color:#064E38;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 3px;
+    margin-bottom: .5rem;
+    width: 40px;
+    background-color:#E7FAF3;
+}
+
+.dashboard-cards p{
+    font-size: 14px !important;
+    font-weight: bold;
+    font-family: "Outfit", sans-serif;
+}
+
+
+.dashboard-cards h3{
+    color:#064E38 !important;
+    font-size: 1.2rem;
+}
+
+.delivery-status h1{
+    color:#064E38;
+    font-size: 2.3rem;
+}
+
+.delivery-status p{
+    font-size: 16px;
+    font-family: "Outfit", sans-serif;
+}
+
+.transaction div:first-child > p:first-child{
+    font-size: 16px;
+    font-family: "Outfit", sans-serif;
+    font-weight: bold;
+}
+
+.transaction div:last-child > p:last-child{
+    font-family: "Outfit", sans-serif;
+}
+
+.image1,
+.image3,
+.image4,
+.image2{
+    /* height:200px !important;
+    width: 100% !important;
+    max-width:180px !important; */
+    border: 1px dashed #9b9b9b;
+    border-radius: 5px;
+}
+
+.core-details h3{
+    color:#064E38;
+    font-size: 2.3rem;
+}
+
+.product-categories p{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Outfit", sans-serif;
+
+}
+
+.sizing h3{
+    color:#064E38;
+    font-size: 2.3rem;
+}
+
+.product-details button:hover,
+.product-details button{
+    background-color: #064E38;
+    color:#fff;
+    font-family: "Outfit", sans-serif;
+    height:45px;
+}
+
+.inventory-list a:hover,
+.inventory-list a{
+    font-size:16px;
+    font-family: "Outfit", sans-serif;
+    background-color: #064E38;
+}
+
+.product .title,
+.product .price,
+.product .category{
+    color:#064E38;
+    font-size: 18px !important;
+}
+
+.order .product-title{
+    font-size:16px;
+}
+
+.order .street,
+.order .country{
+    font-family: "Outfit", sans-serif;
+}
+
+.order .phone,
+.order .name {
+    color:#064E38;
+}
+
+.order .quantity,
+.order .size,
+.order .method,
+.order .status,
+.order .unit-price,
+.order .total-price,
+.order .date{
+    font-family: "Outfit", sans-serif;
+}
+
+
+.user-card > i{
+    height: 40px;
+    width:40px;
+    border-radius: 5px;
+    color:#064E38;
+    margin-bottom: .5rem;
+    text-align: center;
+    line-height: 40px;
+    font-size:1.2rem;
+    background-color: #E0DED9;
+}
+
+.user-card p{
+    font-size: 16px;
+    font-family: "Outfit", sans-serif;
+}
+
+.user-card h3{
+    color:#064E38;
+}
+
+.users-row{
+    font-family: "Outfit", sans-serif;
+}
+
+/* .product-categories p,
+.edit-price p,
+.edit-sub-category p, */
+.edit-product-description input,
+.edit-product-title input,
+.edit-product-description p,
+.edit-product-title p{
+    font-family: "Outfit", sans-serif;
+}
+
+.edit-item:hover,
+.edit-item{
+    background-color: #064E38;
+    font-family: "Outfit", sans-serif;
+}
+
+.user-profile p:first-child{
+    color:#064E38;
+}
+
+.personal-information p,
+.user-profile .gmail{
+    font-family: "Outfit", sans-serif;
+}
+
 
 

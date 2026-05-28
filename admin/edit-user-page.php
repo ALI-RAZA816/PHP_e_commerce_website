@@ -1,5 +1,6 @@
 <?php 
-    include "header.php";
+    // include "header.php";
+    session_start();
     include "config.php";
     if($_SESSION['role'] === 'editor' && $_GET['editId']){
         header("Location: {$host_name}/admin/not-found.php");
@@ -7,14 +8,12 @@
     }
 ?>
 <section class='admin-page position-relative'>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-3 border-end" data-aos="fade-right"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 p-0 g-0 border-end">
                 <?php include "sidebar.php" ?>
             </div>
-            <div class="col-9 py-2">
+            <div class="col-10 py-2" style='background-color:#FFF8F5;'>
                   <?php 
                             include "config.php";
                             $query = "SELECT * FROM users WHERE id = {$_GET['editId']}";
@@ -49,13 +48,13 @@
                                         $bgcolor ='rgba(191, 8, 8,.25)';
                                     }
                         ?>
-                <h5 class='text-muted  fw-bold fs-4 mb-0'>Edit user</h5>
-                <p class='text-muted border-bottom pb-2'>Update profile, role, and permissions</p>
+                <h5 class='fw-bold fs-2 mb-0' style='color:#064E38;'>Edit user</h5>
+                <p class='text-muted pb-2'>Update profile, role, and permissions</p>
                     <div class="row g-0 p-0 edit-user-page">
-                        <div class="col-12 d-flex align-items-center profile py-2 border-bottom pb-3">
+                        <div class="col-12 d-flex align-items-center profile px-3 py-4 bg-white rounded-3" style='border:1px solid #efefef;'>
                             <div class="user-img text-muted fw-bold me-3" style='color:<?php echo $role_color ?>;background-color:<?php echo $role_bg_color ?>;'>AR</div>
-                            <div class="detail">
-                                <p class='mb-0 fw-bold text-dark name'><?php echo $row['name'] ?></p>
+                            <div class="detail user-profile">
+                                <p class='mb-0 fs-3 mb-2 fw-bold name'><?php echo $row['name'] ?></p>
                                 <p class='mb-0 text-muted gmail'><?php echo $row['email'] ?></p>
                                 <div>
                                     <span class='admin d-inline-block text-capitalize' style='color:<?php echo $role_color ?>;background-color:<?php echo $role_bg_color?>;'><?php echo $row['user_role'] ?></span>
@@ -64,27 +63,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="personal-information rounded-2 pt-3 border mt-5">
-                        <p class='text-muted text-capitalize fw-bold ms-4'>Personal information</p>
-                        <form action="" class='row px-4 pb-3 g-0 form '>
+                    <div class="personal-information bg-white rounded-2 pt-3 border mt-5">
+                        <p class='text-muted text-capitalize border-bottom ms-4'>Personal information</p>
+                        <form action="" class='row px-4 pb-3 g-0 form'>
                             <div class="col-md-6 pe-md-3">
                                 <label for="" class='form-label'>Name</label>
-                                <input type="text" class='form-control rounded-0' name='edit-user-name' value='<?php echo ucwords($row['name']) ?>' placeholder='Name'>
-                                <input type="hidden" class='form-control rounded-0' name='edit-user-id' value='<?php echo $_GET['editId'] ?>'>
+                                <input type="text" class='form-control rounded-3' name='edit-user-name' value='<?php echo ucwords($row['name']) ?>' placeholder='Name'>
+                                <input type="hidden" class='form-control rounded-3' name='edit-user-id' value='<?php echo $_GET['editId'] ?>'>
                             </div>
                             <div class="col-md-6">
                                 <label for="" class='form-label'>Email</label>
-                                <input type="text" class='form-control rounded-0' name='edit-user-email' value='<?php echo $row['email'] ?>' placeholder = 'Email'>
+                                <input type="text" class='form-control rounded-3' name='edit-user-email' value='<?php echo $row['email'] ?>' placeholder = 'Email'>
                             </div>
-                            <div class="col-12 mt-4 roles">
-                                <p class='text-muted text-capitalize fw-bold'>Role</p>
+                            <div class="col-12 mt-5 roles">
+                                <p class='text-muted text-capitalize border-bottom'>Role</p>
                                 <div class='row p-0 g-0'>
                                     <?php 
                                         if($row['user_role'] === 'super-admin'){
                                             echo "<div class='col-sm-6 col-md-4 col-lg-3'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='role' class='role-selection' value='super-admin' id='super-admin' hidden checked>
-                                                        <label for='super-admin' class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
+                                                        <label for='super-admin' class='supers-admin border rounded p-3 pe-5' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-crown mb-3' style='color:#DAA464;'></i>
                                                             <p class='mb-0 fw-bold'>Super Admin</p>
                                                             <p class='mb-0'>Full Platform Access</p>
@@ -95,7 +94,7 @@
                                               echo "<div class='col-sm-6 col-md-4 col-lg-3'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='role' class='role-selection' value='super-admin' id='super-admin' hidden>
-                                                        <label for='super-admin' class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
+                                                        <label for='super-admin' class='supers-admin border rounded p-3 pe-5' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-crown mb-3' style='color:#DAA464;'></i>
                                                             <p class='mb-0 fw-bold'>Super Admin</p>
                                                             <p class='mb-0'>Full Platform Access</p>
@@ -108,7 +107,7 @@
                                             echo "<div class='col-sm-6 col-md-4 col-lg-3'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='role' class='role-selection' value='admin' id='admin' hidden checked>
-                                                        <label for='admin' class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
+                                                        <label for='admin' class='supers-admin border rounded p-3 pe-5' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-unlock mb-3' style='color:#170C79;'></i>
                                                             <p class='mb-0 fw-bold'>Admin</p>
                                                             <p class='mb-0'>Manage users, content & settings</p>
@@ -119,7 +118,7 @@
                                               echo "<div class='col-sm-6 col-md-4 col-lg-3'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='role' class='role-selection' value='admin' id='admin' hidden>
-                                                        <label for='admin' class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
+                                                        <label for='admin' class='supers-admin border rounded p-3 pe-5' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-unlock mb-3' style='color:#170C79;'></i>
                                                             <p class='mb-0 fw-bold'>Admin</p>
                                                             <p class='mb-0'>Manage users, content & settings</p>
@@ -132,7 +131,7 @@
                                             echo "<div class='col-sm-6 col-md-4 col-lg-3'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='role' class='role-selection' value='editor' id='editor' hidden checked>
-                                                        <label for='editor' class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
+                                                        <label for='editor' class='supers-admin border rounded p-3 pe-5' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-edit mb-3' style='color:#1F6F5F;'></i>
                                                             <p class='mb-0 fw-bold'>Editor</p>
                                                             <p class='mb-0'>Publish & manage content</p>
@@ -143,7 +142,7 @@
                                              echo "<div class='col-sm-6 col-md-4 col-lg-3'>
                                                         <label for='' style='width:100%;' class='p-2'>
                                                             <input type='radio' name='role' class='role-selection' value='editor' id='editor' hidden >
-                                                            <label for='editor' class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
+                                                            <label for='editor' class='supers-admin border rounded p-3 pe-5' style='width:100%;background-color:#FFF8F5;'>
                                                                 <i class='fa-solid fa-edit mb-3' style='color:#1F6F5F;'></i>
                                                                 <p class='mb-0 fw-bold'>Editor</p>
                                                                 <p class='mb-0'>Publish & manage content</p>
@@ -156,7 +155,7 @@
                                             echo"<div class='col-sm-6 col-md-4 col-lg-3'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='role' class='role-selection' value='reader' id='reader' hidden checked>
-                                                        <label for='reader' class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
+                                                        <label for='reader' class='supers-admin border rounded p-3 pe-5' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-book mb-3' style='color:#8A5F41;'></i>
                                                             <p class='mb-0 fw-bold'>Reader</p>
                                                             <p class='mb-0'>Read only access</p>
@@ -167,7 +166,7 @@
                                              echo"<div class='col-sm-6 col-md-4 col-lg-3'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='role' class='role-selection' value='reader' id='reader' hidden>
-                                                        <label for='reader' class='supers-admin border rounded p-3 pe-5' style='width:100%;'>
+                                                        <label for='reader' class='supers-admin border rounded p-3 pe-5' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-book mb-3' style='color:#8A5F41;'></i>
                                                             <p class='mb-0 fw-bold'>Reader</p>
                                                             <p class='mb-0'>Read only access</p>
@@ -179,15 +178,15 @@
                                     ?>
                                 </div>
                             </div>
-                            <div class="col-12 mt-4 status">
-                                <p class='text-muted text-capitalize fw-bold'>Status</p>
+                            <div class="col-12 mt-5 status">
+                                <p class='text-muted text-capitalize border-bottom'>Status</p>
                                 <div class='row p-0 g-0'>
                                     <?php 
                                         if($row['status'] === 'active'){
                                             echo "<div class='col-md-4'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='status' class='active-selection' value='active' id='active' hidden checked>
-                                                        <label for='active' class='actives text-center border rounded p-3 ' style='width:100%;'>
+                                                        <label for='active' class='actives text-center border rounded p-3 ' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-regular fa-circle-check mb-2'></i>
                                                             <p class='mb-0'>Active</p>
                                                         </label>
@@ -197,7 +196,7 @@
                                              echo "<div class='col-md-4'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='status' class='active-selection' value='active' id='active' hidden>
-                                                        <label for='active' class='actives text-center border rounded p-3 ' style='width:100%;'>
+                                                        <label for='active' class='actives text-center border rounded p-3 ' style='width:100%;background-color:#FFF8F5;'>
                                                             <i class='fa-regular fa-circle-check mb-2'></i>
                                                             <p class='mb-0'>Active</p>
                                                         </label>
@@ -208,7 +207,7 @@
                                             echo " <div class='col-md-4'>
                                                         <label for='' style='width:100%;' class='p-2'>
                                                             <input type='radio' name='status' class='inactive-selection' value='inactive' id='inactive' hidden checked>
-                                                            <label for='inactive' class='inactive text-center border rounded p-3 ' style='width:100%;'>
+                                                            <label for='inactive' class='inactive text-center border rounded p-3 ' style='width:100%;background-color:#FFF8F5;'>
                                                                 <i class='fa-solid fa-circle-minus mb-2'></i>
                                                                 <p class='mb-0'>Inactive</p>
                                                             </label>
@@ -218,7 +217,7 @@
                                              echo "<div class='col-md-4'>
                                                         <label for='' style='width:100%;' class='p-2'>
                                                             <input type='radio' name='status' class='inactive-selection' value='inactive' id='inactive' hidden>
-                                                            <label for='inactive' class='inactive text-center border rounded p-3 ' style='width:100%;'>
+                                                            <label for='inactive' class='inactive text-center border rounded p-3 ' style='width:100%;background-color:#FFF8F5;'>
                                                                 <i class='fa-solid fa-circle-minus mb-2'></i>
                                                                 <p class='mb-0'>Inactive</p>
                                                             </label>
@@ -229,7 +228,7 @@
                                             echo "<div class='col-md-4'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='status' class='suspend-selection' value='suspend' id='suspend' hidden checked>
-                                                        <label for='suspend' class='suspend text-center border rounded p-3 ' style='width:100%;cursor:pointer;'>
+                                                        <label for='suspend' class='suspend text-center border rounded p-3 ' style='width:100%;cursor:pointer;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-ban mb-2'></i>
                                                             <p class='mb-0'>Suspended</p>
                                                         </label>
@@ -239,7 +238,7 @@
                                              echo "<div class='col-md-4'>
                                                     <label for='' style='width:100%;' class='p-2'>
                                                         <input type='radio' name='status' class='suspend-selection' value='suspend' id='suspend' hidden>
-                                                        <label for='suspend' class='suspend text-center border rounded p-3 ' style='width:100%;cursor:pointer;'>
+                                                        <label for='suspend' class='suspend text-center border rounded p-3 ' style='width:100%;cursor:pointer;background-color:#FFF8F5;'>
                                                             <i class='fa-solid fa-ban mb-2'></i>
                                                             <p class='mb-0'>Suspended</p>
                                                         </label>

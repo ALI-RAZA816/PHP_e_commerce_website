@@ -1,4 +1,4 @@
-<?php include "header.php"?>
+<?php session_start();?>
 <section class='admin-page position-relative'>
     <div class="container">
         <div class="row mt-5">

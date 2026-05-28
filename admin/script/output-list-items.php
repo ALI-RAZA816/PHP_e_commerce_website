@@ -9,26 +9,26 @@
         if(mysqli_num_rows($result) > 0){
                 $output .= "<table class='table'>
                             <thead>
-                                <tr class='border'>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th class='text-center'>Category</th>
-                                    <th class='text-center'>Price</th>
-                                    <th class='text-center'>Action</th>
+                                <tr>
+                                    <th class='text-uppercase bg-transparent text-muted' style='font-size:14px;'>Image</th>
+                                    <th class='text-uppercase bg-transparent text-muted' style='font-size:14px;'>Name</th>
+                                    <th class='text-center text-uppercase bg-transparent text-muted' style='font-size:14px;'>Category</th>
+                                    <th class='text-center text-uppercase bg-transparent text-muted' style='font-size:14px;'>Price</th>
+                                    <th class='text-center text-uppercase bg-transparent text-muted' style='font-size:14px;'>Action</th>
                                 </tr>
                             </thead>
                             <tbody>";
                             while($row = mysqli_fetch_assoc($result)){
                                 $category = ucfirst($row['product_category']);
-                                $output .= "<tr class='align-middle border'>
+                                $output .= "<tr class='align-middle product'>
                                     <th class='col-1'>
-                                        <img src='./images/product_img/{$row['img1']}' height='40px' width='40px' class='img-fluid' alt=''>
+                                        <img src='./images/product_img/{$row['img1']}' class='img-fluid rounded-3' alt=''>
                                     </th>
-                                    <td class='text-muted'>{$row['product_title']}</td>
-                                    <td class='text-muted text-center'>{$category}</td>
-                                    <td class='text-muted text-center'><span>$</span>{$row['product_price']}</td>
-                                    <td class='text-muted text-center'>
-                                    <a href='edit-product.php?edit_id={$row['id']}' class='text-decoration-none text-muted'><i class='fa-solid fa-pen-to-square me-1' style='cursor:pointer;'></i></a>
+                                    <td class='title text-nowrap'>{$row['product_title']}</td>
+                                    <td class='text-muted category text-center'>{$category}</td>
+                                    <td class='price text-center'><span>$</span>{$row['product_price']}</td>
+                                    <td class='text-center'>
+                                    <a href='edit-product.php?edit_id={$row['id']}' class='text-decoration-none text-muted'><i class='fa-solid fa-pencil me-2' style='cursor:pointer;color:#064E38;'></i></a>
                                     <i class='fa-solid fa-trash list-delete-product text-danger' data-product_id={$row['id']} style='cursor:pointer;'></i>
                                     </td>
                                 </tr>";

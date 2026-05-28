@@ -1,5 +1,5 @@
 <?php 
-    include "header.php";
+    session_start();
     include "config.php";
     if(!isset($_SESSION['role']) || $_SESSION['role'] === 'editor'){
         header("Location: {$host_name}/admin/not-found.php");
@@ -7,16 +7,16 @@
     }
 ?>
 <section class='admin-page position-relative'>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-3 border-end">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 p-0 border-end">
                 <?php include "sidebar.php" ?>
             </div>
-            <div class="col-9 py-2">
+            <div class="col-10"  style='background-color:#FFF8F5;'>
                 <div class="users">
-                    <div data-aos="fade-up" data-aos-offset='300' class="row g-0 p-3 bg-white ">
-                        <h5 class='text-muted fw-bold fs-4 mb-0'>Users</h5>
-                        <p class='text-muted border-bottom pb-2'>Manage all registered accounts</p>
+                    <div class="row g-0 p-3">
+                        <h3 style='color:#064E38;font-size:2.4rem;' class='fw-bold mb-0'>Users</h3>
+                        <p class='text-muted pb-2'>Manage all registered accounts</p>
                         <?php 
                             include "config.php";
                             $query = "SELECT COUNT(*) AS total FROM users";
@@ -39,32 +39,36 @@
                             $result4 = mysqli_query($conn, $query4);
                             $row4 = mysqli_fetch_assoc($result4);
                         ?>
-                        <div class="col-md-3 mt-4 mt-md-0 pe-3">
-                            <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
+                        <div class="col-6 col-lg-3 mt-4 mt-md-0 pe-3 mb-3 mb-lg-0">
+                            <div class='rounded-3 user-card p-3' style='background-color:#FAF2EE;'>
+                                <i class='fa-solid fa-users'></i>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Total users</p>
-                                <h3 class='text-dark m-0 fs-3 fw-bold'><?php echo ($row['total'] < 9) ? str_pad($row['total'], 2,"0",STR_PAD_LEFT) : $row['total'] ?></h3>
+                                <h3 class=' m-0 fs-2 fw-bold'><?php echo ($row['total'] < 9) ? str_pad($row['total'], 2,"0",STR_PAD_LEFT) : $row['total'] ?></h3>
                             </div>
                         </div>
-                        <div class="col-md-3 mt-4 mt-md-0 px-3">
-                            <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
+                        <div class="col-6 col-lg-3 mt-4 mt-md-0 pe-0 mb-3 mb-lg-0 px-lg-3">
+                            <div class='rounded-3 user-card p-3' style='background-color:#FAF2EE;'>
+                                <i class="fa-solid fa-person-circle-check"></i>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Active users</p>
-                                <h3 class='text-success m-0 fs-3 fw-bold'><?php echo ($row1['total'] < 9) ? str_pad($row1['total'], 2,"0",STR_PAD_LEFT) : $row1['total'] ?></h3>
+                                <h3 class=' m-0 fs-2 fw-bold'><?php echo ($row1['total'] < 9) ? str_pad($row1['total'], 2,"0",STR_PAD_LEFT) : $row1['total'] ?></h3>
                             </div>
                         </div>
-                        <div class="col-md-3 mt-4 mt-md-0 px-3">
-                            <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
+                        <div class="col-6 col-lg-3 mt-4 mt-md-0 pe-3 px-lg-3">
+                            <div class='rounded-3 user-card p-3' style='background-color:#FAF2EE;'>
+                                <i class="fa-solid text-danger fa-ban"></i>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Suspended</p>
-                                <h3 class='text-danger m-0 fs-3 fw-bold'><?php echo ($row2['total'] < 9) ? str_pad($row2['total'], 2,"0",STR_PAD_LEFT) : $row2['total'] ?></h3>
+                                <h3 class = m-0 fs-2 fw-bold'><?php echo ($row2['total'] < 9) ? str_pad($row2['total'], 2,"0",STR_PAD_LEFT) : $row2['total'] ?></h3>
                             </div>
                         </div>
-                        <div class="col-md-3 mt-4 mt-md-0 ps-3">
-                            <div class='rounded-3 bg-white p-3' style='box-shadow:0 0 10px 1px #efefef;'>
+                        <div class="col-6 col-lg-3 mt-4 mt-md-0 ps-lg-3">
+                            <div class='rounded-3 user-card p-3' style='background-color:#FAF2EE;'>
+                                <i class="fa-regular fa-gem"></i>
                                 <p class='text-muted mb-2 text-uppercase' style='font-size:14px;'>Admin/Editors</p>
-                                <h3 class='text-dark m-0 fs-3 fw-bold'><?php echo ($total < 9) ? str_pad($total, 2,"0",STR_PAD_LEFT) : $total ?>/<?php echo ($row4['total'] < 9) ? str_pad($row4['total'], 2,"0",STR_PAD_LEFT) : $row4['total'] ?></h3>
+                                <h3 class=' m-0 fs-2 fw-bold'><?php echo ($total < 9) ? str_pad($total, 2,"0",STR_PAD_LEFT) : $total ?>/<?php echo ($row4['total'] < 9) ? str_pad($row4['total'], 2,"0",STR_PAD_LEFT) : $row4['total'] ?></h3>
                             </div>
                         </div>
                     </div>
-                    <div data-aos="fade-up" data-aos-offset='300' class="row g-0 vh-100 p-3 bg-white mt-4">
+                    <div class="row g-0 vh-100 p-3 mt-4">
                         <div class="col-12 border p-0 rounded-3 border-bottom-0 table-responsive users-data">
                             <!-- <table class="table m-0">
                                 <thead>

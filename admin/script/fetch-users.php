@@ -47,21 +47,21 @@
                                 $color='#C00707;';
                                 $bgcolor='rgba(191, 8, 8,.25)';
                             }
-                            $output .=" <tr class='align-middle'>
-                                            <td>
+                            $output .=" <tr class='align-middle users-row'>
+                                            <td class='py-4'>
                                                 <div class='d-flex'>
                                                     <div style='height:45px;width:45px;border-radius:100%;text-align:center;line-height:45px;color:{$role_color};background-color:{$role_bg_color}' class='me-3 text-muted text-uppercase fw-bold'>{$initial}</div>
                                                     <div>
-                                                        <p class='text-capitalize m-0 fw-bold'>{$row['name']}</p>
-                                                            <p class='m-0 text-muted fw-normal'>{$row['email']}</p>
+                                                        <p class='text-capitalize user-name m-0 fw-bold'>{$row['name']}</p>
+                                                            <p class='m-0 user-email text-muted fw-normal'>{$row['email']}</p>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class='text-capitalize text-primary fw-bold'><span style='color:{$role_color};background-color:{$role_bg_color};font-size:13px;' class='px-1 d-inline-block rounded-1 mb-0'>{$row['user_role']}</span></td>
-                                                <td class='text-capitalize '><span style='color:{$color};background-color:{$bgcolor};font-size:14px;' class='d-inline-block rounded-1 mb-0 px-1'>{$row['status']}</span></td>
-                                                <td>{$row['join_date']}</td>
-                                                <td>
-                                                    <a href='edit-user-page.php?editId={$row['id']}' class='text-decoration-none text-muted'><i class='fa-solid fa-edit text-muted'></i></a>
+                                                <td class='text-capitalize user-role text-primary fw-bold'><span style='color:{$role_color};background-color:{$role_bg_color};font-size:13px;' class='px-1 d-inline-block rounded-1 text-nowrap mb-0'>{$row['user_role']}</span></td>
+                                                <td class='text-capitalize user-status'><span style='color:{$color};background-color:{$bgcolor};font-size:14px;' class='d-inline-block rounded-1 mb-0 px-1 text-nowrap'>{$row['status']}</span></td>
+                                                <td class='text-nowrap'>{$row['join_date']}</td>
+                                                <td class='text-nowrap'>
+                                                    <a href='edit-user-page.php?editId={$row['id']}' class='text-decoration-none text-muted'><i class='fa-solid fa-pencil me-3' style='color:#064E38;'></i></a>
                                                     <i style= 'cursor:pointer;'class='fa-solid fa-trash text-danger'
                                                     data-delete-user={$row['id']} id='delete-user-button'></i>
                                                 </td>

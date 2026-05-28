@@ -1,6 +1,16 @@
 <?php 
     session_start();
+    include "config.php";
+    if($_SESSION['role'] === 'admin'){
+        header("Location: {$host_name}/admin/orders.php");
+        exit();
+    }else if( $_SESSION['role'] === 'editor'){
+        header("Location: {$host_name}/admin/list-items.php");
+        exit();
+    }
 ?>
+ <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
+    </div>
 <section class='admin-page position-relative'>
     <div class="container-fluid">
         <div class="row">

@@ -6,6 +6,8 @@
         exit();
     }
 ?>
+ <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
+    </div>
 <section class='admin-page position-relative'>
     <div class="container-fluid">
         <div class="row">

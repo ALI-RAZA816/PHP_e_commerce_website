@@ -1,7 +1,7 @@
 <?php 
     include "header.php";
 ?>
-<section class="cart-section">
+<section class="cart-section pb-5">
     <div class="container">
         <div class="row">
             <div class="col-12 mt-5 mb-3">

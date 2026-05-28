@@ -4,15 +4,9 @@
         header("Location: {$host_name}/admin/not-found.php");
         exit();
     }
-    else if(  $_SESSION['role'] === 'admin'){
-        header("Location: {$host_name}/admin/orders.php");
-        exit();
-    }
-    else if( $_SESSION['role'] === 'editor'){
-        header("Location: {$host_name}/admin/list-items.php");
-        exit();
-    }
 ?>
+ <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
+    </div>
 <section style='background-color:#FFF8F5;'><div class="add-product-page py-3 px-3">
     <div>
         <h2 class='fs-1 mb-0 pb-4' style='color:#064E38;'></i>Add New Product</h2>

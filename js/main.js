@@ -266,28 +266,28 @@ $(document).ready(function(){
             },3000);
             return;
         }
-        if(!$(".edit-sub-category").val()){
-            $(".error").css("top","30px");
-            $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Select sub category</span>");
-            $('.edit-sub-category').addClass('img_error');
-            setTimeout(()=>{
-                $(".error").css("top","-25px");
-                $(".error").html("");
-                $('.edit-sub-category').removeClass('img_error');
-            },3000);
-            return;
-        }
-        if(!$(".edit-price").val()){
-            $(".error").css("top","30px");
-            $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Insert product price</span>");
-            $('.edit-price').addClass('img_error');
-            setTimeout(()=>{
-                $(".error").css("top","-25px");
-                $(".error").html("");
-                $('.edit-price').removeClass('img_error');
-            },3000);
-            return;
-        }
+        // if(!$(".edit-sub-category").val()){
+        //     $(".error").css("top","30px");
+        //     $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Select sub category</span>");
+        //     $('.edit-sub-category').addClass('img_error');
+        //     setTimeout(()=>{
+        //         $(".error").css("top","-25px");
+        //         $(".error").html("");
+        //         $('.edit-sub-category').removeClass('img_error');
+        //     },3000);
+        //     return;
+        // }
+        // if(!$(".edit-price").val()){
+        //     $(".error").css("top","30px");
+        //     $(".error").html("<i class='fa-solid  fa-triangle-exclamation fs-5 me-2 text-danger'></i><span class='text-danger fs-6'>Insert product price</span>");
+        //     $('.edit-price').addClass('img_error');
+        //     setTimeout(()=>{
+        //         $(".error").css("top","-25px");
+        //         $(".error").html("");
+        //         $('.edit-price').removeClass('img_error');
+        //     },3000);
+        //     return;
+        // }
 
         var form = $(this).closest('form')[0];
         var formData = new FormData(form);

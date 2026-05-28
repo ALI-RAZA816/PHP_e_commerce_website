@@ -26,6 +26,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+     <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
+    </div>
 <section class='dashboard-page overflow-hidden position-relative'>
     <div class="container-fluid p-0">
         <div class="row p-0">

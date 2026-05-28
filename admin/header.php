@@ -24,8 +24,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
-    </div>
     <header class='py-2' style='background-color:#F5F4ED;'>
         <nav class="navbar">
             <div class="container">

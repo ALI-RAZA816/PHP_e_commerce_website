@@ -236,7 +236,7 @@ header .website-name{
         position: absolute;
         visibility: hidden;
         flex-direction: column;
-        background-color: #fff;
+        background-color: #FFF8F5;
         transition: height .50s ease-in-out;
         box-shadow: 0 0 10px 2px #33333357;
     }
@@ -297,6 +297,11 @@ header .website-name{
 }
 
 @media screen and (max-width:575px) {
+
+    .navbar .website-name{
+        font-size:1.3rem;
+    }
+
     .overlay h1{
         font-size: 2.3rem !important;
     }
@@ -392,11 +397,14 @@ header .website-name{
 /* product page  */
 
 .product-title{
-    color: #3D3D3D;
+    /* color: #3D3D3D; */
+    color:#064E38;
     text-transform: uppercase;
-    font-size: 14px;
-    font-family: "Outfit", sans-serif;
+    font-size:2.6rem;
+    /* font-family: "Outfit", sans-serif; */
 }
+
+
 
 .product-description{
      color: #3D3D3D;
@@ -736,6 +744,15 @@ header .website-name{
     display: none;
 }
 
+.product-size h3{
+    color:#064E38;
+    font-family: "Outfit", sans-serif;
+}
+
+.product-size ul li{
+    font-family: "Outfit", sans-serif;
+}
+
 .product-size p{
     font-size: 14px;
     text-transform: uppercase;
@@ -764,6 +781,14 @@ header .website-name{
     background-color: #064E38;
     color:#fff;
 }
+
+.product-size button:hover,
+.product-size button{
+    background-color:#064E38;
+    font-family: "Outfit", sans-serif;
+    border-color:#064E38;
+}
+
 
 .bestseller-check label{
     font-size: 14px;
@@ -948,6 +973,19 @@ header .website-name{
     background-color: #E6DEDA;
 }
 
+.user-card,
+.delivery-status,
+.dashboard-cards{
+    transition: transform .20s ease;
+}
+
+.user-card:hover,
+.delivery-status:hover,
+.dashboard-cards:hover{
+    cursor: pointer;
+    transform: translateY(-5px) !important;
+}
+
 .dashboard-cards i{
     color:#064E38;
     height:40px;
@@ -1066,6 +1104,7 @@ header .website-name{
 }
 
 
+
 .user-card > i{
     height: 40px;
     width:40px;
@@ -1111,9 +1150,14 @@ header .website-name{
     color:#064E38;
 }
 
+.related-products span,
 .personal-information p,
 .user-profile .gmail{
     font-family: "Outfit", sans-serif;
+}
+
+.related-products h1{
+    color:#064E38;
 }
 
 

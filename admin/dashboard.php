@@ -4,7 +4,7 @@
 <section class='admin-page position-relative'>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 sidebar-box p-0 border-end">
+            <div class="col-2 sidebar-box p-0 border-end" style='background-color:#F5F4ED;position:sticky;top:0;'>
                 <?php include "sidebar.php" ?>
             </div>
             <div class="col-10 p-0 m-0">

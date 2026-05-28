@@ -18,7 +18,8 @@
 }
 
 .active{
-    font-weight: bold !important;
+    border-bottom:.2rem solid #064E38 !important;
+    color:#064E38 !important;
 }
 
 .show-profile{

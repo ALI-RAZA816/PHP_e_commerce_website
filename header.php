@@ -19,15 +19,15 @@
 <body>
     <div class="error d-flex align-items-center border py-2 px-2 bg-white rounded-2 shadow-sm">
     </div>
-    <header data-aos="fade-down" class='py-3' style='position:sticky;top:0px;left:0;z-index:9;'>
-        <nav class="navbar p-0">
+    <header data-aos="fade-down" style='position:sticky;top:0px;left:0;z-index:9;'>
+        <nav class="navbar px-3 py-3">
             <div class="container-fluid">
                 <div class="col-1">
                     <h2 class='website-name'>FOREVER</h2>
                 </div>
                 <div class="col-7 d-flex justify-content-center align-items-center">
                     <ul class="nav header-nav-tab" id='header-nav-tabs'>
-                        <i class='fa-solid fa-xmark nav-tab-cross'></i>
+                        <i class='fa-solid fa-xmark nav-tab-cross' style='color:#064E38;'></i>
                         <li class="nav-item"><a class="nav-link pages" href="index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link pages" href="collection.php">Collection</a></li>
                         <li class="nav-item"><a class="nav-link pages" href="about.php">About</a></li>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <a href="cart.php" class='position-relative text-decoration-none'><i class="fa-solid fa-bag-shopping header-icons"></i><span class='total-item text-white'>0</span></a>
-                    <i class="fa-solid fa-bars-staggered ms-3 nav-bars"></i>
+                    <i class="fa-solid fa-bars-staggered ms-3 nav-bars" style='color:#064E38;'></i>
                 </div>
             </div>
         </nav>

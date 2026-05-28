@@ -9,7 +9,7 @@
 <section class='admin-page position-relative'>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 p-0 border-end">
+            <div class="col-2 p-0 border-end" style='background-color:#F5F4ED;'>
                 <?php include "sidebar.php" ?>
             </div>
             <div class="col-10"  style='background-color:#FFF8F5;'>

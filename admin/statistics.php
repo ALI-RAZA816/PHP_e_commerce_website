@@ -29,7 +29,7 @@
 <section class='dashboard-page overflow-hidden position-relative'>
     <div class="container-fluid p-0">
         <div class="row p-0">
-            <div class="col-2 p-0 vh-100 border-end">
+            <div class="col-2 p-0 border-end" style='background-color:#F5F4ED;'>
                 <?php 
                     include "sidebar.php";
                     $query = "SELECT *, SUM(totalprice) AS revenue FROM orders WHERE order_status = 'deliverd'";
@@ -52,29 +52,29 @@
                     <h2 class='my-3 fs-1' style='color:#064E38;'>Overview</h2>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" class="row g-0 mt-md-4 px-3 py-4">
-                    <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 pe-md-3">
-                        <div class='rounded-3 dashboard-cards bg-white p-3'>
+                    <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 pe-md-3" >
+                        <div class='rounded-3 dashboard-cards bg-white p-3' style='box-shadow:0 2px 10px 1px rgba(51, 51, 51,.05);'>
                             <i class="fa-solid fa-money-bills fs-6 me-2"></i>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'>Revenue</p>
                             <h3 class='m-0 fs-3 fw-bold'>$ <?php echo $revenue['revenue']; ?></h3>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 px-lg-3">
-                        <div class='rounded-3 dashboard-cards bg-white p-3'>
+                        <div class='rounded-3 dashboard-cards bg-white p-3' style='box-shadow:0 2px 10px 1px rgba(51, 51, 51,.05);'>
                             <i class="fa-solid fa-cart-shopping fs-6 me-2"></i>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'>Orders</p>
                             <h3 class='m-0 fs-3 fw-bold'><?php echo $placeOrder['place_orders'] ?></h3>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3 mt-4 mt-lg-0 pe-md-3 px-lg-3">
-                        <div class='rounded-3 dashboard-cards bg-white p-3'>
+                        <div class='rounded-3 dashboard-cards bg-white p-3' style='box-shadow:0 2px 10px 1px rgba(51, 51, 51,.05);'>
                             <i class="fa-solid fa-user-group fs-6 me-2"></i>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'>Customers</p>
                             <h3 class='m-0 fs-3 fw-bold'><?php echo $customers['customer'] ?></h3>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3 mt-4 mt-lg-0  ps-lg-3">
-                        <div class='rounded-3 dashboard-cards bg-white p-3'>
+                        <div class='rounded-3 dashboard-cards bg-white p-3' style='box-shadow:0 2px 10px 1px rgba(51, 51, 51,.05);'>
                             <i class="fa-solid fa-ban text-danger fs-6 me-2"></i>
                             <p class='text-muted mb-2 text-uppercase' style='font-size:15px;'>Cancelled</p>
                             <h3 class='m-0 fs-3 fw-bold'><?php echo $cancelledOrder['c_order'] ?></h3>
@@ -109,7 +109,7 @@
                             $row11 = mysqli_fetch_assoc($result11);
                             $cancelled_avg = ceil($row11['cancelled']);
                         ?>
-                        <div  class='p-3 delivery-status bg-white rounded-3'>
+                        <div  class='p-3 delivery-status bg-white rounded-3' style='box-shadow:0 0 10px 1px rgba(51, 51, 51,.08);'>
                             <h1>Delivery Status</h1>
                             <p class='text-muted mb-4'>Logistics performance for the current quarter.</p>
                             <div class='mb-3 py-2'>

@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
-<section class='collection-page'>
-    <div class="container p-0">
+<section class='collection-page' >
+    <div class="container px-3">
         <div class="row">
             <div data-aos="fade-left" class="col-md-12 rounded-3">
                 <div class='d-flex flex-column flex-md-row  bg-white collection-header my-5 justify-content-between align-items-center'>

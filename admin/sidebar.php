@@ -30,7 +30,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-<div class='sidebar pt-3 pt-lg-0 px-4 overflow-hidden vh-100'>
+<div class='sidebar pt-3 pt-lg-0 px-4 overflow-hidden' style='min-height:100vh;position:sticky;top:0;'>
     <h2 class='mb-0 d-none d-lg-block mt-2 text-uppercase'>Forever</h2>
     <h2 class='mb-0 d-none d-lg-block'>Admin</h2>
     <p class='text-muted d-none d-lg-block text-uppercase'>Management Portal</p>

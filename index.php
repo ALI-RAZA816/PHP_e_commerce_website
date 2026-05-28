@@ -15,7 +15,7 @@
         </div>
     </section>
     <section class='latest-collection-section'>
-        <div class="container-fluid bg-white px-3">
+        <div class="container-fluid bg-white px-4">
             <div class="row text-center">
                 <div class="col-12 collection-text">
                     <h1 class='text-uppercase'>Latest Collections<i class="fa-solid fa-minus"></i></h1>
@@ -47,7 +47,7 @@
         </div>
     </section>
     <section class='best-seller-section'>
-        <div class="container-fluid">
+        <div class="container-fluid px-4">
             <div class="row text-center">
                 <div class="col-12 best-seller-text">
                     <h1 class='text-uppercase'>Best Seller<i class="fa-solid fa-minus"></i></h1>

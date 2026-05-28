@@ -6,7 +6,7 @@
                 <h5 class='text-muted text-uppercase'>My <span class='fw-bold text-dark'>Orders</span><i class="fa-solid fa-minus" style='color:#2A2A2A'></i></h5>
             </div>
         </div>
-        <div class="orders" style='min-height:100vh;margin-bottom:5rem;'>
+        <div class="orders" style='min-height:100vh;'>
             <div class="row cart-products align-items-start">
                 <?php
                     

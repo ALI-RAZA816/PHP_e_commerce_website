@@ -86,32 +86,37 @@
                 <div data-aos="fade-up" data-aos-duration="3000" class="row">
                     <div class="col-lg-8 mt-5" >
                         <?php 
-                            $query7 = "SELECT AVG(id) AS average FROM orders WHERE order_status = 'deliverd'";
+                            $totalOrders = "SELECT COUNT(*) as total FROM orders";
+                            $result12 = mysqli_query($conn, $totalOrders);
+                            $orders = mysqli_fetch_assoc($result12);
+                            $total_orders = $orders['total'];
+
+                            $query7 = "SELECT COUNT(*) AS average FROM orders WHERE order_status = 'deliverd'";
                             $result7 = mysqli_query($conn, $query7);
                             $row7 = mysqli_fetch_assoc($result7);
-                            $deliver_avg = ceil($row7['average']);
+                            $deliver_avg = round(($row7['average']/$total_orders) * 100, 2);
 
-                            $query8 = "SELECT AVG(id) AS packing FROM orders WHERE order_status = 'packing'";
+                            $query8 = "SELECT COUNT(*) AS packing FROM orders WHERE order_status = 'packing'";
                             $result8 = mysqli_query($conn, $query8);
                             $row8 = mysqli_fetch_assoc($result8);
-                            $packing_avg = ceil($row8['packing']);
+                            $packing_avg = round(($row8['packing']/$total_orders) * 100, 2);
 
-                            $query9 = "SELECT AVG(id) AS shipped FROM orders WHERE order_status = 'shipped'";
+                            $query9 = "SELECT COUNT(*) AS shipped FROM orders WHERE order_status = 'shipped'";
                             $result9 = mysqli_query($conn, $query9);
                             $row9 = mysqli_fetch_assoc($result9);
-                            $shipping_avg = ceil($row9['shipped']);
+                            $shipping_avg = round(($row9['shipped']/$total_orders) * 100, 2);
 
-                            $query10 = "SELECT AVG(id) AS out_delivered FROM orders WHERE order_status = 'out for delivery'";
+                            $query10 = "SELECT COUNT(*) AS out_delivered FROM orders WHERE order_status = 'out for delivery'";
                             $result10 = mysqli_query($conn, $query10);
                             $row10 = mysqli_fetch_assoc($result10);
-                            $outdelivery_avg = ceil($row10['out_delivered']);
+                            $outdelivery_avg = round(($row10['out_delivered']/$total_orders) * 100, 2);
 
-                            $query11 = "SELECT AVG(id) AS cancelled FROM orders WHERE order_status = 'cancelled'";
+                            $query11 = "SELECT COUNT(*) AS cancelled FROM orders WHERE order_status = 'cancelled'";
                             $result11 = mysqli_query($conn, $query11);
                             $row11 = mysqli_fetch_assoc($result11);
-                            $cancelled_avg = ceil($row11['cancelled']);
+                            $cancelled_avg = round(($row11['cancelled']/$total_orders)*100,2);
                         ?>
-                        <div  class='p-3 delivery-status bg-white rounded-3' style='box-shadow:0 0 10px 1px rgba(51, 51, 51,.08);'>
+                        <div  class='p-3 overflow-hidden delivery-status bg-white rounded-3' style='box-shadow:0 0 10px 1px rgba(51, 51, 51,.08);'>
                             <h1>Delivery Status</h1>
                             <p class='text-muted mb-4'>Logistics performance for the current quarter.</p>
                             <div class='mb-3 py-2'>

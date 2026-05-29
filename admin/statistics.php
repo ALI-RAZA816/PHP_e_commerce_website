@@ -6,13 +6,22 @@
         header("Location: {$host_name}/admin/not-found.php");
         exit();
     }
+
+    
+    $page = basename($_SERVER['PHP_SELF']);
+    $page_title = '';
+    switch($page){
+        case $page === 'statistics.php':
+            $page_title = 'Admin | Dashboard';
+            break;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $page_title . " | Forever" ?></title>
     <!-- BOOTSTRAP  -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">

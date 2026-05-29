@@ -1,9 +1,42 @@
+
+<?php 
+    $page = basename($_SERVER['PHP_SELF']);
+    $page_title = '';
+    switch($page){
+        case $page === 'index.php':
+            $page_title = 'Home';
+            break;
+        case $page ==='collection.php':
+            $page_title = 'Collection'; 
+            break;
+        case $page ==='about.php':
+            $page_title = 'About'; 
+            break;
+        case $page ==='contact.php':
+            $page_title = 'Contact'; 
+            break;
+        case $page ==='product-page.php':
+            $page_title = 'Product Page'; 
+            break;
+        case $page ==='my-order.php':
+            $page_title = 'My Orders'; 
+            break;
+        case $page ==='cart.php':
+            $page_title = 'Cart'; 
+            break;
+        case $page ==='payment.php':
+            $page_title = 'Checkout'; 
+            break;
+        default:
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title><?php echo $page_title. " | Forever" ?></title>
     <!-- BOOTSTRAP  -->
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">

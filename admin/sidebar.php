@@ -10,13 +10,44 @@
     $list_items = basename($_SERVER['PHP_SELF']) === "list-items.php" ? "active-link" : '';
     $orders = basename($_SERVER['PHP_SELF']) === "orders.php" ? "active-link" : '';
     $users = basename($_SERVER['PHP_SELF']) === "users.php" ? "active-link" : '';
+
+    
+
+    $page = basename($_SERVER['PHP_SELF']);
+    $page_title = '';
+    switch($page){
+        case $page === 'statistics.php':
+            $page_title = ' Admin | Dashboard';
+            break;
+        case $page ==='dashboard.php':
+            $page_title = ' Admin | Add Product'; 
+            break;
+        case $page ==='list-items.php':
+            $page_title = ' Admin | Items'; 
+            break;
+        case $page ==='orders.php':
+            $page_title = ' Admin | Orders'; 
+            break;
+        case $page ==='users.php':
+            $page_title = 'Admin | Users'; 
+            break;
+        case $page ==='edit-product.php':
+            $page_title = 'Admin | Edit Product'; 
+            break;
+        case $page ==='edit-user-page.php':
+            $page_title = 'Admin | Edit User'; 
+            break;
+        default:
+        
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $page_title . " | Forever" ?></title>
     <!-- BOOTSTRAP  -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">

@@ -61,7 +61,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-<div class='sidebar d-flex flex-column justify-content-between pt-3 pt-lg-0 px-2 px-md-4 overflow-hidden' style='min-height:100vh;position:sticky;top:0;'>
+<div class='sidebar d-flex flex-column justify-content-between pt-3 pt-lg-0 px-md-4 overflow-hidden' style='min-height:100vh;position:sticky;top:0;'>
     <div>
         <h2 class='mb-0 d-none d-lg-block mt-2 text-uppercase'>Forever</h2>
         <h2 class='mb-0 d-none d-lg-block'>Admin</h2>
@@ -89,7 +89,9 @@
             <li class="nav-item"><a class="nav-link dashboard-links text-dark border border-end-0 mb-3 rounded-start-2 d-flex align-items-center" href="users.php"><i class="fa-solid fa-user-group fs-5 me-2"></i><span class='d-none d-md-block'>Users</span></a></li> -->
         </ul>
     </div>
-    <button style='background-color:rgba(61, 61, 61,.20);' class='btn mb-5 text-muted admin-logout d-flex align-items-center justify-content-center'><i class="fa-solid me-2 py-2 fa-right-from-bracket"></i><span class='d-none d-lg-block'>Logout</span></button>
+    
+    <button style='background-color:rgba(255, 2, 2, 0.2);color:rgb(224, 0, 0);' class='btn mb-5 fw-bold admin-logout d-flex align-items-center justify-content-center'><i class="fa-solid me-2 py-2 fa-right-from-bracket"></i><span class='d-none d-lg-block'>Logout</span></button>
+
 </div>
     <script src='../js/jquery.js'></script>
     <script src='../js/main.js'></script>

@@ -197,6 +197,17 @@ $(document).ready(function(){
         });
     }
     collection();
+    
+    function fetch_orders(){
+        $.ajax({
+            url:'script/fetch-orders.php',
+            success:function(data){
+                $(".fetch-orders").html(data);
+            }
+        });
+    }
+    fetch_orders();
+
 
     // delete product from list_items
     $(document).on('click','.list-delete-product',function(){
@@ -1195,4 +1206,68 @@ $(document).ready(function(){
             }
         });
     });
+
+    // pagination 
+    // handle product pagination
+    $(document).on('click','.product-page',function(event){
+        event.preventDefault();
+       var pageNo =  $(this).attr('data-page');
+       $.ajax({
+        url:'script/output-list-items.php',
+        type:'POST',
+        data:{
+            page_no : pageNo
+        },
+        success:function(data){
+            $(".all-products-list").html(data)
+        }
+       })
+    });
+
+    // handle order pagination
+    $(document).on('click','.order-page',function(event){
+        event.preventDefault();
+        var pageNo =  $(this).attr('data-page');
+        $.ajax({
+            url:'script/fetch-orders.php',
+            type:'POST',
+            data:{
+                page_no : pageNo
+            },
+            success:function(data){
+                $(".fetch-orders").html(data);
+            }
+       });
+    });
+
+    $(document).on('click','.users-page',function(event){
+        event.preventDefault();
+        var pageNo =  $(this).attr('data-page');
+        $.ajax({
+            url:'script/fetch-users.php',
+            type:'POST',
+            data:{
+                page_no : pageNo
+            },
+            success:function(data){
+                 $('.users-data').html(data);
+            }
+       });
+    });
+    $(document).on('click','.collect-page',function(event){
+        event.preventDefault();
+        var pageNo =  $(this).attr('data-page');
+        $.ajax({
+            url:'admin/script/collection.php',
+            type:'POST',
+            data:{
+                page_no : pageNo
+            },
+            success:function(data){
+                 $('.collection').html(data);
+            }
+       });
+    });
+
+    
 });

@@ -30,6 +30,10 @@
 
 /* color: #064E38; */
 
+.active-page{
+    border-color: #064E38 !important;
+}
+.active-page,
 .active-link{
     background-color:  #064E38 !important;
     color:#fff !important;

@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="row g-0 vh-100 p-3 mt-4">
-                        <div class="col-12 border p-0 rounded-3 border-bottom-0 table-responsive users-data">
+                        <div class="col-12 p-0 rounded-3 table-responsive users-data" style='background-color:#FAF2EE:'>
                             <!-- <table class="table m-0">
                                 <thead>
                                     <tr class='align-middle'>

@@ -1171,5 +1171,55 @@ header .website-name{
     color:#064E38;
 }
 
+.fa-trash:hover{
+    background-color:rgba(255, 0, 0,.30)
+}
+
+.fa-pencil:hover{
+    background-color:rgba(6, 78, 56,.30) !important;
+}
+
+.fa-pencil{
+    background-color:rgba(6, 78, 56,.20) !important;
+}
+
+.fa-pencil,
+.fa-trash{
+    min-height:40px;
+    min-width:40px;
+    text-align: center;
+    line-height: 40px !important;
+    border-radius: 100%;
+    background-color:rgba(255, 0, 0,.20)
+}
+
+.order-page,
+.collect-page,
+.users-page,
+.product-page{
+    height:40px;
+    width:40px;
+    text-align: center;
+    font-size: .9rem;
+    font-weight: normal;
+    line-height: 40px !important;
+    padding: 0 !important;
+    background: #c2c2c260 !important;
+    color:#333 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border:1.2px solid #cecece !important;
+    border-radius: 3px !important;
+    font-family: "Outfit", sans-serif;
+}
+
+.order-page:hover,
+.collect-page:hover,
+.users-page:hover,
+.product-page:hover{
+    border: 1.2px solid #064E38 !important;
+}
+
+
 
 

@@ -2,8 +2,10 @@
     
     include "config.php";
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-        $query = "SELECT * FROM users";
+        $limit = 3;
+        $page = isset($_POST['page_no']) ? (int)$_POST['page_no'] : 1;
+        $offset = ($page - 1) * $limit;
+        $query = "SELECT * FROM users LIMIT {$offset}, {$limit}";
         $result = mysqli_query($conn, $query);
         $output = '';
         if(mysqli_num_rows($result) > 0){
@@ -69,6 +71,39 @@
                         }
                 $output .= "</tbody>
                     </table>";
+                $totalProducts = "SELECT * FROM users";
+                    $execute = mysqli_query($conn, $totalProducts);
+                    $records = mysqli_num_rows($execute);
+                    $totalpage = ceil($records/$limit);
+
+                    $prevPage = $page - 1;
+                    $nextPage = $page + 1;
+                    if($page <= 1){
+                        $disabled = 'disabled';
+                    }else{
+                        $disabled = '';
+                    }
+                
+                    $output .="<nav class='d-flex justify-content-center my-5' aria-label='Page navigation example'>
+                        <ul class='mb-0 pagination'>
+                            <li class='page-item $disabled'><a class='page-link me-2 users-page' data-page={$prevPage} href='#'><span>&laquo;</span></a></li>";
+                            for($pageNumber = 1; $pageNumber<=$totalpage; $pageNumber++){
+                                if($pageNumber === $page){
+                                    $active = 'active-page';
+                                }else{
+                                    $active = '';
+                                }
+                                $output .="<li class='page-item '><a class='page-link $active me-2 users-page ' data-page='{$pageNumber}' href='#'>{$pageNumber}</a></li>";
+                            }
+                            if($page >= $totalpage){
+                                $disabled1 = 'disabled';
+                            }else{
+                                $disabled1 = '';
+                            }
+                            
+                            $output .="<li class='page-item $disabled1'><a class='page-link  users-page' data-page={$nextPage} href='#'><span>&raquo;</span></a></li>
+                        </ul>
+                        </nav>";
         }
         echo $output;
 

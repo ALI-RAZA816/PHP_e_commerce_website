@@ -70,7 +70,7 @@
             <?php 
                 if($_SESSION['role'] === 'super-admin'){
                     echo "<li class='nav-item'><a class='text-muted nav-link $statistics dashboard-links text-dark mb-3 rounded-2 d-flex align-items-center' href='statistics.php'><i class='fa-solid fa-dice-d6 fs-5 me-2'></i><span class='d-none d-lg-block'>Dashboard</span></a></li>
-                    <li class='nav-item'><a class='text-muted nav-link $items dashboard-links text-dark mb-3 rounded-2 d-flex align-items-center' href='dashboard.php'><i class='fa-regular fa-square-plus fs-5 me-2'></i><span class='d-none d-lg-block'>Add Items</span></a></li>
+                    <li class='nav-item'><a class='text-muted nav-link $items dashboard-links text-dark mb-3 rounded-2 d-flex align-items-center' href='dashboard.php'><i class='fa-regular fa-square-plus fs-5 me-2'></i><span class='d-none d-lg-block'>Add Products</span></a></li>
                         <li class='nav-item'><a class='text-muted nav-link $list_items dashboard-links text-dark  mb-3 rounded-2 d-flex align-items-center' href='list-items.php'><i class='fa-solid fa-list fs-5 me-2'></i><span class='d-none d-lg-block'>List Items</span></a></li>
                         <li class='nav-item'><a class='text-muted nav-link $orders dashboard-links text-dark  mb-3 rounded-2 d-flex align-items-center' href='orders.php'><i class='fa-solid fa-shopping-cart fs-5 me-2'></i><span class='d-none d-lg-block'>Orders</span></a></li>
                         <li class='nav-item'><a class='text-muted nav-link $users dashboard-links text-dark mb-3 rounded-2 d-flex align-items-center' href='users.php'><i class='fa-solid fa-user-group fs-5 me-2'></i><span class='d-none d-lg-block'>Users</span></a></li>";

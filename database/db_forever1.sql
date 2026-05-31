@@ -79,9 +79,9 @@ CREATE TABLE `orders` (
   `pay_method` varchar(50) DEFAULT NULL,
   `track_id` varchar(300) DEFAULT NULL,
   `order_date` varchar(50) DEFAULT NULL,
-  `order_status` varchar(100) DEFAULT 'order placed',
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`productid`) REFERENCES `products` (`id`)
+  `order_status` varchar(100) DEFAULT 'order placed'
+  -- PRIMARY KEY (`id`),
+  -- FOREIGN KEY (`productid`) REFERENCES `products`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

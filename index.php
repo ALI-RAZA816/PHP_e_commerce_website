@@ -15,10 +15,10 @@
         </div>
     </section>
     <section class='latest-collection-section'>
-        <div class="container-fluid bg-white px-4">
+        <div class="container bg-white px-4">
             <div class="row text-center">
                 <div class="col-12 collection-text">
-                    <h1 class='text-uppercase'>Latest Collections<i class="fa-solid fa-minus"></i></h1>
+                    <h1 class='text-uppercase mt-5'>Latest Collections<i class="fa-solid fa-minus"></i></h1>
                     <span class='text-muted'>Experience the intersection of luxury and everyday comfort. Our newest pieces are curated with precision for the modern individual.</span>
                 </div>
             </div>
@@ -47,14 +47,14 @@
         </div>
     </section>
     <section class='best-seller-section'>
-        <div class="container-fluid px-4">
+        <div class="container px-4">
             <div class="row text-center">
-                <div class="col-12 best-seller-text">
-                    <h1 class='text-uppercase'>Best Seller<i class="fa-solid fa-minus"></i></h1>
+                <div class="col-12  best-seller-text">
+                    <h1 class='text-uppercase  mt-5 '>Best Seller<i class="fa-solid fa-minus"></i></h1>
                     <span class='text-muted'>Our most beloved silhouettes, redefined for the season. Timeless designs that resonate with quality and purpose.</span>
                 </div>
             </div>
-            <div class="row g-0 p-0">
+            <div class="row g-0 pb-5 p-0">
                 <?php 
                     include "config.php";
                     $query2 = "SELECT COUNT(*) AS total FROM products WHERE bestseller = 'bestseller'";

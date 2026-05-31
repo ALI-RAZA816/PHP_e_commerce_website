@@ -84,12 +84,12 @@
                     <div class='user-profile'>
                         <i class="fa-regular me-3 fa-user header-icons user-icon"></i>
                         <div class="profile">
-                            <p class='mb-1 text-muted'><a href="my-order.php" class='text-decoration-none text-dark'>Orders</a></p>
+                            <p class='mb-1 text-muted bg-secondary-subtle d-flex align-items-center rounded-2 py-2 ps-2' style='background-color:#efefef;'><i class="fa-solid me-2 fa-cart-arrow-down"></i><a href="my-order.php" class='text-decoration-none text-dark'>Orders</a></p>
                             <?php 
                                 if(isset($_SESSION['name'])){
-                                    echo "<p class='mb-1 text-muted'><a href='#' class='text-decoration-none text-dark logout'>Logout</a></p>"; 
+                                    echo "<p class='mb-1 text-muted bg-secondary-subtle rounded-2 py-2 ps-2 d-flex align-items-center' style='background-color:#efefef;'><i class='fa-solid me-2 fa-arrow-right-from-bracket text-danger'></i><a href='#' class='text-decoration-none text-danger logout'>Logout</a></p>"; 
                                 } else{
-                                    echo "<p class='mb-1 text-muted'><a href='signup.php' class='text-decoration-none text-dark'>Sign Up</a></p>"; 
+                                    echo "<p class='mb-1 text-muted bg-secondary-subtle rounded-2 py-2 ps-2' style='background-color:#efefef;'><a href='signup.php' class='text-decoration-none text-dark'>Sign Up</a></p>"; 
                                 }
                             ?>
                         </div>

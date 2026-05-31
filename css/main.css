@@ -1218,6 +1218,8 @@ header .website-name{
 .users-page:hover,
 .product-page:hover{
     border: 1.2px solid #064E38 !important;
+    background: #064E38 !important;
+    color:#fff !important;
 }
 
 

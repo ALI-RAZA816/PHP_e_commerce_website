@@ -21,7 +21,7 @@
                 <p class='mb-0 text-muted'>alirazamujahid102@gmail.com</p>
             </div>
         </div>
-        <div class="row mt-5 border-top">
+        <div class="row mt-5">
             <div class="col-12 text-center py-3 text-muted">
                 <span>Copyright 2026 © RazaDeveloper - All Right Reserved.</span>
             </div>

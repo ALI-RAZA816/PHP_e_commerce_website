@@ -51,7 +51,7 @@
                     $disabled1 = '';
                 }
                 
-                $output .="<li class='page-item $disabled1'><a class='page-link  collect-page' data-page={$nextPage} href='#'><span>&raquo;</span></a></li>
+                $output .="<li class='page-item $disabled1'><a class='page-link collect-page next-btn' data-page={$nextPage} href='#'><span>&raquo;</span></a></li>
             </ul>
         </nav>";
     }

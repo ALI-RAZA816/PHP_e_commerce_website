@@ -84,8 +84,8 @@
                         $disabled = '';
                     }
                 
-                    $output .="<nav class='d-flex justify-content-center my-5' aria-label='Page navigation example'>
-                        <ul class='mb-0 pagination'>
+                    $output .="<nav class='d-flex justify-content-end my-5' aria-label='Page navigation example'>
+                        <ul class='mb-0 pagination me-5 '>
                             <li class='page-item $disabled'><a class='page-link me-2 users-page' data-page={$prevPage} href='#'><span>&laquo;</span></a></li>";
                             for($pageNumber = 1; $pageNumber<=$totalpage; $pageNumber++){
                                 if($pageNumber === $page){

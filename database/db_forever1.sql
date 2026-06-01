@@ -3,11 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2026 at 05:18 AM
+-- Generation Time: Jun 01, 2026 at 01:40 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
-CREATE DATABASE `db_forever1`;
-USE db_forever1;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,18 +35,6 @@ CREATE TABLE `cart` (
   `price` int(11) NOT NULL,
   `user` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `product_id`, `size`, `quantity`, `price`, `user`) VALUES
-(57, 31, 'M', 5, 90, 'Ali Raza Mujahid'),
-(58, 29, 'M', 3, 100, 'Ali Raza Mujahid'),
-(59, 13, 'M', 4, 45, 'Ali Raza Mujahid'),
-(60, 23, 'M', 2, 105, 'Abdullah'),
-(61, 30, 'L', 1, 150, 'Abdullah'),
-(62, 26, 'XXL', 13, 50, 'Abdullah');
 
 -- --------------------------------------------------------
 
@@ -80,22 +66,7 @@ CREATE TABLE `orders` (
   `track_id` varchar(300) DEFAULT NULL,
   `order_date` varchar(50) DEFAULT NULL,
   `order_status` varchar(100) DEFAULT 'order placed'
-  -- PRIMARY KEY (`id`),
-  -- FOREIGN KEY (`productid`) REFERENCES `products`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `productid`, `title`, `image`, `quantity`, `size`, `first_name`, `last_name`, `email_address`, `street`, `city`, `state`, `zip_code`, `country`, `phone`, `unitprice`, `totalprice`, `username`, `status`, `pay_method`, `track_id`, `order_date`, `order_status`) VALUES
-(27, 42, 'Boy Round Neck Pure Cotton T-shirt', '1778907221-Rectangle 3634.png', 1, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'aaaaaaaaaaa', 453115, 'Pakistan', '03007994674', 99, 99, 'Ali Raza Mujahid', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
-(28, 31, 'Men Round Neck Pure Cotton T-shirt', '1778906526-Rectangle 3619.png', 5, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'sdfffffffff', 453115, 'Pakistan', '03007994674', 90, 450, 'Ali Raza Mujahid', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
-(29, 29, 'Girls Round Neck Cotton Top', '1778906394-Gemini_Generated_Image_1z4edl1z4edl1z4es.png', 3, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'sdfffffffff', 453115, 'Pakistan', '03007994674', 100, 450, 'Ali Raza Mujahid', 'Pending', 'COD', NULL, '20/05/2026', 'packing'),
-(30, 13, 'Boy Round Neck Pure Cotton T-shirt', '1778904862-ChatGPT Image May 14, 2026, 12_39_41 PMdsdf.png', 4, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'sdfffffffff', 453115, 'Pakistan', '03007994674', 45, 450, 'Ali Raza Mujahid', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
-(31, 23, 'Men Slim Fit Relaxed Denim Jacket', '1778905875-ChatGPT Image May 15, 2026, 06_24_55 PMdsf.png', 2, 'M', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'ddfgdfg', 453115, 'Pakistan', '03007994674', 105, 210, 'Abdullah', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
-(32, 30, 'Girls Round Neck Cotton Top', '1778906459-Gemini_Generated_Image_w7r9iow7r9iow7r9df.png', 1, 'L', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'ddfgdfg', 453115, 'Pakistan', '03007994674', 150, 210, 'Abdullah', 'Pending', 'COD', NULL, '20/05/2026', 'order placed'),
-(33, 26, ' Women Round Neck Cotton Top', '1778906152-ChatGPT Image May 15, 2026, 06_52_50 PM.png', 13, 'XXL', 'ALI', 'MUJAHID', 'razadeveloper816@gmail.com', 'District Okara Tehsil Depalpur Chorasta Mian Khan P/O Basipur', 'Lahore', 'ddfgdfg', 453115, 'Pakistan', '03007994674', 50, 210, 'Abdullah', 'Pending', 'COD', NULL, '20/05/2026', 'order placed');
 
 -- --------------------------------------------------------
 
@@ -189,11 +160,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_role`, `status`, `join_date`, `otp`) VALUES
-(1, 'Ali Raza Mujahid', 'alirazamujahid102@gmail.com', '$2y$10$svzhsFSjHkKGSOkCttrZreOPL0KOJMoWCJZu.VXGYcyd9sTHo8Kuq', 'super-admin', 'active', '15 May 2026', 48981),
-(2, 'Shehroz Ahmad', 'shehrozahmad1055gmail.com', '$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m', 'super-admin', 'active', '15 May 2026', NULL),
-(3, 'Tanvir', 'razadeveloper816@gmail.com', '$2y$10$5fwJOVAYGcgx.mu4nuqy8O6.vhgqhygjpU37v/f4IntaLyUINgN.m', 'editor', 'active', '15 May 2026', 11598),
-(4, 'Abdullah', 'developerraza816@gmail.com', '$2y$10$e0e8xfE1.92FxWnkwDCSPOllInyI.UZILVkeQzd42ttsXegoGd6O.', 'reader', 'active', '15 May 2026', NULL),
-(5, 'Haseeb', 'haseebahmad543@gmail.com', '$2y$10$w5CgsnY7Ot8KzO7z9IYowuZaVcM0eaf.acrQd.UTIAyryMSwrCC1K', 'admin', 'active', '15 May 2026', NULL);
+(1, 'Ali Raza Mujahid', 'alirazamujahid102@gmail.com', '$2y$10$svzhsFSjHkKGSOkCttrZreOPL0KOJMoWCJZu.VXGYcyd9sTHo8Kuq', 'super-admin', 'active', '15 May 2026', 48981);
 
 --
 -- Indexes for dumped tables
@@ -231,13 +198,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -249,7 +216,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

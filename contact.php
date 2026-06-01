@@ -21,7 +21,7 @@
                     <div>
                         <textarea name="message" id="" class=' bg-transparent border-bottom border-top-0 border-end-0 border-start-0 form-control mail-content rounded-0' placeholder='Message' class='mb-3'></textarea>
                     </div>
-                    <button type='button' class='text-white submit-maild-block w-100 btn mt-3'>Submit</button>
+                    <button type='button' class='text-white submit-mail d-block w-100 btn mt-3'>Submit</button>
                 </form>
             </div>
         </div>

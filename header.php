@@ -27,7 +27,12 @@
         case $page ==='payment.php':
             $page_title = 'Checkout'; 
             break;
-        default:
+        case $page ==='signup.php':
+            $page_title = 'SignUp'; 
+            break;
+        case $page ==='login.php':
+            $page_title = 'Login'; 
+            break;
     }
 ?>
 
@@ -89,7 +94,7 @@
                                 if(isset($_SESSION['name'])){
                                     echo "<p class='mb-1 text-muted bg-secondary-subtle rounded-2 py-2 ps-2 d-flex align-items-center' style='background-color:#efefef;'><i class='fa-solid me-2 fa-arrow-right-from-bracket text-danger'></i><a href='#' class='text-decoration-none text-danger logout'>Logout</a></p>"; 
                                 } else{
-                                    echo "<p class='mb-1 text-muted bg-secondary-subtle rounded-2 py-2 ps-2' style='background-color:#efefef;'><a href='signup.php' class='text-decoration-none text-dark'>Sign Up</a></p>"; 
+                                    echo "<p class='mb-1 text-muted bg-secondary-subtle rounded-2 py-2 ps-2 d-flex align-items-center' style='background-color:#efefef;'><i class='fa-solid me-2 fa-user-plus'></i><a href='signup.php' class='text-decoration-none text-dark'>Sign Up</a></p>"; 
                                 }
                             ?>
                         </div>

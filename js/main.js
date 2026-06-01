@@ -777,7 +777,7 @@ $(document).ready(function(){
                 }else if(data === 'Message sent'){
                     $('.about-us-form').trigger('reset');
                     $(".error").css("top","30px");
-                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Message has been sent. <br> We'll contact you shortly.</span>");
+                    $(".error").html("<i class='fa-solid fa-circle-check fs-5 me-2 text-success'></i><span class='text-success fs-6'>Message has been sent. We'll contact you shortly.</span>");
                     setTimeout(()=>{
                         $(".error").css("top","-25px");
                         $(".error").html("");
@@ -1191,7 +1191,7 @@ $(document).ready(function(){
         })
     });
 
-    $('.order-status').on('change',function(){
+    $(document).on('change','.order-status',function(){
         var order_status = $(this).val(); 
         var order_id = $(this).attr('id');
         $.ajax({
@@ -1202,7 +1202,7 @@ $(document).ready(function(){
                 order_id:order_id
             },
             success:function(data){
-                
+                // $(".fetch-orders").html(data);
             }
         });
     });

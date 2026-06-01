@@ -41,8 +41,8 @@
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('razadeveloper816@gmail.com', 'Ali Raza Mujahid');
-            $mail->addAddress($EMAIL, $NAME);     //Add a recipient
+            $mail->setFrom($EMAIL, $NAME);
+            $mail->addAddress('razadeveloper816@gmail.com', 'Ali Raza Mujahid');     //Add a recipient
 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
